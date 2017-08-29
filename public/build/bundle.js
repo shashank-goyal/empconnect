@@ -60962,16 +60962,57 @@ var HomepageLayout = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomepageLayout.__proto__ || Object.getPrototypeOf(HomepageLayout)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: 'Home' }, _this.handleItemClick = function (e, _ref2) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomepageLayout.__proto__ || Object.getPrototypeOf(HomepageLayout)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: 'Home', selectedLocation: 'Bangalore' }, _this.handleItemClick = function (e, _ref2) {
             var name = _ref2.name;
             return _this.setState({ activeItem: name });
+        }, _this.handleLocationChange = function (e) {
+            return _this.setState({ selectedLocation: e.target.value });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(HomepageLayout, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            function displayLocation(latitude, longitude) {
+                var request = new XMLHttpRequest();
+
+                var method = 'GET';
+                var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&sensor=true';
+                var async = true;
+
+                request.open(method, url, async);
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        var data = JSON.parse(request.responseText);
+                        alert(request.responseText); // check under which type your city is stored, later comment this line
+                        var addressComponents = data.results[0].address_components;
+                        for (var i = 0; i < addressComponents.length; i++) {
+                            var types = addressComponents[i].types;
+                            //alert(types);
+                            if (types == "locality,political") {
+                                alert(addressComponents[i].long_name); // this should be your city, depending on where you are
+                            }
+                        }
+                        //alert(address.city.short_name);
+                    }
+                };
+                request.send();
+            };
+
+            var successCallback = function successCallback(position) {
+                var x = position.coords.latitude;
+                var y = position.coords.longitude;
+                displayLocation(x, y);
+            };
+
+            navigator.geolocation.getCurrentPosition(successCallback);
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var activeItem = this.state.activeItem;
+            var _state = this.state,
+                activeItem = _state.activeItem,
+                selectedLocation = _state.selectedLocation;
 
             return _react2.default.createElement(
                 'div',
@@ -61025,7 +61066,18 @@ var HomepageLayout = function (_Component) {
                                     _semanticUiReact.Menu.Item,
                                     null,
                                     'Welcome User'
-                                )
+                                ),
+                                _react2.default.createElement(_semanticUiReact.Dropdown, {
+                                    button: true,
+                                    className: 'icon',
+                                    floating: true,
+                                    labeled: true,
+                                    icon: 'world',
+                                    options: [{ key: 'Bangalore', text: 'Bangalore', value: 'Bangalore' }, { key: 'Pune', text: 'Pune', value: 'Pune' }],
+                                    text: selectedLocation,
+                                    placeholder: 'Select Location',
+                                    onChange: this.handleLocationChange
+                                })
                             )
                         )
                     )
