@@ -10,7 +10,9 @@ router.get('/test', function(req, res, next) {
   users.find({}, (err, user) => {
 
      res.json({success:user})
-   }) 
+   })
+
+   
 
 });
 module.exports = router;
