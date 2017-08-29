@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "webpack": "webpack"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -12,6 +13,9 @@
     "express": "~4.15.2",
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "semantic-ui-react": "^0.72.0",
     "serve-favicon": "~2.4.2"
   },
   "repository": {
@@ -23,5 +27,15 @@
   "bugs": {
     "url": "https://github.com/shashank-goyal/empconnect/issues"
   },
-  "homepage": "https://github.com/shashank-goyal/empconnect#readme"
+  "homepage": "https://github.com/shashank-goyal/empconnect#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "webpack": "^3.5.5"
+  }
 }
