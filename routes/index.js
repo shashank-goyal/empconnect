@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
 router.get('/test', function(req, res, next) {
   const users = connection.get('Users');
   users.find({}, (err, user) => {
-
-     res.json({success:user})
+  res.json({success:user})
    }) 
 
 });
