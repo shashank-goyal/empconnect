@@ -3,7 +3,7 @@ var router = express.Router();
 const connection = require('../config/database')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Employee Connect' });
 });
 router.get('/test', function(req, res, next) {
   const users = connection.get('Users');
