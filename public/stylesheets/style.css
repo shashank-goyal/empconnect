@@ -1,8 +1,15 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+
+.ui.button.toggle.active{
+  background-color:#2185d0!important
 }
 
-a {
-  color: #00B7FF;
+.ui.button.toggle.active:hover{
+  background-color:#2185d0!important
+}
+#toggleVisible{
+ display: none;
+}
+#clasifiedTile{
+  display: table !important;
 }
