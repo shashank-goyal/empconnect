@@ -1,19 +1,3 @@
-import React, { Component } from 'react'
-import {
-    Button,
-    Container,
-    Divider,
-    Grid,
-    Header,
-    Icon,
-    Image,
-    List,
-    Menu,
-    Segment,
-    Visibility,Dropdown,
-    Tab,Label
-} from 'semantic-ui-react'
-import ClassifiedTile from './ClassifiedTile'
 const description = [
     'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their',
     'tiny stature, and even others for their massive size.',
@@ -60,25 +44,5 @@ const data = [
         description:description
     }
 ]
-export default class Classifieds extends Component {
 
-
-    render() {
-        return (
-            <div>
-                <Segment style={{ padding: '6em 0em' }} vertical>
-                    <Grid container stackable verticalAlign='top'>
-                    <Grid.Row id="clasifiedTile">
-                      <Grid.Column width={2}>
-                       </Grid.Column>
-                       <Grid.Column width={12}>
-                         <ClassifiedTile data={data}/>
-                        </Grid.Column>
-                         
-                    </Grid.Row>
-                    </Grid>
-                </Segment>
-            </div>
-        )
-    }
-}
+export default data;

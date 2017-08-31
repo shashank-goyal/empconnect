@@ -41201,11 +41201,11 @@ var _Classifieds = __webpack_require__(871);
 
 var _Classifieds2 = _interopRequireDefault(_Classifieds);
 
-var _Events = __webpack_require__(874);
+var _Events = __webpack_require__(875);
 
 var _Events2 = _interopRequireDefault(_Events);
 
-var _Achievements = __webpack_require__(875);
+var _Achievements = __webpack_require__(876);
 
 var _Achievements2 = _interopRequireDefault(_Achievements);
 
@@ -78517,6 +78517,10 @@ var _ClassifiedTile = __webpack_require__(872);
 
 var _ClassifiedTile2 = _interopRequireDefault(_ClassifiedTile);
 
+var _data = __webpack_require__(874);
+
+var _data2 = _interopRequireDefault(_data);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -78524,45 +78528,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var description = ['Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their', 'tiny stature, and even others for their massive size.'].join(' ');
-var data = [{
-    title: "Maruthi",
-    image: "images/swift.png",
-    type: "Car",
-    model: "Desire",
-    year: "2004",
-    price: "1000",
-    contact: "554554",
-    description: description
-}, {
-    title: "Bugatti",
-    image: "images/super-cars.png",
-    type: "Car",
-    model: "Chevr",
-    year: "2012",
-    price: "1000000",
-    contact: "55455ff4",
-    description: description
-}, {
-    title: "iPhone 7",
-    image: "images/iphone.jpg",
-    type: "Mobile",
-    model: "iPhone 7",
-    year: "2015",
-    price: "100000",
-    contact: "554554",
-    description: description
-}, {
-    title: "Bullet Desert Storm",
-    image: "images/bullet.png",
-    type: "Bike",
-    model: "Deset Storm 500",
-    year: "2016",
-    price: "200000",
-    contact: "554554",
-    description: description
-}];
 
 var Classifieds = function (_Component) {
     _inherits(Classifieds, _Component);
@@ -78592,7 +78557,7 @@ var Classifieds = function (_Component) {
                             _react2.default.createElement(
                                 _semanticUiReact.Grid.Column,
                                 { width: 12 },
-                                _react2.default.createElement(_ClassifiedTile2.default, { data: data })
+                                _react2.default.createElement(_ClassifiedTile2.default, { data: _data2.default })
                             )
                         )
                     )
@@ -78808,6 +78773,57 @@ exports.default = SingleClassifiedTile;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+var description = ['Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their', 'tiny stature, and even others for their massive size.'].join(' ');
+var data = [{
+    title: "Maruthi",
+    image: "images/swift.png",
+    type: "Car",
+    model: "Desire",
+    year: "2004",
+    price: "1000",
+    contact: "554554",
+    description: description
+}, {
+    title: "Bugatti",
+    image: "images/super-cars.png",
+    type: "Car",
+    model: "Chevr",
+    year: "2012",
+    price: "1000000",
+    contact: "55455ff4",
+    description: description
+}, {
+    title: "iPhone 7",
+    image: "images/iphone.jpg",
+    type: "Mobile",
+    model: "iPhone 7",
+    year: "2015",
+    price: "100000",
+    contact: "554554",
+    description: description
+}, {
+    title: "Bullet Desert Storm",
+    image: "images/bullet.png",
+    type: "Bike",
+    model: "Deset Storm 500",
+    year: "2016",
+    price: "200000",
+    contact: "554554",
+    description: description
+}];
+
+exports.default = data;
+
+/***/ }),
+/* 875 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -78863,7 +78879,7 @@ var Events = function (_Component) {
 exports.default = Events;
 
 /***/ }),
-/* 875 */
+/* 876 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
