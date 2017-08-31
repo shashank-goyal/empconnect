@@ -78674,11 +78674,11 @@ var SingleClassifiedTile = function (_React$Component) {
     _createClass(SingleClassifiedTile, [{
         key: 'toggleDescription',
         value: function toggleDescription(event) {
-            var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display;
+            var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display;
 
             event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = toggle == "none" || toggle == "" ? "Less <<" : "More >>";
             event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none" || toggle == "" ? "300px" : "150px";
-            event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" || toggle == "" ? "table" : "none";
+            event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display = toggle == "none" || toggle == "" ? "table" : "none";
         }
     }, {
         key: 'render',
@@ -78707,7 +78707,13 @@ var SingleClassifiedTile = function (_React$Component) {
                                 _react2.default.createElement(
                                     'span',
                                     { className: 'price' },
-                                    this.props.type,
+                                    this.props.category,
+                                    ' >> '
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'stay' },
+                                    this.props.brand,
                                     ' >> '
                                 ),
                                 _react2.default.createElement(
@@ -78726,10 +78732,22 @@ var SingleClassifiedTile = function (_React$Component) {
                                 _semanticUiReact.Item.Description,
                                 null,
                                 _react2.default.createElement(
-                                    'p',
+                                    'div',
                                     null,
-                                    this.props.year
+                                    this.props.purpose == "S" ? _react2.default.createElement(
+                                        _semanticUiReact.Label,
+                                        { as: 'a', tag: true },
+                                        this.props.year,
+                                        ' Model'
+                                    ) : _react2.default.createElement('div', null),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Label,
+                                        { as: 'a' },
+                                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'location arrow' }),
+                                        this.props.location
+                                    )
                                 ),
+                                _react2.default.createElement('br', null),
                                 _react2.default.createElement(
                                     'span',
                                     { id: 'toggleVisible' },
@@ -78746,9 +78764,14 @@ var SingleClassifiedTile = function (_React$Component) {
                                 ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { secondary: true, size: 'mini', floated: 'left' },
+                                    { secondary: true, size: 'mini' },
                                     _react2.default.createElement(_semanticUiReact.Icon, { name: 'phone' }),
                                     'Get contact details'
+                                ),
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'price' },
+                                    this.props.postTimestamp.split(" ").slice(1, 3).reverse().join(" ")
                                 )
                             )
                         )
@@ -78775,40 +78798,102 @@ Object.defineProperty(exports, "__esModule", {
 });
 var description = ['Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their', 'tiny stature, and even others for their massive size.'].join(' ');
 var data = [{
-    title: "Maruthi",
+    title: "Maruthi Swift Desire",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
     image: "images/swift.png",
-    type: "Car",
+    category: "4 Wheelers",
+    purpose: "S",
+    brand: "Maruthi",
     model: "Desire",
     year: "2004",
     price: "1000",
-    contact: "554554",
+    location: "Koramangala",
+    phone: "554554",
+    postTimestamp: "Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
     description: description
 }, {
-    title: "Bugatti",
+    title: "Bugatti Chevr",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
     image: "images/super-cars.png",
-    type: "Car",
+    category: "4 Wheelers",
+    purpose: "S",
+    brand: "Bugatti",
     model: "Chevr",
     year: "2012",
     price: "1000000",
-    contact: "55455ff4",
+    location: "Koramangala",
+    phone: "55455ff4",
+    postTimestamp: "Thu Aug 25 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
     description: description
 }, {
     title: "iPhone 7",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
     image: "images/iphone.jpg",
-    type: "Mobile",
+    category: "Electronics",
+    brand: "Apple",
+    purpose: "S",
     model: "iPhone 7",
     year: "2015",
     price: "100000",
-    contact: "554554",
+    location: "Koramangala",
+    phone: "554554",
+    postTimestamp: "Thu Aug 26 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
     description: description
 }, {
     title: "Bullet Desert Storm",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
     image: "images/bullet.png",
-    type: "Bike",
+    category: "2 Wheelers",
+    brand: "RE",
     model: "Deset Storm 500",
+    purpose: "S",
     year: "2016",
     price: "200000",
-    contact: "554554",
+    location: "Koramangala",
+    phone: "554554",
+    postTimestamp: "Thu Aug 28 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
+    description: description
+}, {
+    title: "Need a partner for 2 sharing",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
+    image: "images/share.jpg",
+    category: "Real Estate",
+    purpose: "SH",
+    brand: "2 BHK",
+    model: "2 sharing bedroom",
+    location: "Marathahalli",
+
+    year: "",
+    price: "1000",
+    phone: "554554",
+    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
+    description: description
+}, {
+    title: "Rent a house - 3 BHK",
+    ntId: "npsaa",
+    email: "npsaa@allstate.com",
+    image: "images/rent.jpeg",
+    category: "Real Estate",
+    purpose: "R",
+    brand: "3 BHK",
+    model: "",
+    location: "Koramangala",
+
+    year: "",
+    price: "1000",
+    phone: "554554",
+    postTimestamp: "Thu Aug 29 2017 19:03:35 GMT+0530 (IST)",
+    deletionFlag: false,
     description: description
 }];
 
