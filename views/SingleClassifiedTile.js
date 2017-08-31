@@ -12,8 +12,10 @@ class SingleClassifiedTile extends React.Component{
    } 
    toggleDescription(event){
        var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display;
-       event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none"?"300px":"150px"      
-       event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none"?"table":"none";
+       
+       event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = toggle == "none" ||toggle == ""? "Less <<":"More >>"
+       event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none"|| toggle == ""?"300px":"150px"      
+       event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" ||toggle == ""?"table":"none";
    
     }
   render(){
@@ -41,11 +43,10 @@ class SingleClassifiedTile extends React.Component{
                 
                 </Item.Description> 
                 <Item.Extra>
-                <Button secondary size='mini' onClick={this.toggleDescription}  floated='left'>
-                More 
-                <Icon name='angle double right' />
+                <Button secondary size='mini' onClick={this.toggleDescription}  floated='right'>
+                More >> 
                 </Button>
-                <Button secondary size='mini'  floated='right'>
+                <Button secondary size='mini'  floated='left'>
                 <Icon name='phone' />
                     Get contact details
                     
