@@ -78710,8 +78710,10 @@ var SingleClassifiedTile = function (_React$Component) {
         key: 'toggleDescription',
         value: function toggleDescription(event) {
             var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display;
-            event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none" ? "300px" : "150px";
-            event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" ? "table" : "none";
+
+            event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = toggle == "none" || toggle == "" ? "Less <<" : "More >>";
+            event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none" || toggle == "" ? "300px" : "150px";
+            event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" || toggle == "" ? "table" : "none";
         }
     }, {
         key: 'render',
@@ -78774,13 +78776,12 @@ var SingleClassifiedTile = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { secondary: true, size: 'mini', onClick: this.toggleDescription, floated: 'left' },
-                                    'More',
-                                    _react2.default.createElement(_semanticUiReact.Icon, { name: 'angle double right' })
+                                    { secondary: true, size: 'mini', onClick: this.toggleDescription, floated: 'right' },
+                                    'More >>'
                                 ),
                                 _react2.default.createElement(
                                     _semanticUiReact.Button,
-                                    { secondary: true, size: 'mini', floated: 'right' },
+                                    { secondary: true, size: 'mini', floated: 'left' },
                                     _react2.default.createElement(_semanticUiReact.Icon, { name: 'phone' }),
                                     'Get contact details'
                                 )
