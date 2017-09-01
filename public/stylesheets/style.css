@@ -13,3 +13,7 @@
 #clasifiedTile{
   display: table !important;
 }
+.achievement{
+  height : 300px;
+  width : 600px
+}
