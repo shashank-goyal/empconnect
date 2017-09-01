@@ -61131,7 +61131,7 @@ var HomepageLayout = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomepageLayout.__proto__ || Object.getPrototypeOf(HomepageLayout)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: "none", openModal1: false, openModal2: false }, _this.panes = [{ menuItem: 'Activities', render: function render() {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomepageLayout.__proto__ || Object.getPrototypeOf(HomepageLayout)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: "none", openModal1: false, openModal2: false, openModal3: false, openModal4: false, activeClassifiedItem: 'none' }, _this.panes = [{ menuItem: 'Activities', render: function render() {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
                     { attached: false },
@@ -61149,15 +61149,39 @@ var HomepageLayout = function (_Component) {
                     { attached: false },
                     'Recent Holidays'
                 );
-            } }], _this.handleClick = function (e, _ref2) {
+            } }], _this.options = [{ key: 's', text: 'Sell', value: 'sell' }, { key: 'r', text: 'Rent', value: 'rent' }, { key: 'sh', text: 'Share', value: 'share' }], _this.handleClick = function (e, _ref2) {
             var name = _ref2.name;
             return _this.setState({ activeItem: name });
+        }, _this.handleClassifiedsClick = function (e, _ref3) {
+            var name = _ref3.name;
+            return _this.setState({ activeClassifiedItem: name });
         }, _this.handleNewItemClick = function (e) {
-            return _this.setState({ openModal1: true, openModal2: false });
-        }, _this.handleNextClick = function (e) {
-            return _this.setState({ openModal2: true, openModal1: false });
-        }, _this.handleBackClick = function (e) {
-            return _this.setState({ openModal2: false, openModal1: true });
+            return _this.setState({ openModal1: true, openModal2: false, openModal3: false, openModal4: false });
+        }, _this.handleNextClick = function (e, _ref4) {
+            var name = _ref4.name;
+
+            console.log('next name', name);
+            if (name === 'modal1next') {
+                if (_this.state.activeItem === 'Classifieds') {
+                    _this.setState({ openModal2: false, openModal1: false, openModal3: true, openModal4: false });
+                } else {
+                    _this.setState({ openModal2: true, openModal1: false, openModal3: false, openModal4: false });
+                }
+            } else if (name === 'modal3next') {
+                _this.setState({ openModal2: false, openModal1: false, openModal3: false, openModal4: true });
+            }
+        }, _this.handleBackClick = function (e, _ref5) {
+            var name = _ref5.name;
+
+            console.log('back name', name, _this.state);
+            if (name === 'modal3back' || name === 'modal2back') {
+                _this.setState({ openModal2: false, openModal1: true, openModal3: false, activeClassifiedItem: 'none' });
+            } else if (name === 'modal4back') {
+                console.log('inside else if');
+                _this.setState({ openModal2: false, openModal1: false, openModal3: true, openModal4: false });
+            }
+        }, _this.close = function () {
+            return _this.setState({ openModal1: false, openModal2: false, activeItem: "none", openModal3: false, openModal4: false, activeClassifiedItem: 'none' });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -61167,7 +61191,10 @@ var HomepageLayout = function (_Component) {
             var _state = this.state,
                 activeItem = _state.activeItem,
                 openModal1 = _state.openModal1,
-                openModal2 = _state.openModal2;
+                openModal2 = _state.openModal2,
+                openModal3 = _state.openModal3,
+                openModal4 = _state.openModal4,
+                activeClassifiedItem = _state.activeClassifiedItem;
 
             return _react2.default.createElement(
                 'div',
@@ -61268,11 +61295,13 @@ var HomepageLayout = function (_Component) {
                 ),
                 _react2.default.createElement(
                     _semanticUiReact.Modal,
-                    { open: openModal1 },
+                    { open: openModal1, closeOnEscape: true, closeIcon: true, closeOnRootNodeClick: false, onClose: this.close },
                     _react2.default.createElement(
                         _semanticUiReact.Modal.Header,
                         null,
-                        'Step 1: Select type'
+                        'Step 1',
+                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'angle double right' }),
+                        ' Select type'
                     ),
                     _react2.default.createElement(
                         _semanticUiReact.Modal.Content,
@@ -61291,14 +61320,14 @@ var HomepageLayout = function (_Component) {
                                         { width: 4 },
                                         _react2.default.createElement(
                                             _semanticUiReact.Button,
-                                            { name: 'Events', toggle: true, active: activeItem === "Events", onClick: this.handleClick },
+                                            { name: 'Classifieds', toggle: true, active: activeItem === "Classifieds", onClick: this.handleClick },
                                             _react2.default.createElement(
                                                 'span',
                                                 null,
-                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'add to calendar', size: 'massive' }),
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'newspaper', size: 'massive' }),
                                                 _react2.default.createElement('br', null),
                                                 _react2.default.createElement('br', null),
-                                                'Events'
+                                                'Classifieds'
                                             )
                                         )
                                     ),
@@ -61307,14 +61336,14 @@ var HomepageLayout = function (_Component) {
                                         { width: 4 },
                                         _react2.default.createElement(
                                             _semanticUiReact.Button,
-                                            { name: 'Classifieds', toggle: true, active: activeItem === "Classifieds", onClick: this.handleClick },
+                                            { name: 'Events', toggle: true, active: activeItem === "Events", onClick: this.handleClick },
                                             _react2.default.createElement(
                                                 'span',
                                                 null,
-                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'shopping cart', size: 'massive' }),
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'add to calendar', size: 'massive' }),
                                                 _react2.default.createElement('br', null),
                                                 _react2.default.createElement('br', null),
-                                                'Classifieds'
+                                                'Events'
                                             )
                                         )
                                     ),
@@ -61343,7 +61372,12 @@ var HomepageLayout = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _semanticUiReact.Button,
-                            { primary: true, onClick: this.handleNextClick },
+                            { secondary: true, onClick: this.close },
+                            'Cancel'
+                        ),
+                        _react2.default.createElement(
+                            _semanticUiReact.Button,
+                            { name: 'modal1next', primary: true, onClick: this.handleNextClick, disabled: activeItem === 'none' },
                             'Next ',
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'right chevron' })
                         )
@@ -61351,11 +61385,15 @@ var HomepageLayout = function (_Component) {
                 ),
                 _react2.default.createElement(
                     _semanticUiReact.Modal,
-                    { open: openModal2 },
+                    { open: openModal2, closeOnEscape: true, closeIcon: true, closeOnRootNodeClick: false, onClose: this.close },
                     _react2.default.createElement(
                         _semanticUiReact.Modal.Header,
                         null,
-                        'Step 2: Add Details'
+                        'Step 2',
+                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'angle double right' }),
+                        ' Provide ',
+                        activeItem,
+                        ' Details'
                     ),
                     _react2.default.createElement(
                         _semanticUiReact.Modal.Content,
@@ -61369,7 +61407,8 @@ var HomepageLayout = function (_Component) {
                                 _react2.default.createElement(
                                     _semanticUiReact.Grid.Row,
                                     null,
-                                    'Form'
+                                    activeItem,
+                                    ' Form'
                                 )
                             )
                         )
@@ -61379,15 +61418,224 @@ var HomepageLayout = function (_Component) {
                         null,
                         _react2.default.createElement(
                             _semanticUiReact.Button,
-                            { secondary: true, onClick: this.handleBackClick },
+                            { name: 'modal2back', secondary: true, onClick: this.handleBackClick },
                             'Back ',
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'left chevron' })
                         ),
                         _react2.default.createElement(
                             _semanticUiReact.Button,
                             { primary: true },
+                            'Create'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _semanticUiReact.Modal,
+                    { open: openModal3, closeOnEscape: true, closeIcon: true, closeOnRootNodeClick: false, onClose: this.close },
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Header,
+                        null,
+                        'Step 2',
+                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'angle double right' }),
+                        ' Select Category'
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Content,
+                        { image: true },
+                        _react2.default.createElement(
+                            _semanticUiReact.Modal.Description,
+                            null,
+                            _react2.default.createElement(
+                                _semanticUiReact.Grid,
+                                { stackable: true, centered: true },
+                                _react2.default.createElement(
+                                    _semanticUiReact.Grid.Row,
+                                    null,
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'TwoWheelers', toggle: true, active: activeClassifiedItem === "TwoWheelers", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'motorcycle', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                '2 Wheelers'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'FourWheelers', toggle: true, active: activeClassifiedItem === "FourWheelers", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'car', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                '4 Wheelers'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'RealEstate', toggle: true, active: activeClassifiedItem === "RealEstate", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'building', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                'Real Estate'
+                                            )
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                _semanticUiReact.Grid,
+                                { stackable: true, centered: true },
+                                _react2.default.createElement(
+                                    _semanticUiReact.Grid.Row,
+                                    null,
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'Electronics', toggle: true, active: activeClassifiedItem === "Electronics", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'laptop', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                'Electronics'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'HomeAppliances', toggle: true, active: activeClassifiedItem === "HomeAppliances", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'cocktail', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                'Home Appliances'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 4 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Button,
+                                            { name: 'Books', toggle: true, active: activeClassifiedItem === "Books", onClick: this.handleClassifiedsClick },
+                                            _react2.default.createElement(
+                                                'span',
+                                                null,
+                                                _react2.default.createElement(_semanticUiReact.Icon, { name: 'book', size: 'massive' }),
+                                                _react2.default.createElement('br', null),
+                                                _react2.default.createElement('br', null),
+                                                'Books'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Actions,
+                        null,
+                        _react2.default.createElement(
+                            _semanticUiReact.Button,
+                            { name: 'modal3back', secondary: true, onClick: this.handleBackClick },
+                            'Back ',
+                            _react2.default.createElement(_semanticUiReact.Icon, { name: 'left chevron' })
+                        ),
+                        _react2.default.createElement(
+                            _semanticUiReact.Button,
+                            { name: 'modal3next', primary: true, onClick: this.handleNextClick, disabled: activeClassifiedItem === 'none' },
                             'Next ',
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'right chevron' })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    _semanticUiReact.Modal,
+                    { open: openModal4, closeOnEscape: true, closeIcon: true, closeOnRootNodeClick: false, onClose: this.close },
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Header,
+                        null,
+                        'Step 3',
+                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'angle double right' }),
+                        ' Provide ',
+                        activeClassifiedItem,
+                        ' Details'
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Content,
+                        { image: true, scrolling: true },
+                        _react2.default.createElement(
+                            _semanticUiReact.Modal.Description,
+                            null,
+                            _react2.default.createElement(
+                                _semanticUiReact.Grid,
+                                { stackable: true },
+                                _react2.default.createElement(
+                                    _semanticUiReact.Grid.Row,
+                                    null,
+                                    _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 4 }),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Column,
+                                        { width: 8 },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Form,
+                                            null,
+                                            _react2.default.createElement(_semanticUiReact.Form.Select, { label: 'Purpose', options: this.options, placeholder: 'Buy/Sell/Share', required: true }),
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Brand/Model', placeholder: 'Provide Brand/Model name' }),
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Year', placeholder: 'Provide year of purchase' }),
+                                            _react2.default.createElement(_semanticUiReact.Form.TextArea, { label: 'Description', placeholder: 'Tell us more...' }),
+                                            _react2.default.createElement(_semanticUiReact.Form.Checkbox, { label: 'I agree to the Terms and Conditions' }),
+                                            _react2.default.createElement(
+                                                _semanticUiReact.Form.Button,
+                                                null,
+                                                'Submit'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        _semanticUiReact.Modal.Actions,
+                        null,
+                        _react2.default.createElement(
+                            _semanticUiReact.Button,
+                            { name: 'modal4back', secondary: true, onClick: this.handleBackClick },
+                            'Back ',
+                            _react2.default.createElement(_semanticUiReact.Icon, { name: 'left chevron' })
+                        ),
+                        _react2.default.createElement(
+                            _semanticUiReact.Button,
+                            { primary: true },
+                            'Create'
                         )
                     )
                 )
