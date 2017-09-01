@@ -54,12 +54,13 @@ class SingleClassifiedTile extends React.Component{
                 <Button secondary size='mini' onClick={this.toggleDescription}  floated='right'>
                 More >> 
                 </Button>
-                <Button secondary size='mini' >
+                
+                <span className='price' style={{float:"left"}}>{this.props.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
+                <Button secondary size='mini' floated='right'>
                 <Icon name='phone' />
                     Get contact details
                     
                 </Button>
-                <span className='price'>{this.props.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
                 </Item.Extra>
             </Item.Content>
             </Item>

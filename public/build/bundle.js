@@ -78532,15 +78532,27 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Classifieds = function (_Component) {
     _inherits(Classifieds, _Component);
 
-    function Classifieds() {
+    function Classifieds(props) {
         _classCallCheck(this, Classifieds);
 
-        return _possibleConstructorReturn(this, (Classifieds.__proto__ || Object.getPrototypeOf(Classifieds)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Classifieds.__proto__ || Object.getPrototypeOf(Classifieds)).call(this, props));
+
+        _this.handleItemClick = function (e, _ref) {
+            var name = _ref.name;
+            return _this.setState({ activeItem: name });
+        };
+
+        _this.state = {
+            activeItem: "search"
+        };
+        _this.handleItemClick = _this.handleItemClick.bind(_this);
+        return _this;
     }
 
     _createClass(Classifieds, [{
         key: 'render',
         value: function render() {
+            var activeItem = this.state.activeItem;
             return _react2.default.createElement(
                 'div',
                 null,
@@ -78553,7 +78565,65 @@ var Classifieds = function (_Component) {
                         _react2.default.createElement(
                             _semanticUiReact.Grid.Row,
                             { id: 'clasifiedTile' },
-                            _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                            _react2.default.createElement(
+                                _semanticUiReact.Grid.Column,
+                                { width: 3 },
+                                _react2.default.createElement(
+                                    _semanticUiReact.Menu,
+                                    { vertical: true },
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Menu.Item,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Input, { placeholder: 'Search...' })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Menu.Item,
+                                        null,
+                                        'Home',
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Menu.Menu,
+                                            null,
+                                            _react2.default.createElement(
+                                                _semanticUiReact.Menu.Item,
+                                                { name: 'search', active: activeItem === 'search', onClick: this.handleItemClick },
+                                                'Search'
+                                            ),
+                                            _react2.default.createElement(
+                                                _semanticUiReact.Menu.Item,
+                                                { name: 'add', active: activeItem === 'add', onClick: this.handleItemClick },
+                                                'Add'
+                                            ),
+                                            _react2.default.createElement(
+                                                _semanticUiReact.Menu.Item,
+                                                { name: 'about', active: activeItem === 'about', onClick: this.handleItemClick },
+                                                'Remove'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Menu.Item,
+                                        { name: 'browse', active: activeItem === 'browse', onClick: this.handleItemClick },
+                                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'grid layout' }),
+                                        'Browse'
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Menu.Item,
+                                        { name: 'messages', active: activeItem === 'messages', onClick: this.handleItemClick },
+                                        'Messages'
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Dropdown,
+                                        { item: true, text: 'More' },
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Dropdown.Menu,
+                                            null,
+                                            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { icon: 'edit', text: 'Edit Profile' }),
+                                            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { icon: 'globe', text: 'Choose Language' }),
+                                            _react2.default.createElement(_semanticUiReact.Dropdown.Item, { icon: 'settings', text: 'Account Settings' })
+                                        )
+                                    )
+                                )
+                            ),
                             _react2.default.createElement(
                                 _semanticUiReact.Grid.Column,
                                 { width: 12 },
@@ -78614,10 +78684,13 @@ var ClassifiedTile = function (_React$Component) {
     _createClass(ClassifiedTile, [{
         key: 'render',
         value: function render() {
+            var sortList = this.props.data.sort(function (a, b) {
+                return new Date(b.postTimestamp) - new Date(a.postTimestamp);
+            });
             return _react2.default.createElement(
                 'div',
                 null,
-                this.props.data.map(function (e, i) {
+                sortList.map(function (e, i) {
                     return _react2.default.createElement(_SingleClassifiedTile2.default, _extends({ key: i }, e));
                 })
             );
@@ -78763,15 +78836,15 @@ var SingleClassifiedTile = function (_React$Component) {
                                     'More >>'
                                 ),
                                 _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { secondary: true, size: 'mini' },
-                                    _react2.default.createElement(_semanticUiReact.Icon, { name: 'phone' }),
-                                    'Get contact details'
+                                    'span',
+                                    { className: 'price', style: { float: "left" } },
+                                    this.props.postTimestamp.split(" ").slice(1, 3).reverse().join(" ")
                                 ),
                                 _react2.default.createElement(
-                                    'span',
-                                    { className: 'price' },
-                                    this.props.postTimestamp.split(" ").slice(1, 3).reverse().join(" ")
+                                    _semanticUiReact.Button,
+                                    { secondary: true, size: 'mini', floated: 'right' },
+                                    _react2.default.createElement(_semanticUiReact.Icon, { name: 'phone' }),
+                                    'Get contact details'
                                 )
                             )
                         )
