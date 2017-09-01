@@ -79,7 +79,6 @@ export default class HomepageLayout extends Component {
                                             <Header as='h3' style={{ fontSize: '2em' }}>Recent Classifieds</Header>
                                             Here we will se ethe latest 5 classifieds.
                                         </Segment>
-
                                     </Grid.Row>
                                 </Grid>
                             </Grid.Column>

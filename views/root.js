@@ -14,9 +14,9 @@ import {
     Tab,Label
 } from 'semantic-ui-react'
 import HomepageLayout from './HomepageLayout';
-import Classifieds from './Classifieds';
+import Classifieds from './classifieds/Classifieds';
 import Events from './Events';
-import Achievements from './Achievements';
+//import Achievements from './achievements/Achievements';
 
 export default class Root extends React.Component {
     constructor(){
@@ -103,7 +103,7 @@ export default class Root extends React.Component {
                 { activeItem === 'Home' ?   <HomepageLayout/> : undefined}
                 { activeItem === 'Classifieds' ?   <Classifieds/> : undefined}
                 { activeItem === 'Events' ?   <Events/> : undefined}
-                { activeItem === 'Achievements' ?   <Achievements/> : undefined}
+                { activeItem === 'Achievements' ?  <div></div> : undefined}
                 <Segment inverted vertical style={{ padding: '5em 0em' }}>
                     <Container>
                         <Grid divided inverted stackable>

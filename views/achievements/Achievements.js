@@ -20,47 +20,52 @@ const description = [
   ].join(' ')
 const data = [
     {
-        title:"Maruthi",
-        image:"images/swift.png",
-        type:"Car",
-        model:"Desire",
-        year:"2004",
+        title:"Shashank",
+        image:"images/standing_ovation.png",
+        type:"Standing Ovation",
+        year:"Aug, 207",
+        price:"200000",
+        contact:"554554",
+        description:description
+    },
+    {
+        title:"Jimit",
+        image:"images/badminton.png",
+        type:"Badminton",
+        year:"Sep, 2017",
         price:"1000",
         contact:"554554",
         description:description
     },
     {
-        title:"Bugatti",
-        image:"images/super-cars.png",
-        type:"Car",
-        model:"Chevr",
-        year:"2012",
+        title:"Chandra",
+        image:"images/table_tennis.jpg",
+        type:"Table Tennis",
+        year:"July, 2017",
         price:"1000000",
         contact:"55455ff4",
         description:description
     },
     {
-        title:"iPhone 7",
-        image:"images/iphone.jpg",
-        type:"Mobile",
-        model:"iPhone 7",
-        year:"2015",
+        title:"Master",
+        image:"images/singing.jpg",
+        type:"Singing",
+        year:"Nov, 2016",
         price:"100000",
         contact:"554554",
         description:description
     },
     {
-        title:"Bullet Desert Storm",
-        image:"images/bullet.png",
-        type:"Bike",
-        model:"Deset Storm 500",
-        year:"2016",
+        title:"Thiru",
+        image:"images/dance.jpg",
+        type:"Dancing",
+        year:"Mar, 2012",
         price:"200000",
         contact:"554554",
         description:description
     }
 ]
-export default class Classifieds extends Component {
+export default class Achievements extends Component {
 
 
     render() {
