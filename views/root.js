@@ -14,7 +14,7 @@ import {
     Tab,Label
 } from 'semantic-ui-react'
 import HomepageLayout from './HomepageLayout';
-import Classifieds from './Classifieds';
+import Classifieds from './classifieds/Classifieds';
 import Events from './Events';
 import Achievements from './Achievements';
 
