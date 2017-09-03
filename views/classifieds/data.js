@@ -1,14 +1,12 @@
-const description = [
-    'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their',
-    'tiny stature, and even others for their massive size.',
-  ].join(' ')
+    
+  
 const data = [
     {
         title:"Maruthi Swift Desire",
         ntId:"npsaa",
         email:"npsaa@allstate.com",
         image:"images/swift.png",
-        category:"4 Wheelers",
+        category:"Cars",
         purpose:"S",
         brand:"Maruthi",
         model:"Desire",
@@ -18,14 +16,14 @@ const data = [
         phone:"554554",
         postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     },
     {
         title:"Bugatti Chevr",
         ntId:"npsaa",
         email:"npsaa@allstate.com",
         image:"images/super-cars.png",
-        category:"4 Wheelers",
+        category:"Cars",
         purpose:"S",
         brand:"Bugatti",
         model:"Chevr",
@@ -35,7 +33,7 @@ const data = [
         phone:"55455ff4",
         postTimestamp:"Thu Aug 25 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     },
     {
         title:"iPhone 7",
@@ -52,14 +50,31 @@ const data = [
         phone:"554554",
         postTimestamp:"Thu Aug 26 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
+    },
+    {
+        title:"Sony bravia 48",
+        ntId:"npsaa",
+        email:"npsaa@allstate.com",
+        image:"images/tv.jpg",
+        category:"HomeAppliances",
+        brand:"Sony",
+        purpose:"S",
+        model:"Bravia",
+        year:"2013",
+        price:"10000",
+        location:"BTM",
+        phone:"554554",
+        postTimestamp:"Thu Aug 21 2017 19:03:35 GMT+0530 (IST)",
+        deletionFlag:false,
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     },
     {
         title:"Bullet Desert Storm",
         ntId:"npsaa",
         email:"npsaa@allstate.com",
         image:"images/bullet.png",
-        category:"2 Wheelers",
+        category:"Bikes",
         brand:"RE",
         model:"Deset Storm 500",
         purpose:"S",
@@ -69,14 +84,14 @@ const data = [
         phone:"554554",
         postTimestamp:"Thu Aug 28 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     },
     {
         title:"Need a partner for 2 sharing",
         ntId:"npsaa",
         email:"npsaa@allstate.com",
         image:"images/share.jpg",
-        category:"Real Estate",
+        category:"RealEstate",
         purpose:"SH",
         brand:"2 BHK",
         model:"2 sharing bedroom",
@@ -87,14 +102,14 @@ const data = [
         phone:"554554",
         postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     },
     {
         title:"Rent a house - 3 BHK",
         ntId:"npsaa",
         email:"npsaa@allstate.com",
         image:"images/rent.jpeg",
-        category:"Real Estate",
+        category:"RealEstate",
         purpose:"R",
         brand:"3 BHK",
         model:"",
@@ -105,7 +120,7 @@ const data = [
         phone:"554554",
         postTimestamp:"Thu Aug 29 2017 19:03:35 GMT+0530 (IST)",
         deletionFlag:false,
-        description:description
+        description:'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
     }
 ]
 
