@@ -14,7 +14,7 @@ import {
     Tab,Label,Input,Dimmer,Loader
 } from 'semantic-ui-react'
 import ClassifiedTile from './ClassifiedTile'
-import data from './data'
+//import data from './data'
 import axios from 'axios'
 export default class Classifieds extends Component {
    constructor(props){
@@ -22,7 +22,8 @@ export default class Classifieds extends Component {
        this.state = {
            activeItem:"all",
            data:[],
-           action:"loader"
+           action:"loader",
+           res:[]
        }
        this.handleItemClick = this.handleItemClick.bind(this);
    }
@@ -33,7 +34,7 @@ export default class Classifieds extends Component {
         var update = this.setState.bind(this)  
         axios.get('/get-classifieds')
         .then(function (response) {
-        update({data:response.data.data,action:"normal"})
+        update({data:response.data.data,action:"normal",rsp:response.data.data})
         })
         .catch(function (error) {
         console.log(error);
@@ -42,19 +43,21 @@ export default class Classifieds extends Component {
    }
    handleItemClick(e, { name }) {
     var newData;   
-    if(name == "all")
-         newData = data
-    if(name == "realestate"){
+    if(name == "all"){
+        this.setState({action:"loader"}) 
+        this.renderTiles();
+    }
+    else if(name == "realestate"){
         var x 
       switch(e.target.innerText.toLowerCase()){
           case "share": x ="SH";break;
           case "rent":  x = "R";break;
           default:x ="S"
       }
-      newData = data.filter(e => e.category.toLowerCase() == name && e.purpose == x)
+      newData = this.state.rsp.filter(e => e.category.toLowerCase() == name && e.purpose == x)
     }
     else
-      newData = data.filter(e => e.category.toLowerCase() == name)
+      newData = this.state.rsp.filter(e => e.category.toLowerCase() == name)
        //console.log(newData)
        this.setState({ activeItem: name,
                              data:newData

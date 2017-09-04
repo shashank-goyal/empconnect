@@ -1995,7 +1995,7 @@ module.exports = isNil;
 
 
 var bind = __webpack_require__(444);
-var isBuffer = __webpack_require__(884);
+var isBuffer = __webpack_require__(883);
 
 /*global toString:true*/
 
@@ -14615,7 +14615,7 @@ ItemMeta.create = Object(__WEBPACK_IMPORTED_MODULE_4__lib__["l" /* createShortha
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(33);
-var normalizeHeaderName = __webpack_require__(886);
+var normalizeHeaderName = __webpack_require__(885);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -29490,12 +29490,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(33);
-var settle = __webpack_require__(887);
-var buildURL = __webpack_require__(889);
-var parseHeaders = __webpack_require__(890);
-var isURLSameOrigin = __webpack_require__(891);
+var settle = __webpack_require__(886);
+var buildURL = __webpack_require__(888);
+var parseHeaders = __webpack_require__(889);
+var isURLSameOrigin = __webpack_require__(890);
 var createError = __webpack_require__(446);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(892);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(891);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -29592,7 +29592,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(893);
+      var cookies = __webpack_require__(892);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -29677,7 +29677,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(888);
+var enhanceError = __webpack_require__(887);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -41880,7 +41880,7 @@ var _Classifieds = __webpack_require__(878);
 
 var _Classifieds2 = _interopRequireDefault(_Classifieds);
 
-var _Events = __webpack_require__(901);
+var _Events = __webpack_require__(900);
 
 var _Events2 = _interopRequireDefault(_Events);
 
@@ -79442,11 +79442,7 @@ var _ClassifiedTile = __webpack_require__(879);
 
 var _ClassifiedTile2 = _interopRequireDefault(_ClassifiedTile);
 
-var _data = __webpack_require__(881);
-
-var _data2 = _interopRequireDefault(_data);
-
-var _axios = __webpack_require__(882);
+var _axios = __webpack_require__(881);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -79457,6 +79453,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+//import data from './data'
+
 
 var Classifieds = function (_Component) {
     _inherits(Classifieds, _Component);
@@ -79469,7 +79467,8 @@ var Classifieds = function (_Component) {
         _this.state = {
             activeItem: "all",
             data: [],
-            action: "loader"
+            action: "loader",
+            res: []
         };
         _this.handleItemClick = _this.handleItemClick.bind(_this);
         return _this;
@@ -79485,7 +79484,7 @@ var Classifieds = function (_Component) {
         value: function renderTiles() {
             var update = this.setState.bind(this);
             _axios2.default.get('/get-classifieds').then(function (response) {
-                update({ data: response.data.data, action: "normal" });
+                update({ data: response.data.data, action: "normal", rsp: response.data.data });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -79496,8 +79495,10 @@ var Classifieds = function (_Component) {
             var name = _ref.name;
 
             var newData;
-            if (name == "all") newData = _data2.default;
-            if (name == "realestate") {
+            if (name == "all") {
+                this.setState({ action: "loader" });
+                this.renderTiles();
+            } else if (name == "realestate") {
                 var x;
                 switch (e.target.innerText.toLowerCase()) {
                     case "share":
@@ -79507,10 +79508,10 @@ var Classifieds = function (_Component) {
                     default:
                         x = "S";
                 }
-                newData = _data2.default.filter(function (e) {
+                newData = this.state.rsp.filter(function (e) {
                     return e.category.toLowerCase() == name && e.purpose == x;
                 });
-            } else newData = _data2.default.filter(function (e) {
+            } else newData = this.state.rsp.filter(function (e) {
                 return e.category.toLowerCase() == name;
             });
             //console.log(newData)
@@ -79889,140 +79890,10 @@ exports.default = SingleClassifiedTile;
 /* 881 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-
-var data = [{
-    title: "Maruthi Swift Desire",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/swift.png",
-    category: "Cars",
-    purpose: "S",
-    brand: "Maruthi",
-    model: "Desire",
-    year: "2004",
-    price: "1000",
-    location: "Koramangala",
-    phone: "554554",
-    postTimestamp: "Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "Bugatti Chevr",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/super-cars.png",
-    category: "Cars",
-    purpose: "S",
-    brand: "Bugatti",
-    model: "Chevr",
-    year: "2012",
-    price: "1000000",
-    location: "Koramangala",
-    phone: "55455ff4",
-    postTimestamp: "Thu Aug 25 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "iPhone 7",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/iphone.jpg",
-    category: "Electronics",
-    brand: "Apple",
-    purpose: "S",
-    model: "iPhone 7",
-    year: "2015",
-    price: "100000",
-    location: "Koramangala",
-    phone: "554554",
-    postTimestamp: "Thu Aug 26 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "Sony bravia 48",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/tv.jpg",
-    category: "HomeAppliances",
-    brand: "Sony",
-    purpose: "S",
-    model: "Bravia",
-    year: "2013",
-    price: "10000",
-    location: "BTM",
-    phone: "554554",
-    postTimestamp: "Thu Aug 21 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "Bullet Desert Storm",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/bullet.png",
-    category: "Bikes",
-    brand: "RE",
-    model: "Deset Storm 500",
-    purpose: "S",
-    year: "2016",
-    price: "200000",
-    location: "Koramangala",
-    phone: "554554",
-    postTimestamp: "Thu Aug 28 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "Need a partner for 2 sharing",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/share.jpg",
-    category: "RealEstate",
-    purpose: "SH",
-    brand: "2 BHK",
-    model: "2 sharing bedroom",
-    location: "Marathahalli",
-
-    year: "",
-    price: "1000",
-    phone: "554554",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}, {
-    title: "Rent a house - 3 BHK",
-    ntId: "npsaa",
-    email: "npsaa@allstate.com",
-    image: "images/rent.jpeg",
-    category: "RealEstate",
-    purpose: "R",
-    brand: "3 BHK",
-    model: "",
-    location: "Koramangala",
-
-    year: "",
-    price: "1000",
-    phone: "554554",
-    postTimestamp: "Thu Aug 29 2017 19:03:35 GMT+0530 (IST)",
-    deletionFlag: false,
-    description: 'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.'
-}];
-
-exports.default = data;
+module.exports = __webpack_require__(882);
 
 /***/ }),
 /* 882 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(883);
-
-/***/ }),
-/* 883 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80030,7 +79901,7 @@ module.exports = __webpack_require__(883);
 
 var utils = __webpack_require__(33);
 var bind = __webpack_require__(444);
-var Axios = __webpack_require__(885);
+var Axios = __webpack_require__(884);
 var defaults = __webpack_require__(240);
 
 /**
@@ -80065,14 +79936,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(448);
-axios.CancelToken = __webpack_require__(899);
+axios.CancelToken = __webpack_require__(898);
 axios.isCancel = __webpack_require__(447);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(900);
+axios.spread = __webpack_require__(899);
 
 module.exports = axios;
 
@@ -80081,7 +79952,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 884 */
+/* 883 */
 /***/ (function(module, exports) {
 
 /*!
@@ -80108,7 +79979,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 885 */
+/* 884 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80116,10 +79987,10 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(240);
 var utils = __webpack_require__(33);
-var InterceptorManager = __webpack_require__(894);
-var dispatchRequest = __webpack_require__(895);
-var isAbsoluteURL = __webpack_require__(897);
-var combineURLs = __webpack_require__(898);
+var InterceptorManager = __webpack_require__(893);
+var dispatchRequest = __webpack_require__(894);
+var isAbsoluteURL = __webpack_require__(896);
+var combineURLs = __webpack_require__(897);
 
 /**
  * Create a new instance of Axios
@@ -80201,7 +80072,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 886 */
+/* 885 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80220,7 +80091,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 887 */
+/* 886 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80253,7 +80124,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 888 */
+/* 887 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80281,7 +80152,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 889 */
+/* 888 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80356,7 +80227,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 890 */
+/* 889 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80400,7 +80271,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 891 */
+/* 890 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80475,7 +80346,7 @@ module.exports = (
 
 
 /***/ }),
-/* 892 */
+/* 891 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80518,7 +80389,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 893 */
+/* 892 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80578,7 +80449,7 @@ module.exports = (
 
 
 /***/ }),
-/* 894 */
+/* 893 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80637,14 +80508,14 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 895 */
+/* 894 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(33);
-var transformData = __webpack_require__(896);
+var transformData = __webpack_require__(895);
 var isCancel = __webpack_require__(447);
 var defaults = __webpack_require__(240);
 
@@ -80723,7 +80594,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 896 */
+/* 895 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80750,7 +80621,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 897 */
+/* 896 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80771,7 +80642,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 898 */
+/* 897 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80792,7 +80663,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 899 */
+/* 898 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80856,7 +80727,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 900 */
+/* 899 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80890,7 +80761,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 901 */
+/* 900 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
