@@ -79772,8 +79772,13 @@ var SingleClassifiedTile = function (_React$Component) {
             //var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display;
             var toggle = this.state.visible;
             event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = !toggle ? "Less <<" : "More >>";
-            event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = !toggle ? "300px" : "150px";
+            // event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = !toggle ?"300px":"150px"      
             this.setState({ visible: !this.state.visible });
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps() {
+            this.setState({ visible: false });
         }
     }, {
         key: 'render',
@@ -79788,7 +79793,12 @@ var SingleClassifiedTile = function (_React$Component) {
                     _react2.default.createElement(
                         _semanticUiReact.Item,
                         null,
-                        _react2.default.createElement(_semanticUiReact.Item.Image, { size: 'small', src: this.props.image }),
+                        _react2.default.createElement(
+                            _semanticUiReact.Transition.Group,
+                            { animation: this.state.animation, duration: this.state.duration },
+                            this.state.visible && _react2.default.createElement(_semanticUiReact.Item.Image, { size: 'medium', src: this.props.image })
+                        ),
+                        !this.state.visible ? _react2.default.createElement(_semanticUiReact.Item.Image, { size: 'small', src: this.props.image }) : _react2.default.createElement('div', null),
                         _react2.default.createElement(
                             _semanticUiReact.Item.Content,
                             null,
