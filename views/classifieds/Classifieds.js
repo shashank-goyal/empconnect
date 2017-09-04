@@ -13,6 +13,7 @@ import {
     Visibility,Dropdown,
     Tab,Label,Input
 } from 'semantic-ui-react'
+
 import ClassifiedTile from './ClassifiedTile'
 import data from './data'
 export default class Classifieds extends Component {

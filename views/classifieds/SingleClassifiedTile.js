@@ -15,7 +15,6 @@ class SingleClassifiedTile extends React.Component{
        event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = toggle == "none" ||toggle == ""? "Less <<":"More >>"
        event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none"|| toggle == ""?"300px":"150px"      
        event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display = toggle == "none" ||toggle == ""?"table":"none";
-   
     }
   render(){
         return(
