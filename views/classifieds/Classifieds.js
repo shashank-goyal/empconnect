@@ -11,70 +11,120 @@ import {
     Menu,
     Segment,
     Visibility,Dropdown,
-    Tab,Label,Input
+    Tab,Label,Input,Dimmer,Loader
 } from 'semantic-ui-react'
 
 import ClassifiedTile from './ClassifiedTile'
-import data from './data'
+//import data from './data'
+import axios from 'axios'
 export default class Classifieds extends Component {
    constructor(props){
        super(props);
        this.state = {
-           activeItem:"search"
+           activeItem:"all",
+           data:[],
+           action:"loader",
+           res:[]
        }
        this.handleItemClick = this.handleItemClick.bind(this);
    }
-   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+   componentWillMount(){
+       this.renderTiles();
+   }
+   renderTiles(){
+        var update = this.setState.bind(this)  
+        axios.get('/get-classifieds')
+        .then(function (response) {
+        update({data:response.data.data,action:"normal",rsp:response.data.data})
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
 
+   }
+   handleItemClick(e, { name }) {
+    var newData;   
+    if(name == "all"){
+        this.setState({action:"loader"}) 
+        this.renderTiles();
+    }
+    else if(name == "realestate"){
+        var x 
+      switch(e.target.innerText.toLowerCase()){
+          case "share": x ="SH";break;
+          case "rent":  x = "R";break;
+          default:x ="S"
+      }
+      newData = this.state.rsp.filter(e => e.category.toLowerCase() == name && e.purpose == x)
+    }
+    else
+      newData = this.state.rsp.filter(e => e.category.toLowerCase() == name)
+       //console.log(newData)
+       this.setState({ activeItem: name,
+                             data:newData
+                             })
+      }
     render() {
-        var activeItem = this.state.activeItem;
+        //var activeItem = this.state.activeItem;
+        var {action,activeItem} = this.state
         return (
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
                     <Grid.Row id="clasifiedTile">
-                      <Grid.Column width={3}>
-                      <Menu vertical>
-                        <Menu.Item>
-                        <Input placeholder='Search...' />
-                        </Menu.Item>
-
+                      <Grid.Column width={4}>
+                      <Menu pointing secondary vertical>
                         <Menu.Item>
                         Home
 
                         <Menu.Menu>
-                            <Menu.Item name='search' active={activeItem === 'search'} onClick={this.handleItemClick}>
-                            Search
-                            </Menu.Item>
+                        <Menu.Item name='all' active={activeItem === 'all'} onClick={this.handleItemClick}>
+                            All Listing
+                        </Menu.Item>
                             <Menu.Item name='add' active={activeItem === 'add'} onClick={this.handleItemClick}>
-                            Add
-                            </Menu.Item>
-                            <Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick}>
-                            Remove
+                            My Listing
                             </Menu.Item>
                         </Menu.Menu>
                         </Menu.Item>
-
-                        <Menu.Item name='browse' active={activeItem === 'browse'} onClick={this.handleItemClick}>
-                        <Icon name='grid layout' />
-                        Browse
+                          <Menu.Item name='cars' active={activeItem === 'cars'} onClick={this.handleItemClick}>
+                        <Icon name='car' />
+                        Cars
                         </Menu.Item>
-                        <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick}>
-                        Messages
+                        <Menu.Item name='bikes' active={activeItem === 'bikes'} onClick={this.handleItemClick}>
+                        <Icon name='bicycle' />
+                        Bikes
                         </Menu.Item>
-
-                        <Dropdown item text='More'>
+                        <Menu.Item name='electronics' active={activeItem === 'electronics'} onClick={this.handleItemClick}>
+                        <Icon name='mobile' />
+                        Electronics
+                        </Menu.Item>
+                        <Menu.Item name='homeappliances' active={activeItem === 'homeappliances'} onClick={this.handleItemClick}>
+                        <Icon name='tv' />
+                        Home Appliances
+                        </Menu.Item>
+                      <Dropdown item text='Real Estate'>
                         <Dropdown.Menu>
-                            <Dropdown.Item icon='edit' text='Edit Profile' />
-                            <Dropdown.Item icon='globe' text='Choose Language' />
-                            <Dropdown.Item icon='settings' text='Account Settings' />
+                          
+                          <Dropdown.Item name='realestate' icon="home" onClick={this.handleItemClick}>Buy</Dropdown.Item>
+                          <Dropdown.Item name='realestate' icon="slideshare" onClick={this.handleItemClick}>Share </Dropdown.Item>
+                          <Dropdown.Item name='realestate' onClick={this.handleItemClick}>Rent</Dropdown.Item>
+                          
                         </Dropdown.Menu>
-                        </Dropdown>
+                      </Dropdown>
+                        <Menu.Item name='books' active={activeItem === 'books'} onClick={this.handleItemClick}>
+                        <Icon name='book' />
+                         Books
+                        </Menu.Item>
+
                     </Menu>
                  </Grid.Column>
-                <Grid.Column width={12}>
-                    <ClassifiedTile data={data}/>
-                </Grid.Column>
+                 <Grid.Column width={12}>
+                 {(action == "loader")?<Dimmer active inverted>
+                                     <Loader inverted inline='centered'  size='large'>Fetching Listing...</Loader>
+                                   </Dimmer>:
+                <ClassifiedTile data={this.state.data}/>
+                }
+                 </Grid.Column>
                 </Grid.Row>
             </Grid>
         </Segment>
