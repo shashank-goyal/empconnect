@@ -7,7 +7,6 @@ export default class AchievementTile extends React.Component{
         super(props);
 
     }
-    
     render(){
       return(
           <div>
