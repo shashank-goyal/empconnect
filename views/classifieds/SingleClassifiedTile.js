@@ -31,10 +31,14 @@ class SingleClassifiedTile extends React.Component{
        //var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display;
        var toggle = this.state.visible;
        event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = !toggle ? "Less <<":"More >>"
-       event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = !toggle ?"300px":"150px"      
+      // event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = !toggle ?"300px":"150px"      
        this.setState({ visible: !this.state.visible });
    
     }
+    componentWillReceiveProps(){
+        this.setState({visible:false})
+    }
+    
   render(){
      // var action = this.state.action;
     return(
@@ -44,7 +48,12 @@ class SingleClassifiedTile extends React.Component{
               
         <Item.Group>
             <Item>
-            <Item.Image size='small'  src={this.props.image}/>
+            <Transition.Group animation={this.state.animation} duration={this.state.duration}>    
+             {this.state.visible&&<Item.Image size="medium" src={this.props.image}/>}
+            </Transition.Group>
+               
+             {!this.state.visible?<Item.Image size="small"  src={this.props.image}/>:<div></div>}
+            
             <Item.Content>
                 <Item.Header>{this.props.title}</Item.Header>
                 <Item.Meta>
