@@ -42668,47 +42668,10 @@ var Root = function (_React$Component) {
                         )
                     )
                 ),
-                activeItem === 'Home' ? _react2.default.createElement(_HomepageLayout2.default, null) : undefined,
+                activeItem === 'Home' ? _react2.default.createElement(_HomepageLayout2.default, { handleItemClick: this.handleItemClick }) : undefined,
                 activeItem === 'Classifieds' ? _react2.default.createElement(_Classifieds2.default, null) : undefined,
                 activeItem === 'Events' ? _react2.default.createElement(_Events2.default, null) : undefined,
-                activeItem === 'Achievements' ? _react2.default.createElement('div', null) : undefined,
-                _react2.default.createElement(
-                    _semanticUiReact.Segment,
-                    { inverted: true, vertical: true, style: { padding: '5em 0em' } },
-                    _react2.default.createElement(
-                        _semanticUiReact.Container,
-                        null,
-                        _react2.default.createElement(
-                            _semanticUiReact.Grid,
-                            { divided: true, inverted: true, stackable: true },
-                            _react2.default.createElement(
-                                _semanticUiReact.Grid.Row,
-                                null,
-                                _react2.default.createElement(
-                                    _semanticUiReact.Grid.Column,
-                                    { width: 3 },
-                                    _react2.default.createElement(_semanticUiReact.Header, { inverted: true, as: 'h4', content: 'About' }),
-                                    _react2.default.createElement(_semanticUiReact.List, { link: true, inverted: true })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Grid.Column,
-                                    { width: 3 },
-                                    _react2.default.createElement(_semanticUiReact.Header, { inverted: true, as: 'h4', content: 'Services' }),
-                                    _react2.default.createElement(_semanticUiReact.List, { link: true, inverted: true })
-                                ),
-                                _react2.default.createElement(
-                                    _semanticUiReact.Grid.Column,
-                                    { width: 7 },
-                                    _react2.default.createElement(
-                                        _semanticUiReact.Header,
-                                        { as: 'h4', inverted: true },
-                                        'Footer Header'
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
+                activeItem === 'Achievements' ? _react2.default.createElement('div', null) : undefined
             );
         }
     }]);
@@ -62665,11 +62628,11 @@ var HomepageLayout = function (_Component) {
                                                 'Recent Classifieds',
                                                 _react2.default.createElement(
                                                     _semanticUiReact.Button,
-                                                    { animated: true, floated: 'right', secondary: true },
+                                                    { name: 'Classifieds', onClick: this.props.handleItemClick, animated: true, floated: 'right', secondary: true },
                                                     _react2.default.createElement(
                                                         _semanticUiReact.Button.Content,
                                                         { visible: true },
-                                                        'See all'
+                                                        'Explore classifieds'
                                                     ),
                                                     _react2.default.createElement(
                                                         _semanticUiReact.Button.Content,
@@ -62678,8 +62641,6 @@ var HomepageLayout = function (_Component) {
                                                     )
                                                 )
                                             ),
-                                            _react2.default.createElement('br', null),
-                                            _react2.default.createElement('br', null),
                                             _react2.default.createElement(_ClassifiedsWidget2.default, null)
                                         )
                                     )
@@ -66158,6 +66119,7 @@ var Classifieds = function (_Component) {
         value: function renderTiles() {
             var update = this.setState.bind(this);
             _axios2.default.get('/get-classifieds').then(function (response) {
+                debugger;
                 update({ data: response.data.data, action: "normal", rsp: response.data.data });
             }).catch(function (error) {
                 console.log(error);
@@ -66362,13 +66324,10 @@ var ClassifiedTile = function (_React$Component) {
         key: 'render',
         value: function render() {
 
-            var sortList = this.props.data.sort(function (a, b) {
-                return new Date(b.postTimestamp) - new Date(a.postTimestamp);
-            });
-            if (sortList.length > 0) return _react2.default.createElement(
+            if (this.props.data.length > 0) return _react2.default.createElement(
                 'div',
                 null,
-                sortList.map(function (e, i) {
+                this.props.data.map(function (e, i) {
                     return _react2.default.createElement(_SingleClassifiedTile2.default, _extends({ key: i }, e));
                 })
             );else return _react2.default.createElement(

@@ -10,12 +10,10 @@ export default class ClassifiedTile extends React.Component{
     
     render(){
         
-        
-    var sortList = this.props.data.sort((a,b) => new Date(b.postTimestamp)-new Date(a.postTimestamp))
-    if(sortList.length > 0)  
+    if(this.props.data.length > 0)  
     return(
           <div>
-              {sortList.map( (e,i) => <SingleClassifiedTile key={i} {...e}/>)}
+              {this.props.data.map( (e,i) => <SingleClassifiedTile key={i} {...e}/>)}
           </div> 
         )
      else 
