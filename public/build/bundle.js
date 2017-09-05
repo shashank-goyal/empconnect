@@ -62553,7 +62553,7 @@ var HomepageLayout = function (_Component) {
                             null,
                             _react2.default.createElement(
                                 _semanticUiReact.Grid.Column,
-                                { width: 10 },
+                                { width: 11 },
                                 _react2.default.createElement(
                                     _semanticUiReact.Grid,
                                     { container: true, stackable: true, verticalAlign: 'middle' },
@@ -62589,9 +62589,25 @@ var HomepageLayout = function (_Component) {
                                             { raised: true, color: 'blue', style: { width: '100%' } },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Header,
-                                                { as: 'h3', style: { fontSize: '2em' } },
-                                                'Recent Classifieds'
+                                                { as: 'h3', style: { fontSize: '2em', background: "white", border: "0rem" }, block: true },
+                                                'Recent Classifieds',
+                                                _react2.default.createElement(
+                                                    _semanticUiReact.Button,
+                                                    { animated: true, floated: 'right', secondary: true },
+                                                    _react2.default.createElement(
+                                                        _semanticUiReact.Button.Content,
+                                                        { visible: true },
+                                                        'See all'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        _semanticUiReact.Button.Content,
+                                                        { hidden: true },
+                                                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'right arrow' })
+                                                    )
+                                                )
                                             ),
+                                            _react2.default.createElement('br', null),
+                                            _react2.default.createElement('br', null),
                                             _react2.default.createElement(_ClassifiedsWidget2.default, null)
                                         )
                                     )
@@ -62599,7 +62615,7 @@ var HomepageLayout = function (_Component) {
                             ),
                             _react2.default.createElement(
                                 _semanticUiReact.Grid.Column,
-                                { width: 6 },
+                                { width: 5 },
                                 _react2.default.createElement(
                                     _semanticUiReact.Grid,
                                     { container: true, stackable: true, verticalAlign: 'top' },
@@ -80091,10 +80107,12 @@ exports.default = HomepageLayout;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = __webpack_require__(1);
 
@@ -80128,80 +80146,106 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: true,
-    arrows: true
-};
+function SampleNextArrow(props) {
+  var className = props.className,
+      style = props.style,
+      onClick = props.onClick;
+
+  return _react2.default.createElement('button', {
+    id: 'next',
+    className: className,
+    style: _extends({}, style),
+    onClick: onClick
+  });
+}
+
+function SamplePrevArrow(props) {
+  var className = props.className,
+      style = props.style,
+      onClick = props.onClick;
+
+  return _react2.default.createElement('button', {
+    id: 'next',
+    className: className,
+    style: _extends({}, style),
+    onClick: onClick
+  });
+}
 
 var ClassifiedWidget = function (_React$Component) {
-    _inherits(ClassifiedWidget, _React$Component);
+  _inherits(ClassifiedWidget, _React$Component);
 
-    function ClassifiedWidget(props) {
-        _classCallCheck(this, ClassifiedWidget);
+  function ClassifiedWidget(props) {
+    _classCallCheck(this, ClassifiedWidget);
 
-        var _this = _possibleConstructorReturn(this, (ClassifiedWidget.__proto__ || Object.getPrototypeOf(ClassifiedWidget)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ClassifiedWidget.__proto__ || Object.getPrototypeOf(ClassifiedWidget)).call(this, props));
 
-        _this.state = {
-            data: _data2.default,
-            action: "normal"
-        };
-        return _this;
+    _this.state = {
+      data: _data2.default,
+      action: "normal"
+    };
+    return _this;
+  }
+  // componentWillMount(){
+  //     this.renderTiles();
+  // }
+  // renderTiles(){
+  //      var update = this.setState.bind(this)  
+  //      axios.get('/get-classifieds')
+  //      .then(function (response) {
+  //      update({data:response.data.data,action:"normal"})
+  //      })
+  //      .catch(function (error) {
+  //      console.log(error);
+  //      });
+
+  // }
+
+
+  _createClass(ClassifiedWidget, [{
+    key: 'render',
+    value: function render() {
+
+      var settings = {
+        autoplay: true,
+        autoplaySpeed: 100,
+        pauseOnHover: true,
+        speed: 500,
+        slidesToShow: 3,
+        centerMode: true,
+        slidesToScroll: 1,
+        arrows: true,
+        centerPadding: "60px",
+        focusOnSelect: true,
+        draggable: true,
+        nextArrow: _react2.default.createElement(SampleNextArrow, null),
+        prevArrow: _react2.default.createElement(SamplePrevArrow, null)
+
+      };
+
+      if (this.state.action == "loader") return _react2.default.createElement(
+        _semanticUiReact.Dimmer,
+        { active: true, inverted: true },
+        _react2.default.createElement(
+          _semanticUiReact.Loader,
+          { inverted: true, inline: 'centered', size: 'large' },
+          'Fetching Listing...'
+        )
+      );else return _react2.default.createElement(
+        _reactSlick2.default,
+        settings,
+        this.state.data.map(function (e, i) {
+          return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(_ClassiCards2.default, _extends({ key: i }, e))
+          );
+        })
+      );
     }
-    // componentWillMount(){
-    //     this.renderTiles();
-    // }
-    // renderTiles(){
-    //      var update = this.setState.bind(this)  
-    //      axios.get('/get-classifieds')
-    //      .then(function (response) {
-    //      update({data:response.data.data,action:"normal"})
-    //      })
-    //      .catch(function (error) {
-    //      console.log(error);
-    //      });
+  }]);
 
-    // }
-
-
-    _createClass(ClassifiedWidget, [{
-        key: 'render',
-        value: function render() {
-            if (this.state.action == "loader") return _react2.default.createElement(
-                _semanticUiReact.Dimmer,
-                { active: true, inverted: true },
-                _react2.default.createElement(
-                    _semanticUiReact.Loader,
-                    { inverted: true, inline: 'centered', size: 'large' },
-                    'Fetching Listing...'
-                )
-            );else return _react2.default.createElement(
-                _reactSlick2.default,
-                settings,
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_ClassiCards2.default, { second: this.state.data[1], first: this.state.data[0] })
-                ),
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_ClassiCards2.default, { second: this.state.data[1], first: this.state.data[0] })
-                ),
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(_ClassiCards2.default, { second: this.state.data[1], first: this.state.data[0] })
-                )
-            );
-        }
-    }]);
-
-    return ClassifiedWidget;
+  return ClassifiedWidget;
 }(_react2.default.Component);
 
 exports.default = ClassifiedWidget;
@@ -82811,53 +82855,61 @@ var ClassiCards = function (_React$Component) {
   _createClass(ClassiCards, [{
     key: 'render',
     value: function render() {
-      var _props$first = this.props.first,
-          image = _props$first.image,
-          title = _props$first.title,
-          brand = _props$first.brand,
-          model = _props$first.model,
-          price = _props$first.price,
-          location = _props$first.location;
-      var _props$second = this.props.second,
-          image1 = _props$second.image1,
-          title1 = _props$second.title1,
-          brand1 = _props$second.brand1,
-          model1 = _props$second.model1,
-          price1 = _props$second.price1,
-          location1 = _props$second.location1;
+      var _props = this.props,
+          image = _props.image,
+          category = _props.category,
+          title = _props.title,
+          brand = _props.brand,
+          model = _props.model,
+          price = _props.price,
+          location = _props.location;
 
-      var loc = _react2.default.createElement(
-        _semanticUiReact.Label,
-        { as: 'a' },
-        _react2.default.createElement(_semanticUiReact.Icon, { name: 'location arrow' }),
-        location
-      );
-      var loc1 = _react2.default.createElement(
-        _semanticUiReact.Label,
-        { as: 'a' },
-        _react2.default.createElement(_semanticUiReact.Icon, { name: 'location arrow' }),
-        location1
-      );
+
       return _react2.default.createElement(
         'div',
-        { style: { width: "220px" } },
+        { style: { width: "195px", height: "350px" } },
         _react2.default.createElement(
-          _semanticUiReact.Card.Group,
+          _semanticUiReact.Card,
           null,
-          _react2.default.createElement(_semanticUiReact.Card, {
-            image: image,
-            header: title,
-            meta: brand,
-            description: price,
-            extra: loc
-          }),
-          _react2.default.createElement(_semanticUiReact.Card, {
-            image: image1,
-            header: title1,
-            meta: brand1,
-            description: price1,
-            extra: loc1
-          })
+          _react2.default.createElement(
+            _semanticUiReact.Card.Content,
+            null,
+            _react2.default.createElement(_semanticUiReact.Image, { size: 'medium', src: image }),
+            _react2.default.createElement(
+              _semanticUiReact.Card.Header,
+              null,
+              _react2.default.createElement('br', null),
+              title
+            ),
+            _react2.default.createElement(
+              _semanticUiReact.Card.Meta,
+              null,
+              _react2.default.createElement(
+                'span',
+                { className: 'price' },
+                category,
+                ' >> '
+              ),
+              _react2.default.createElement(
+                'span',
+                { className: 'stay' },
+                brand,
+                ' >> '
+              ),
+              _react2.default.createElement(
+                'span',
+                { className: 'stay' },
+                model
+              ),
+              _react2.default.createElement(
+                _semanticUiReact.Label,
+                { as: 'a', color: 'orange', attached: 'bottom right', tag: true },
+                _react2.default.createElement(_semanticUiReact.Icon, { name: 'rupee' }),
+                price
+              )
+            ),
+            _react2.default.createElement(_semanticUiReact.Card.Description, null)
+          )
         )
       );
     }

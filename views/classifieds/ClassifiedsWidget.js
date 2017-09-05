@@ -1,21 +1,34 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import {Dimmer,Loader} from 'semantic-ui-react'
+import {Dimmer,Loader,Button} from 'semantic-ui-react'
 import axios from 'axios'
 import ClassiCards from './ClassiCards'
 import data from './data'
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode:true,
-    arrows:true
-  };
+function SampleNextArrow(props) {
+ const {className, style, onClick} = props
+ return (
+  <button
+    id="next"
+     className={className}
+     style={{...style}}
+     onClick={onClick}
+   ></button>
+ );
+}
 
+function SamplePrevArrow(props) {
+ const {className, style, onClick} = props
+ return (
+    <button
+    id="next"
+     className={className}
+     style={{...style}}
+     onClick={onClick}
+   ></button>
+ );
+}
 
 export default class ClassifiedWidget extends React.Component {
     constructor(props){
@@ -42,6 +55,24 @@ export default class ClassifiedWidget extends React.Component {
   
 
   render(){
+
+  var settings = {
+    autoplay:true,
+    autoplaySpeed:100,
+    pauseOnHover:true,
+    speed: 500,
+    slidesToShow: 3,
+    centerMode:true,
+    slidesToScroll: 1,
+    arrows:true,
+    centerPadding:"60px",
+    focusOnSelect	:true,
+    draggable:true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    
+  };
+
     if(this.state.action == "loader")
       return(
         <Dimmer active inverted>
@@ -52,10 +83,8 @@ export default class ClassifiedWidget extends React.Component {
     else
         return (
             <Slider {...settings}>
-            <div ><ClassiCards second={this.state.data[1]} first={this.state.data[0]}/></div>
-            <div ><ClassiCards  second={this.state.data[1]} first={this.state.data[0]}/></div>
-            <div ><ClassiCards  second={this.state.data[1]} first={this.state.data[0]}/></div>
-            </Slider>
+             {this.state.data.map((e,i) => <div ><ClassiCards key={i} {...e}/></div>)} 
+           </Slider>
         );
   }
 }

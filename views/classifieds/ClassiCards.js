@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon,Label } from 'semantic-ui-react'
+import { Card, Icon,Label,Image,Segment } from 'semantic-ui-react'
 
 const extra = (
   <a>
@@ -14,35 +14,41 @@ export default class ClassiCards extends React.Component{
   }  
   render(){
     
-      var {image,title,brand,model,price,location} = this.props.first
-      var {image1,title1,brand1,model1,price1,location1} = this.props.second 
-      var loc = <Label as='a'>
-                  <Icon name='location arrow' />
-                  {location} 
-                 </Label>  
-      var loc1 = <Label as='a'>
-      <Icon name='location arrow' />
-      {location1} 
-    </Label>  
+      var {image,category,title,brand,model,price,location} = this.props
+      
+      
+    
    return(
-   <div style={{width:"220px"}}>   
-    <Card.Group>
-    <Card
-      image={image}
-      header={title}
-      meta={brand}
-      description={price}
-      extra={loc}
-     />
-     <Card
-      image={image1}
-      header={title1}
-      meta={brand1}
-      description={price1}
-      extra={loc1}
-     />
-     </Card.Group>
-    </div>
+   <div style={{width:"195px",height:"350px"}}>   
+    
+    <Card>
+      <Card.Content>
+        <Image  size="medium" src={image}/>
+        <Card.Header>
+          <br></br>
+          {title}
+        </Card.Header>
+        <Card.Meta>
+            <span className='price'>{category} >> </span>
+            <span className='stay'>{brand} >> </span> 
+            <span className='stay'>{model}</span>
+            <Label as='a' color='orange' attached="bottom right" tag>
+            <Icon name='rupee' />    
+                {price}
+            </Label>
+        </Card.Meta>
+        
+        
+        <Card.Description>
+
+        
+           
+            
+        </Card.Description>
+      </Card.Content>
+    </Card> 
+    
+   </div>
     )
   
   }

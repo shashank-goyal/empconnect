@@ -22,3 +22,12 @@
   
   
 }
+
+ .card{
+  height: 260px;
+} 
+#next{
+  background: black;
+  border-radius:100%;
+  border: 1px solid white;
+}
