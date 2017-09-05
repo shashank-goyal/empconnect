@@ -26,6 +26,7 @@ export default class Root extends React.Component {
     onChange(state) {
         this.setState(state);
     }
+
     componentWillMount= () => {
         var setState = this.onChange;
         function displayLocation(latitude,longitude){
@@ -66,6 +67,7 @@ export default class Root extends React.Component {
     }
     state = {activeItem : 'Home', selectedLocation : 'Select Location'}
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    
     handleLocationChange = (e) => this.setState({ selectedLocation: e.target.value })
     render() {
         const { activeItem, selectedLocation } = this.state
@@ -100,11 +102,11 @@ export default class Root extends React.Component {
                         </Container>
                     </Menu>
                 </Segment>
-                { activeItem === 'Home' ?   <HomepageLayout/> : undefined}
+                { activeItem === 'Home' ?   <HomepageLayout handleItemClick={this.handleItemClick}/> : undefined}
                 { activeItem === 'Classifieds' ?   <Classifieds/> : undefined}
                 { activeItem === 'Events' ?   <Events/> : undefined}
                 { activeItem === 'Achievements' ?  <div></div> : undefined}
-                <Segment inverted vertical style={{ padding: '5em 0em' }}>
+                {/* <Segment inverted vertical style={{ padding: '5em 0em' }}>
                     <Container>
                         <Grid divided inverted stackable>
                             <Grid.Row>
@@ -124,7 +126,7 @@ export default class Root extends React.Component {
                             </Grid.Row>
                         </Grid>
                     </Container>
-                </Segment>
+                </Segment> */}
             </div>
         );
     }
