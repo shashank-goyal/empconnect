@@ -5,6 +5,7 @@ const description = [
 const data = [
     {
         title:"Shashank",
+        group:"rewards",
         image:"images/standing_ovation.png",
         type:"Standing Ovation",
         year:"Aug, 2017",
@@ -14,6 +15,7 @@ const data = [
     },
     {
         title:"Jimit",
+        group:"sports",
         image:"images/badminton.png",
         type:"Badminton",
         year:"Sep, 2017",
@@ -23,6 +25,7 @@ const data = [
     },
     {
         title:"Chandra",
+        group:"sports",
         image:"images/table_tennis.jpg",
         type:"Table Tennis",
         year:"July, 2017",
@@ -32,6 +35,7 @@ const data = [
     },
     {
         title:"Master",
+        group:"cultural",
         image:"images/singing.jpg",
         type:"Singing",
         year:"Nov, 2016",
@@ -41,6 +45,7 @@ const data = [
     },
     {
         title:"Thiru",
+        group:"cultural",
         image:"images/dance.jpg",
         type:"Dancing",
         year:"Mar, 2012",

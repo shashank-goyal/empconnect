@@ -13,7 +13,20 @@
 #clasifiedTile{
   display: table !important;
 }
-.achievement{
-  height : 300px;
-  width : 600px
+.AchievementSlider{
+  height : 300px !important;
+  background-color: antiquewhite;
 }
+.CustomIcon{
+    width: 20px; 
+    height: 20px;
+    float: right;
+    margin-left: 5px !important;
+}
+/* .CustomIconAlignment{
+  display: inline-flex !important;
+  align-items: baseline !important;
+  margin-right: 5px !important;
+} */
+
+      
