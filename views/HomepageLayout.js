@@ -14,6 +14,7 @@ import {
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
 import _ from 'lodash'
+import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
 
 export default class HomepageLayout extends Component {
     state = {activeItem : "none", openModal1: false, openModal2: false, openModal3:false,openModal4:false, activeClassifiedItem:'none'}
@@ -63,7 +64,7 @@ export default class HomepageLayout extends Component {
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
                         <Grid.Row>
-                            <Grid.Column width={10}>
+                            <Grid.Column width={11}>
                                 <Grid container stackable verticalAlign='middle'>
                                     <Grid.Row>
                                         <a href="javascript:void(0);" onClick={this.handleNewItemClick}><Icon size="large" color="blue" name='add square' />Click here to add new item</a>
@@ -76,13 +77,23 @@ export default class HomepageLayout extends Component {
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
-                                            <Header as='h3' style={{ fontSize: '2em' }}>Recent Classifieds</Header>
-                                            Here we will se ethe latest 5 classifieds.
+                                            <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
+                                                Recent Classifieds
+                                                <Button animated floated="right" secondary>
+                                                <Button.Content visible>See all</Button.Content>
+                                                <Button.Content hidden>
+                                                    <Icon name='right arrow' />
+                                                </Button.Content>
+                                                </Button>
+                                            </Header>
+                                            
+                                            <br></br><br></br>
+                                            <ClassifiedsWidget/>
                                         </Segment>
                                     </Grid.Row>
                                 </Grid>
                             </Grid.Column>
-                            <Grid.Column width={6}>
+                            <Grid.Column width={5}>
                                 <Grid container stackable verticalAlign='top'>
                                     <Grid.Row>
                                             <Segment raised color='blue' style={{ width: '100%' }}>

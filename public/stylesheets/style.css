@@ -17,3 +17,17 @@
   height : 300px;
   width : 600px
 }
+#coroWidth{
+  /* width:220px !important; */
+  
+  
+}
+
+ .card{
+  height: 260px;
+} 
+#next{
+  background: black;
+  border-radius:100%;
+  border: 1px solid white;
+}
