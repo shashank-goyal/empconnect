@@ -13,11 +13,31 @@ import {
     Visibility,Dropdown,
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
-import _ from 'lodash'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
 
 export default class HomepageLayout extends Component {
-    state = {activeItem : "none", openModal1: false, openModal2: false, openModal3:false,openModal4:false, activeClassifiedItem:'none'}
+    state = {
+        activeItem : "none",
+        openModal1: false,
+        openModal2: false,
+        openModal3:false,
+        openModal4:false,
+        openModal5: false,
+        activeClassifiedItem:'none',
+        classifiedsData : {
+            category: '',
+            purpose: '',
+            brand:'',
+            model: '',
+            year: '',
+            price:'',
+            location: '',
+            email: '',
+            phone: '',
+            description: '',
+            fileUpload: ''
+        }
+    }
     panes = [
         { menuItem: 'Activities', render: () => <Tab.Pane attached={false}>Recent Activities</Tab.Pane> },
         { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}>Recent Bithdays</Tab.Pane> },
@@ -37,28 +57,85 @@ export default class HomepageLayout extends Component {
         console.log('next name', name)
         if(name === 'modal1next'){
             if(this.state.activeItem === 'Classifieds'){
-                this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false})
+                this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false, openModal5:false})
             } else{
-                this.setState({ openModal2: true , openModal1: false, openModal3: false, openModal4:false})
+                this.setState({ openModal2: true , openModal1: false, openModal3: false, openModal4:false, openModal5:false})
             }
         } else if(name === 'modal3next'){
-            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: true})
+            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: true, openModal5:false})
+        } else if(name === 'modal4next'){
+            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: false, openModal5: true})
         }
 
     }
     handleBackClick = (e, { name }) => {
-        console.log('back name', name , this.state)
         if(name === 'modal3back' || name ==='modal2back'){
-            this.setState({ openModal2: false , openModal1: true, openModal3: false, activeClassifiedItem:'none'})
+            this.setState({ openModal2: false , openModal1: true, openModal3: false, activeClassifiedItem:'none', openModal5:false})
         } else if(name === 'modal4back'){
-            console.log('inside else if')
-            this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false})
+            this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false, openModal5:false})
+        } else if(name === 'modal5back'){
+            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4:true, openModal5:false})
         }
-
     }
-    close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, activeClassifiedItem:'none'})
+
+    handleFormChange = (e, { name, value }) => {
+        console.log('inside handleFormChange')
+        const classifiedsData = this.state.classifiedsData;
+        classifiedsData[name] = value;
+        this.setState({classifiedsData});
+    }
+
+    close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none'})
+
+    handleFileUpload = (e) => {
+        //console.log('event.target.files', e.target.files[0])
+        console.log('inside handleFileUpload')
+        const classifiedsData = this.state.classifiedsData;
+        classifiedsData[e.target.name] = e.target.files[0];
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("image").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(e.target.files[0]);
+
+        this.setState({classifiedsData});
+    }
+
+    handleFormSubmit = (e) => {
+        var data = new FormData();
+        var classifiedsInfo = this.state.classifiedsData;
+        var keys = Object.keys(classifiedsInfo);
+        keys.forEach(function(field){
+            if(field === 'fileUpload'){
+                console.log('inside if', data)
+                data.append(field.toString(), classifiedsInfo[field], classifiedsInfo[field].name);
+            } else {
+                console.log('inside else', data)
+                data.append(field.toString(), classifiedsInfo[field]);
+            }
+        })
+            var xhr = new XMLHttpRequest();
+            // Create a new XMLHttpRequest
+            xhr.open('POST', 'insert-classifieds', true);
+            // File Location, this is where the data will be posted
+            xhr.send(data);
+            xhr.onload = function () {
+                // On Data send the following works
+                if (xhr.status === 200) {
+                   console.log('success')
+                } else {
+                    console.log('error')
+                }
+            };
+    }
+
     render() {
-        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem } = this.state;
+        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 } = this.state;
         return (
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
@@ -236,12 +313,18 @@ export default class HomepageLayout extends Component {
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form>
-                                            <Form.Select label='Purpose' options={this.options} placeholder='Buy/Sell/Share' required/>
-                                            <Form.Input label='Brand/Model' placeholder='Provide Brand/Model name' />
-                                            <Form.Input label='Year' placeholder='Provide year of purchase' />
-                                            <Form.TextArea label='Description' placeholder='Tell us more...' />
-                                            <Form.Checkbox label='I agree to the Terms and Conditions' />
-                                            <Form.Button>Submit</Form.Button>
+                                            <Form.Select label='Purpose' name='purpose' value={classifiedsData.purpose} options={this.options} onChange={this.handleFormChange} placeholder='Sell/Share/Rent' required/>
+                                            <Form.Input label='Brand' name='brand' value={classifiedsData.brand} onChange={this.handleFormChange} placeholder='Provide Brand name' required/>
+                                            <Form.Input label='Model' name='model' value={classifiedsData.model} onChange={this.handleFormChange} placeholder='Provide Model name' required/>
+                                            <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
+                                            <Form.Input label='Area/Location' name='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required/>
+                                            <Form.Input label='Price' name='price' value={classifiedsData.price} onChange={this.handleFormChange} placeholder='Provide price details' required/>
+                                            <Form.TextArea label='Description' name='description' value={classifiedsData.description} onChange={this.handleFormChange} placeholder='Tell us more...' required/>
+                                            <Form.Field required>
+                                                <label>Upload Image</label>
+                                                <input type='file' accept=".png,.gif" name='fileUpload' onChange={this.handleFileUpload} />
+                                                <img id="image" style={{width: '200px'}}/>
+                                            </Form.Field>
                                         </Form>
                                     </Grid.Column>
                                 </Grid.Row>
@@ -252,7 +335,37 @@ export default class HomepageLayout extends Component {
                         <Button name="modal4back" secondary onClick={this.handleBackClick}>
                             Back <Icon name='left chevron' />
                         </Button>
-                        <Button primary>
+                        <Button name="modal4next" primary onClick={this.handleNextClick}>
+                            Next <Icon name='right chevron' />
+                        </Button>
+                    </Modal.Actions>
+                </Modal>
+
+
+                <Modal open={openModal5} closeOnEscape closeIcon closeOnRootNodeClick={false} onClose={this.close}>
+                    <Modal.Header>Step 4<Icon name='angle double right' /> Confirm Your Personal Details</Modal.Header>
+                    <Modal.Content image scrolling>
+                        <Modal.Description>
+                            <Grid stackable>
+                                <Grid.Row>
+                                    <Grid.Column width={4}>
+                                    </Grid.Column>
+                                    <Grid.Column width={8}>
+                                        <Form>
+                                            <Form.Input label='Email' name='email' value={classifiedsData.email} onChange={this.handleFormChange} placeholder='Provide your email id' required/>
+                                            <Form.Input label='Contact Number' name='phone' value={classifiedsData.phone} onChange={this.handleFormChange} placeholder='Provide your mobile number' required/>
+                                            <Form.Checkbox label='I agree to the Terms and Conditions' />
+                                        </Form>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Modal.Description>
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button name="modal5back" secondary onClick={this.handleBackClick}>
+                            Back <Icon name='left chevron' />
+                        </Button>
+                        <Button primary onClick={this.handleFormSubmit}>
                             Create
                         </Button>
                     </Modal.Actions>
