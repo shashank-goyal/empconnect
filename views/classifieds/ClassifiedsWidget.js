@@ -1,34 +1,12 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import {Dimmer,Loader,Button} from 'semantic-ui-react'
+import {Dimmer,Loader,Button,Icon} from 'semantic-ui-react'
 import axios from 'axios'
 import ClassiCards from './ClassiCards'
 import data from './data'
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-function SampleNextArrow(props) {
- const {className, style, onClick} = props
- return (
-  <button
-    id="next"
-     className={className}
-     style={{...style}}
-     onClick={onClick}
-   ></button>
- );
-}
 
-function SamplePrevArrow(props) {
- const {className, style, onClick} = props
- return (
-    <button
-    id="next"
-     className={className}
-     style={{...style}}
-     onClick={onClick}
-   ></button>
- );
-}
 
 export default class ClassifiedWidget extends React.Component {
     constructor(props){
@@ -37,6 +15,8 @@ export default class ClassifiedWidget extends React.Component {
             data : data,
             action:"normal"
         }
+          this.next = this.next.bind(this)
+          this.prev = this.prev.bind(this)
     }
     // componentWillMount(){
     //     this.renderTiles();
@@ -52,24 +32,24 @@ export default class ClassifiedWidget extends React.Component {
     //      });
  
     // }
-  
-
+  next(){
+   this.slider.slickNext()
+  }
+  prev(){
+    this.slider.slickPrev()
+  }
   render(){
 
   var settings = {
-    autoplay:true,
-    autoplaySpeed:100,
-    pauseOnHover:true,
+    
     speed: 500,
     slidesToShow: 3,
-    centerMode:true,
+    
     slidesToScroll: 1,
-    arrows:true,
-    centerPadding:"60px",
+   
     focusOnSelect	:true,
-    draggable:true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    draggable:true
+    
     
   };
 
@@ -82,9 +62,17 @@ export default class ClassifiedWidget extends React.Component {
     
     else
         return (
-            <Slider {...settings}>
-             {this.state.data.map((e,i) => <div ><ClassiCards key={i} {...e}/></div>)} 
+          <div>
+           
+            <Slider {...settings} ref={c => this.slider = c }>
+             {this.state.data.map((e,i) => <div ><ClassiCards key={i} {...e} {...this.props}/></div>)} 
            </Slider>
-        );
+           <br/>
+           <div style={{textAlign: 'center'}}>
+              <Button circular size="mini" secondary onClick={this.prev}><Icon name='chevron left' inverted/></Button>
+              <Button circular size="mini" secondary onClick={this.next}><Icon name='chevron right' inverted/></Button>
+           </div>
+          </div>       
+          );
   }
 }

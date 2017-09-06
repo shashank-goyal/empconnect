@@ -48,15 +48,6 @@ export default class Classifieds extends Component {
         this.setState({action:"loader"}) 
         this.renderTiles();
     }
-    else if(name == "realestate"){
-        var x 
-      switch(e.target.innerText.toLowerCase()){
-          case "share": x ="SH";break;
-          case "rent":  x = "R";break;
-          default:x ="S"
-      }
-      newData = this.state.rsp.filter(e => e.category.toLowerCase() == name && e.purpose == x)
-    }
     else
       newData = this.state.rsp.filter(e => e.category.toLowerCase() == name)
        //console.log(newData)
@@ -102,15 +93,11 @@ export default class Classifieds extends Component {
                         <Icon name='tv' />
                         Home Appliances
                         </Menu.Item>
-                      <Dropdown item text='Real Estate'>
-                        <Dropdown.Menu>
-                          
-                          <Dropdown.Item name='realestate' icon="home" onClick={this.handleItemClick}>Buy</Dropdown.Item>
-                          <Dropdown.Item name='realestate' icon="slideshare" onClick={this.handleItemClick}>Share </Dropdown.Item>
-                          <Dropdown.Item name='realestate' onClick={this.handleItemClick}>Rent</Dropdown.Item>
-                          
-                        </Dropdown.Menu>
-                      </Dropdown>
+                        <Menu.Item name='realestate' active={activeItem === 'realestate'} onClick={this.handleItemClick}>
+                        <Icon name='home' />
+                         Real Estate
+                        </Menu.Item>
+
                         <Menu.Item name='books' active={activeItem === 'books'} onClick={this.handleItemClick}>
                         <Icon name='book' />
                          Books

@@ -102,10 +102,12 @@ export default class Root extends React.Component {
                         </Container>
                     </Menu>
                 </Segment>
+                
                 { activeItem === 'Home' ?   <HomepageLayout handleItemClick={this.handleItemClick}/> : undefined}
                 { activeItem === 'Classifieds' ?   <Classifieds/> : undefined}
                 { activeItem === 'Events' ?   <Events/> : undefined}
                 { activeItem === 'Achievements' ?  <div></div> : undefined}
+                  
                 {/* <Segment inverted vertical style={{ padding: '5em 0em' }}>
                     <Container>
                         <Grid divided inverted stackable>

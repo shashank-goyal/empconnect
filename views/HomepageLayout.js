@@ -153,7 +153,7 @@ export default class HomepageLayout extends Component {
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%' }}>
+                                        <Segment raised color='blue' style={{ width: '100%'}}>
                                             <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
                                                 Recent Classifieds
                                                 <Button name="Classifieds" onClick={this.props.handleItemClick} animated floated="right" secondary>
@@ -165,7 +165,7 @@ export default class HomepageLayout extends Component {
                                             </Header>
                                             
                                            
-                                            <ClassifiedsWidget/>
+                                            <ClassifiedsWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
                                 </Grid>
