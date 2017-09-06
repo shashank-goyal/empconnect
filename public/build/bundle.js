@@ -63114,9 +63114,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
@@ -63150,31 +63150,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-function SampleNextArrow(props) {
-  var className = props.className,
-      style = props.style,
-      onClick = props.onClick;
 
-  return _react2.default.createElement('button', {
-    id: 'next',
-    className: className,
-    style: _extends({}, style),
-    onClick: onClick
-  });
-}
-
-function SamplePrevArrow(props) {
-  var className = props.className,
-      style = props.style,
-      onClick = props.onClick;
-
-  return _react2.default.createElement('button', {
-    id: 'next',
-    className: className,
-    style: _extends({}, style),
-    onClick: onClick
-  });
-}
 
 var ClassifiedWidget = function (_React$Component) {
   _inherits(ClassifiedWidget, _React$Component);
@@ -63188,6 +63164,8 @@ var ClassifiedWidget = function (_React$Component) {
       data: _data2.default,
       action: "normal"
     };
+    _this.next = _this.next.bind(_this);
+    _this.prev = _this.prev.bind(_this);
     return _this;
   }
   // componentWillMount(){
@@ -63207,23 +63185,29 @@ var ClassifiedWidget = function (_React$Component) {
 
 
   _createClass(ClassifiedWidget, [{
+    key: 'next',
+    value: function next() {
+      this.slider.slickNext();
+    }
+  }, {
+    key: 'prev',
+    value: function prev() {
+      this.slider.slickPrev();
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       var settings = {
-        autoplay: true,
-        autoplaySpeed: 100,
-        pauseOnHover: true,
+
         speed: 500,
         slidesToShow: 3,
-        centerMode: true,
+
         slidesToScroll: 1,
-        arrows: true,
-        centerPadding: "60px",
+
         focusOnSelect: true,
-        draggable: true,
-        nextArrow: _react2.default.createElement(SampleNextArrow, null),
-        prevArrow: _react2.default.createElement(SamplePrevArrow, null)
+        draggable: true
 
       };
 
@@ -63236,15 +63220,36 @@ var ClassifiedWidget = function (_React$Component) {
           'Fetching Listing...'
         )
       );else return _react2.default.createElement(
-        _reactSlick2.default,
-        settings,
-        this.state.data.map(function (e, i) {
-          return _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(_ClassiCards2.default, _extends({ key: i }, e))
-          );
-        })
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactSlick2.default,
+          _extends({}, settings, { ref: function ref(c) {
+              return _this2.slider = c;
+            } }),
+          this.state.data.map(function (e, i) {
+            return _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(_ClassiCards2.default, _extends({ key: i }, e))
+            );
+          })
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'div',
+          { style: { textAlign: 'center' } },
+          _react2.default.createElement(
+            _semanticUiReact.Button,
+            { circular: true, size: 'mini', secondary: true, onClick: this.prev },
+            _react2.default.createElement(_semanticUiReact.Icon, { name: 'chevron left', inverted: true })
+          ),
+          _react2.default.createElement(
+            _semanticUiReact.Button,
+            { circular: true, size: 'mini', secondary: true, onClick: this.next },
+            _react2.default.createElement(_semanticUiReact.Icon, { name: 'chevron right', inverted: true })
+          )
+        )
       );
     }
   }]);
@@ -65871,7 +65876,7 @@ var ClassiCards = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: { width: "195px", height: "350px" } },
+        { style: { width: "225px" } },
         _react2.default.createElement(
           _semanticUiReact.Card,
           null,

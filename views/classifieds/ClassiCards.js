@@ -19,7 +19,7 @@ export default class ClassiCards extends React.Component{
       
     
    return(
-   <div style={{width:"195px",height:"350px"}}>   
+   <div style={{width:"225px"}}>   
     
     <Card>
       <Card.Content>
