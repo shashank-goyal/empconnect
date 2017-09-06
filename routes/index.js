@@ -45,9 +45,9 @@ router.get("/get-classifieds",function(req,res,next){
 
   classifieds.find({deletionFlag:false},function(err,data){
     if(err) throw err;
-        console.log(data.data)
-    var sortList = data.data.sort((a,b) => new Date(b.postTimestamp)-new Date(a.postTimestamp))
+        
+    var sortList = data.sort((a,b) => new Date(b.postTimestamp)-new Date(a.postTimestamp))
     res.json({data:sortList}) 
-  })
+  }).catch(e => e)
 })
 module.exports = router;

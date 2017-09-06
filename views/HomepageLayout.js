@@ -165,7 +165,7 @@ export default class HomepageLayout extends Component {
                                             </Header>
                                             
                                            
-                                            <ClassifiedsWidget/>
+                                            <ClassifiedsWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
                                 </Grid>

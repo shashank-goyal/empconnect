@@ -65,7 +65,7 @@ export default class ClassifiedWidget extends React.Component {
           <div>
            
             <Slider {...settings} ref={c => this.slider = c }>
-             {this.state.data.map((e,i) => <div ><ClassiCards key={i} {...e}/></div>)} 
+             {this.state.data.map((e,i) => <div ><ClassiCards key={i} {...e} {...this.props}/></div>)} 
            </Slider>
            <br/>
            <div style={{textAlign: 'center'}}>
