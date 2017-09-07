@@ -40,7 +40,7 @@ export default class Achievements extends Component {
         if(!(activeItem == 'home')){
             newData = data.filter(e => e.group == activeItem);
         }
-        
+
         return (
            
             <div>

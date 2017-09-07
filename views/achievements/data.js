@@ -17,7 +17,7 @@ const data = [
         group:"sports",
         image:"images/badminton.png",
         type:"Badminton",
-       postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+        postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
         rank:"2nd",
         contact:"554554",
         description:description

@@ -31,10 +31,10 @@ class SimpleSlider extends React.Component {
       dots: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToScroll: 1
       // nextArrow: <SampleNextArrow />,
       // prevArrow: <SamplePrevArrow />,
-      autoplay: true
+      // autoplay: true
     };
 
     return (

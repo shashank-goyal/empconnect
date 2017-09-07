@@ -4,7 +4,6 @@ import { Image as ImageComponent, Item,Label,Button,Icon,Segment } from 'semanti
 class SingleAchievementTile extends React.Component{
    constructor(props){
        super(props);
-    //    debugger
        this.toggleDescription = this.toggleDescription.bind(this);
    } 
    toggleDescription(event){
@@ -16,7 +15,6 @@ class SingleAchievementTile extends React.Component{
    
     }
   render(){
-    //   debugger
         return(
             <Segment raised>
                 <Item.Group>
