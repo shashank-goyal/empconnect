@@ -16,42 +16,33 @@ class SingleAchievementTile extends React.Component{
     }
   render(){
         return(
-        <Segment raised>
-        <Item.Group>
-            <Item>
-            <Item.Image size='small'  src={this.props.image}/>
-            <Item.Content>
-                <Item.Header>{this.props.title}</Item.Header>
-                <Item.Meta>
-                <span className='price'>{this.props.type}</span>
-                <span className='stay'>{this.props.model}</span>
-                <Label as='a' color='green' attached="top right" tag>
-                <Icon name='rupee' />    
-                    {this.props.price}
-                </Label>
-                </Item.Meta>
-                
-                <Item.Description>
-                <p>{this.props.year}</p>   
-                <span id="toggleVisible">{this.props.description}</span>
-                
-                
-                </Item.Description> 
-                <Item.Extra>
-                <Button secondary size='mini' onClick={this.toggleDescription}  floated='right'>
-                More >> 
-                </Button>
-                <Button secondary size='mini'  floated='left'>
-                <Icon name='phone' />
-                    Get contact details
-                </Button>
-                </Item.Extra>
-            </Item.Content>
-            </Item>
+            <Segment raised>
+                <Item.Group>
+                    <Item>
+                        <Item.Image size='small'  src={this.props.image}/> 
+                        <Item.Content>
+                            <Item.Header>{this.props.title}</Item.Header>
+                            <Item.Meta>
+                                <span className='price'>{this.props.type}</span> 
+                                { !(this.props.group == 'rewards') ?
+                                <Label as='a' color='green' attached="top right" tag>
+                                    <Icon name='trophy' size='large' />    
+                                        {this.props.rank}
+                                </Label> 
+                                : '' 
+                                }
+                            </Item.Meta> 
 
-        
-        </Item.Group>
-       </Segment> 
+                            <Item.Description>
+                                <span>{this.props.description}</span>
+                            </Item.Description> 
+                            <Item.Extra>
+                                <span className='price' style={{float:"left"}}>{this.props.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
+                            </Item.Extra>
+                        </Item.Content> 
+                    </Item>
+                </Item.Group>  
+            </Segment>   
         )
     }
 }

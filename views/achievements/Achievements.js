@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import {
     Button,
     Container,
@@ -13,76 +14,68 @@ import {
     Visibility,Dropdown,
     Tab,Label
 } from 'semantic-ui-react'
-import ClassifiedTile from './ClassifiedTile'
-const description = [
-    'Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their',
-    'tiny stature, and even others for their massive size.',
-  ].join(' ')
-const data = [
-    {
-        title:"Shashank",
-        image:"images/standing_ovation.png",
-        type:"Standing Ovation",
-        year:"Aug, 207",
-        price:"200000",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Jimit",
-        image:"images/badminton.png",
-        type:"Badminton",
-        year:"Sep, 2017",
-        price:"1000",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Chandra",
-        image:"images/table_tennis.jpg",
-        type:"Table Tennis",
-        year:"July, 2017",
-        price:"1000000",
-        contact:"55455ff4",
-        description:description
-    },
-    {
-        title:"Master",
-        image:"images/singing.jpg",
-        type:"Singing",
-        year:"Nov, 2016",
-        price:"100000",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Thiru",
-        image:"images/dance.jpg",
-        type:"Dancing",
-        year:"Mar, 2012",
-        price:"200000",
-        contact:"554554",
-        description:description
-    }
-]
+
+import AchievementTile from './AchievementTile'
+import data from './data'
+import SimpleSlider from './SimpleSlider'
+
 export default class Achievements extends Component {
 
+    constructor(props){
+       super(props);
+       
+       this.state = {
+           activeItem : 'home'
+       }
+       this.handleItemClick = this.handleItemClick.bind(this);
+    }
+
+    handleItemClick(e, {name}){
+        this.setState({activeItem:name})
+    }
 
     render() {
+        var {activeItem} = this.state
+        var newData =data;
+        if(!(activeItem == 'home')){
+            newData = data.filter(e => e.group == activeItem);
+        }
+
         return (
+           
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
-                    <Grid.Row id="clasifiedTile">
-                      <Grid.Column width={2}>
-                       </Grid.Column>
-                       <Grid.Column width={12}>
-                         <ClassifiedTile data={data}/>
-                        </Grid.Column>
-                         
-                    </Grid.Row>
+                        <Grid.Row>
+                            <Grid.Column width={4}>
+                                <Menu pointing secondary vertical>
+                                    <Menu.Item name='home' active={activeItem === 'home'} icon="home" size="large" onClick={this.handleItemClick}>
+                                    Home
+                                    </Menu.Item>
+
+                                    <Menu.Item name='rewards' active={activeItem === 'rewards'} onClick={this.handleItemClick}>
+                                    Rewards Ricognation
+                                    <img src='images/standing_ovation.png'   className='CustomIcon'/>
+                                    </Menu.Item>
+
+                                    <Menu.Item name='sports' active={activeItem === 'sports'} onClick={this.handleItemClick}>
+                                    Sports
+                                    <img src='images/sports_icon.svg' className='CustomIcon'/>
+                                    </Menu.Item>
+
+                                    <Menu.Item name='cultural' active={activeItem === 'cultural'} onClick={this.handleItemClick}>
+                                    Cultural  Activities
+                                    <img src='images/cultural_activities_icon.svg' className='CustomIcon'/>
+                                    </Menu.Item>
+                                </Menu>
+                            </Grid.Column>
+
+                            <Grid.Column width={12}>
+                                <AchievementTile data={newData}/>
+                            </Grid.Column>
+                        </Grid.Row>
                     </Grid>
-                </Segment>
+                </Segment> 
             </div>
         )
     }

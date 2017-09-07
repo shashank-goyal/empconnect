@@ -13,6 +13,7 @@ import {
     Visibility,Dropdown,
     Tab,Label,Input,Dimmer,Loader
 } from 'semantic-ui-react'
+
 import ClassifiedTile from './ClassifiedTile'
 //import data from './data'
 import axios from 'axios'

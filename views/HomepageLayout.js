@@ -14,7 +14,7 @@ import {
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
-
+import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {
         activeItem : "none",
@@ -32,11 +32,12 @@ export default class HomepageLayout extends Component {
             year: '',
             price:'',
             location: '',
-            email: '',
-            phone: '',
+            email: 'test@123.com',
+            phone: '9876543210',
             description: '',
             fileUpload: ''
-        }
+        },
+        isFormValid: false
     }
     panes = [
         { menuItem: 'Activities', render: () => <Tab.Pane attached={false}>Recent Activities</Tab.Pane> },
@@ -44,17 +45,24 @@ export default class HomepageLayout extends Component {
         { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}>Recent Holidays</Tab.Pane> },
     ]
 
-    options = [
+    optionsAll = [
         { key: 's', text: 'Sell', value: 'sell' },
         { key: 'r', text: 'Rent', value: 'rent' },
         { key: 'sh', text: 'Share', value: 'share' }
     ]
+    optionSell = [
+        { key: 's', text: 'Sell', value: 'sell' }
+    ]
 
     handleClick = (e, { name }) => this.setState({ activeItem: name })
-    handleClassifiedsClick= (e, { name }) => this.setState({ activeClassifiedItem: name })
+    handleClassifiedsClick= (e, { name }) => {
+        var classifiedsData = this.state.classifiedsData;
+        classifiedsData.category = name;
+        this.setState({ activeClassifiedItem: name , classifiedsData : classifiedsData})
+    }
+
     handleNewItemClick = (e) => this.setState({ openModal1: true,openModal2: false,  openModal3: false, openModal4:false})
     handleNextClick = (e, { name }) => {
-        console.log('next name', name)
         if(name === 'modal1next'){
             if(this.state.activeItem === 'Classifieds'){
                 this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false, openModal5:false})
@@ -79,17 +87,23 @@ export default class HomepageLayout extends Component {
     }
 
     handleFormChange = (e, { name, value }) => {
-        console.log('inside handleFormChange')
         const classifiedsData = this.state.classifiedsData;
         classifiedsData[name] = value;
-        this.setState({classifiedsData});
+        var isFormValid = true;
+        var keys = Object.keys(classifiedsData);
+        console.log(keys)
+        keys.forEach(function(field){
+            if(classifiedsData[field] === "" && field !== 'fileUpload'){
+                isFormValid = false;
+            }
+        })
+        this.setState({classifiedsData, isFormValid});
     }
 
     close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none'})
 
     handleFileUpload = (e) => {
         //console.log('event.target.files', e.target.files[0])
-        console.log('inside handleFileUpload')
         const classifiedsData = this.state.classifiedsData;
         classifiedsData[e.target.name] = e.target.files[0];
 
@@ -119,23 +133,23 @@ export default class HomepageLayout extends Component {
                 data.append(field.toString(), classifiedsInfo[field]);
             }
         })
-            var xhr = new XMLHttpRequest();
-            // Create a new XMLHttpRequest
-            xhr.open('POST', 'insert-classifieds', true);
-            // File Location, this is where the data will be posted
-            xhr.send(data);
-            xhr.onload = function () {
-                // On Data send the following works
-                if (xhr.status === 200) {
-                   console.log('success')
-                } else {
-                    console.log('error')
-                }
-            };
+        var xhr = new XMLHttpRequest();
+        // Create a new XMLHttpRequest
+        xhr.open('POST', 'insert-classifieds', true);
+        // File Location, this is where the data will be posted
+        xhr.send(data);
+        xhr.onload = function () {
+            // On Data send the following works
+            if (xhr.status === 200) {
+                console.log('success')
+            } else {
+                console.log('error')
+            }
+        };
     }
 
     render() {
-        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 } = this.state;
+        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid} = this.state;
         return (
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
@@ -149,22 +163,22 @@ export default class HomepageLayout extends Component {
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
                                             <Header as='h3' style={{ fontSize: '2em' }}>Recent Achievements</Header>
-                                            Here we will se ethe latest 5 achievements.
+                                            <SimpleSlider/>
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%'}}>
+                                        <Segment raised color='blue' style={{ width: '100%' }}>
                                             <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
                                                 Recent Classifieds
                                                 <Button name="Classifieds" onClick={this.props.handleItemClick} animated floated="right" secondary>
-                                                <Button.Content visible>Explore classifieds</Button.Content>
-                                                <Button.Content hidden>
-                                                    <Icon name='right arrow' />
-                                                </Button.Content>
+                                                    <Button.Content visible>Explore classifieds</Button.Content>
+                                                    <Button.Content hidden>
+                                                        <Icon name='right arrow' />
+                                                    </Button.Content>
                                                 </Button>
                                             </Header>
-                                            
-                                           
+
+
                                             <ClassifiedsWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
@@ -173,10 +187,10 @@ export default class HomepageLayout extends Component {
                             <Grid.Column width={5}>
                                 <Grid container stackable verticalAlign='top'>
                                     <Grid.Row>
-                                            <Segment raised color='blue' style={{ width: '100%' }}>
-                                                <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
-                                                <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
-                                            </Segment>
+                                        <Segment raised color='blue' style={{ width: '100%' }}>
+                                            <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
+                                            <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
+                                        </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
@@ -313,7 +327,7 @@ export default class HomepageLayout extends Component {
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form>
-                                            <Form.Select label='Purpose' name='purpose' value={classifiedsData.purpose} options={this.options} onChange={this.handleFormChange} placeholder='Sell/Share/Rent' required/>
+                                            <Form.Select label='Purpose' name='purpose' value={classifiedsData.purpose} options={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ?this.optionsAll :this.optionSell} onChange={this.handleFormChange} placeholder={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' :'Sell'} required/>
                                             <Form.Input label='Brand' name='brand' value={classifiedsData.brand} onChange={this.handleFormChange} placeholder='Provide Brand name' required/>
                                             <Form.Input label='Model' name='model' value={classifiedsData.model} onChange={this.handleFormChange} placeholder='Provide Model name' required/>
                                             <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
@@ -335,7 +349,7 @@ export default class HomepageLayout extends Component {
                         <Button name="modal4back" secondary onClick={this.handleBackClick}>
                             Back <Icon name='left chevron' />
                         </Button>
-                        <Button name="modal4next" primary onClick={this.handleNextClick}>
+                        <Button name="modal4next" primary onClick={this.handleNextClick} disabled={!isFormValid}>
                             Next <Icon name='right chevron' />
                         </Button>
                     </Modal.Actions>
