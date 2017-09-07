@@ -31340,6 +31340,7 @@ var SingleClassifiedTile = function (_React$Component) {
         key: 'render',
         value: function render() {
             // var action = this.state.action;
+            var purpose = { SH: "For sharing", R: "For Rent" };
             return _react2.default.createElement(
                 _semanticUiReact.Segment,
                 { raised: true },
@@ -31456,13 +31457,17 @@ var SingleClassifiedTile = function (_React$Component) {
                                     null,
                                     this.props.purpose == "S" ? _react2.default.createElement(
                                         _semanticUiReact.Label,
-                                        { as: 'a', tag: true },
+                                        { as: 'a', color: 'orange', tag: true },
                                         this.props.year,
                                         ' Model'
-                                    ) : _react2.default.createElement('div', null),
+                                    ) : _react2.default.createElement(
+                                        _semanticUiReact.Label,
+                                        { as: 'a', color: 'orange', tag: true },
+                                        purpose[this.props.purpose]
+                                    ),
                                     _react2.default.createElement(
                                         _semanticUiReact.Label,
-                                        { as: 'a' },
+                                        { as: 'a', color: 'orange' },
                                         _react2.default.createElement(_semanticUiReact.Icon, { name: 'location arrow' }),
                                         this.props.location
                                     )
