@@ -8,8 +8,7 @@ const data = [
         group:"rewards",
         image:"images/standing_ovation.png",
         type:"Standing Ovation",
-        year:"Aug, 2017",
-        price:"200000",
+        postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
         contact:"554554",
         description:description
     },
@@ -18,8 +17,8 @@ const data = [
         group:"sports",
         image:"images/badminton.png",
         type:"Badminton",
-        year:"Sep, 2017",
-        price:"1000",
+       postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+        rank:"2nd",
         contact:"554554",
         description:description
     },
@@ -28,8 +27,8 @@ const data = [
         group:"sports",
         image:"images/table_tennis.jpg",
         type:"Table Tennis",
-        year:"July, 2017",
-        price:"1000000",
+        postTimestamp:"Thu Aug 25 2017 19:03:35 GMT+0530 (IST)",
+        rank:"1st",
         contact:"55455ff4",
         description:description
     },
@@ -38,8 +37,8 @@ const data = [
         group:"cultural",
         image:"images/singing.jpg",
         type:"Singing",
-        year:"Nov, 2016",
-        price:"100000",
+        postTimestamp:"Thu Aug 26 2017 19:03:35 GMT+0530 (IST)",
+        rank:"under top 10",
         contact:"554554",
         description:description
     },
@@ -48,8 +47,8 @@ const data = [
         group:"cultural",
         image:"images/dance.jpg",
         type:"Dancing",
-        year:"Mar, 2012",
-        price:"200000",
+        postTimestamp:"Thu Aug 21 2017 19:03:35 GMT+0530 (IST)",
+        rank:"under top 5",
         contact:"554554",
         description:description
     }

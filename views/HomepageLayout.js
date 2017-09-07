@@ -14,7 +14,8 @@ import {
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
 import _ from 'lodash'
-
+import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
+import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {activeItem : "none", openModal1: false, openModal2: false, openModal3:false,openModal4:false, activeClassifiedItem:'none'}
     panes = [
@@ -71,13 +72,13 @@ export default class HomepageLayout extends Component {
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
                                             <Header as='h3' style={{ fontSize: '2em' }}>Recent Achievements</Header>
-                                            Here we will se ethe latest 5 achievements.
+                                            <SimpleSlider/>
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
                                             <Header as='h3' style={{ fontSize: '2em' }}>Recent Classifieds</Header>
-                                            Here we will se ethe latest 5 classifieds.
+                                            <ClassifiedsWidget/>
                                         </Segment>
                                     </Grid.Row>
                                 </Grid>

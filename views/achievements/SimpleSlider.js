@@ -29,21 +29,20 @@ class SimpleSlider extends React.Component {
   render () {
     var settings = {
       dots: true,
-      // infinite: true,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-      // autoplay: true
+      // nextArrow: <SampleNextArrow />,
+      // prevArrow: <SamplePrevArrow />,
+      autoplay: true
     };
+
     return (
       <div>
         <Slider  {...settings}>
           <div><SingleAchievementTile {...data[0]}/></div>
           <div><SingleAchievementTile {...data[1]}/></div>
           <div><SingleAchievementTile {...data[2]}/></div>
-          <div><SingleAchievementTile {...data[3]}/></div>
         </Slider>
       </div>
     );

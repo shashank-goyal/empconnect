@@ -23,6 +23,7 @@ export default class Achievements extends Component {
 
     constructor(props){
        super(props);
+       
        this.state = {
            activeItem : 'home'
        }
@@ -31,17 +32,17 @@ export default class Achievements extends Component {
 
     handleItemClick(e, {name}){
         this.setState({activeItem:name})
-        if(name=='home'){
-            console.log('home')
-        }else {
-            console.log('cultural')
-        }
-
     }
 
     render() {
         var {activeItem} = this.state
+        var newData =data;
+        if(!(activeItem == 'home')){
+            newData = data.filter(e => e.group == activeItem);
+        }
+        
         return (
+           
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
@@ -52,7 +53,7 @@ export default class Achievements extends Component {
                                     Home
                                     </Menu.Item>
 
-                                    <Menu.Item name='rewards' active={activeItem === 'standingOvation'} onClick={this.handleItemClick}>
+                                    <Menu.Item name='rewards' active={activeItem === 'rewards'} onClick={this.handleItemClick}>
                                     Rewards Ricognation
                                     <img src='images/standing_ovation.png'   className='CustomIcon'/>
                                     </Menu.Item>
@@ -62,7 +63,7 @@ export default class Achievements extends Component {
                                     <img src='images/sports_icon.svg' className='CustomIcon'/>
                                     </Menu.Item>
 
-                                    <Menu.Item name='cultural' active={activeItem === 'culturalActivities'} onClick={this.handleItemClick}>
+                                    <Menu.Item name='cultural' active={activeItem === 'cultural'} onClick={this.handleItemClick}>
                                     Cultural  Activities
                                     <img src='images/cultural_activities_icon.svg' className='CustomIcon'/>
                                     </Menu.Item>
@@ -70,7 +71,7 @@ export default class Achievements extends Component {
                             </Grid.Column>
 
                             <Grid.Column width={12}>
-                                {activeItem == 'home' ? <SimpleSlider/> : <AchievementTile data={data}/>}
+                                <AchievementTile data={newData}/>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
