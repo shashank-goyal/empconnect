@@ -62714,11 +62714,12 @@ var HomepageLayout = function (_Component) {
                 year: '',
                 price: '',
                 location: '',
-                email: '',
-                phone: '',
+                email: 'test@123.com',
+                phone: '9876543210',
                 description: '',
                 fileUpload: ''
-            }
+            },
+            isFormValid: false
         }, _this.panes = [{ menuItem: 'Activities', render: function render() {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
@@ -62737,18 +62738,20 @@ var HomepageLayout = function (_Component) {
                     { attached: false },
                     'Recent Holidays'
                 );
-            } }], _this.options = [{ key: 's', text: 'Sell', value: 'sell' }, { key: 'r', text: 'Rent', value: 'rent' }, { key: 'sh', text: 'Share', value: 'share' }], _this.handleClick = function (e, _ref2) {
+            } }], _this.optionsAll = [{ key: 's', text: 'Sell', value: 'sell' }, { key: 'r', text: 'Rent', value: 'rent' }, { key: 'sh', text: 'Share', value: 'share' }], _this.optionSell = [{ key: 's', text: 'Sell', value: 'sell' }], _this.handleClick = function (e, _ref2) {
             var name = _ref2.name;
             return _this.setState({ activeItem: name });
         }, _this.handleClassifiedsClick = function (e, _ref3) {
             var name = _ref3.name;
-            return _this.setState({ activeClassifiedItem: name });
+
+            var classifiedsData = _this.state.classifiedsData;
+            classifiedsData.category = name;
+            _this.setState({ activeClassifiedItem: name, classifiedsData: classifiedsData });
         }, _this.handleNewItemClick = function (e) {
             return _this.setState({ openModal1: true, openModal2: false, openModal3: false, openModal4: false });
         }, _this.handleNextClick = function (e, _ref4) {
             var name = _ref4.name;
 
-            console.log('next name', name);
             if (name === 'modal1next') {
                 if (_this.state.activeItem === 'Classifieds') {
                     _this.setState({ openModal2: false, openModal1: false, openModal3: true, openModal4: false, openModal5: false });
@@ -62774,15 +62777,21 @@ var HomepageLayout = function (_Component) {
             var name = _ref6.name,
                 value = _ref6.value;
 
-            console.log('inside handleFormChange');
             var classifiedsData = _this.state.classifiedsData;
             classifiedsData[name] = value;
-            _this.setState({ classifiedsData: classifiedsData });
+            var isFormValid = true;
+            var keys = Object.keys(classifiedsData);
+            console.log(keys);
+            keys.forEach(function (field) {
+                if (classifiedsData[field] === "" && field !== 'fileUpload') {
+                    isFormValid = false;
+                }
+            });
+            _this.setState({ classifiedsData: classifiedsData, isFormValid: isFormValid });
         }, _this.close = function () {
             return _this.setState({ openModal1: false, openModal2: false, activeItem: "none", openModal3: false, openModal4: false, openModal5: false, activeClassifiedItem: 'none' });
         }, _this.handleFileUpload = function (e) {
             //console.log('event.target.files', e.target.files[0])
-            console.log('inside handleFileUpload');
             var classifiedsData = _this.state.classifiedsData;
             classifiedsData[e.target.name] = e.target.files[0];
 
@@ -62837,7 +62846,8 @@ var HomepageLayout = function (_Component) {
                 openModal4 = _state.openModal4,
                 activeClassifiedItem = _state.activeClassifiedItem,
                 classifiedsData = _state.classifiedsData,
-                openModal5 = _state.openModal5;
+                openModal5 = _state.openModal5,
+                isFormValid = _state.isFormValid;
 
             return _react2.default.createElement(
                 'div',
@@ -63264,7 +63274,7 @@ var HomepageLayout = function (_Component) {
                                         _react2.default.createElement(
                                             _semanticUiReact.Form,
                                             null,
-                                            _react2.default.createElement(_semanticUiReact.Form.Select, { label: 'Purpose', name: 'purpose', value: classifiedsData.purpose, options: this.options, onChange: this.handleFormChange, placeholder: 'Sell/Share/Rent', required: true }),
+                                            _react2.default.createElement(_semanticUiReact.Form.Select, { label: 'Purpose', name: 'purpose', value: classifiedsData.purpose, options: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? this.optionsAll : this.optionSell, onChange: this.handleFormChange, placeholder: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' : 'Sell', required: true }),
                                             _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Brand', name: 'brand', value: classifiedsData.brand, onChange: this.handleFormChange, placeholder: 'Provide Brand name', required: true }),
                                             _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Model', name: 'model', value: classifiedsData.model, onChange: this.handleFormChange, placeholder: 'Provide Model name', required: true }),
                                             _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Year', name: 'year', value: classifiedsData.year, onChange: this.handleFormChange, placeholder: 'Provide year of purchase', required: true }),
@@ -63299,7 +63309,7 @@ var HomepageLayout = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _semanticUiReact.Button,
-                            { name: 'modal4next', primary: true, onClick: this.handleNextClick },
+                            { name: 'modal4next', primary: true, onClick: this.handleNextClick, disabled: !isFormValid },
                             'Next ',
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'right chevron' })
                         )
