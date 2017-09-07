@@ -48,6 +48,7 @@ class SingleClassifiedTile extends React.Component{
     
   render(){
      // var action = this.state.action;
+     var purpose = {SH:"For sharing",R:"For Rent"}
     return(
       
          
@@ -108,8 +109,8 @@ class SingleClassifiedTile extends React.Component{
                 
                 <Item.Description>
                 <div>    
-                    {this.props.purpose=="S"?<Label as='a' tag>{this.props.year} Model</Label>:<div></div>}
-                    <Label as='a'>
+                    {this.props.purpose=="S"?<Label as='a' color="orange" tag>{this.props.year} Model</Label>:<Label as='a' color="orange" tag>{purpose[this.props.purpose]}</Label>}
+                    <Label as='a' color="orange">
                     <Icon name='location arrow' />
                     {this.props.location} 
                     </Label>    
