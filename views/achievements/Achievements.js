@@ -54,7 +54,7 @@ export default class Achievements extends Component {
                                     </Menu.Item>
 
                                     <Menu.Item name='rewards' active={activeItem === 'rewards'} onClick={this.handleItemClick}>
-                                    Rewards Ricognation
+                                    Rewards recognition
                                     <img src='images/standing_ovation.png'   className='CustomIcon'/>
                                     </Menu.Item>
 

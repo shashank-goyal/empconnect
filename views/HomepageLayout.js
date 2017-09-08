@@ -14,6 +14,7 @@ import {
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
+import AchievementWidget from './achievements/AchievementWidget';
 import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {
@@ -162,8 +163,16 @@ export default class HomepageLayout extends Component {
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
-                                            <Header as='h3' style={{ fontSize: '2em' }}>Recent Achievements</Header>
-                                            <SimpleSlider/>
+                                            <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
+                                                Recent Achievements
+                                                <Button name="Achievements" onClick={this.props.handleItemClick} animated floated="right" secondary>
+                                                    <Button.Content visible>Explore achievements</Button.Content>
+                                                    <Button.Content hidden>
+                                                        <Icon name='right arrow' />
+                                                    </Button.Content>
+                                                </Button>
+                                            </Header>
+                                            <AchievementWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
