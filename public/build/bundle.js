@@ -63228,7 +63228,6 @@ var HomepageLayout = function (_Component) {
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
             if (document.getElementById("image")) {
-                document.getElementById("fileUpload").value = this.state.classifiedsData.fileUpload.fileName;
                 if (this.state.imageSrc) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
@@ -63715,7 +63714,7 @@ var HomepageLayout = function (_Component) {
                                                     null,
                                                     'Upload Image'
                                                 ),
-                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', id: 'fileUpload', onChange: this.handleFileUpload }),
+                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', onChange: this.handleFileUpload }),
                                                 _react2.default.createElement('img', { id: 'image', style: { width: '200px' }, src: imageSrc })
                                             )
                                         )
