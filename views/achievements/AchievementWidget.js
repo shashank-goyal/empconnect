@@ -44,11 +44,9 @@ export default class AchievementWidget extends React.Component {
         <Loader inverted inline='centered'  size='large'>Fetching Listing...</Loader>
       </Dimmer>
       )
-    
     else
         return (
           <div>
-           
             <Slider {...settings} ref={c => this.slider = c }>
              {this.state.data.map((e,i) => <div ><AchievementCards key={i} {...e} {...this.props}/></div>)} 
            </Slider>

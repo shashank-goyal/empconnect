@@ -12,7 +12,6 @@ const extra = (
 export default class AchievementCards extends React.Component{ 
   constructor(props){
       super(props)
-      // debugger
       this.state = {
         modalOpen: false 
       }

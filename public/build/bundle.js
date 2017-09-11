@@ -63066,12 +63066,19 @@ var HomepageLayout = function (_Component) {
                 year: '',
                 price: '',
                 location: '',
-                email: 'test@123.com',
-                phone: '9876543210',
                 description: '',
                 fileUpload: ''
             },
-            isFormValid: false
+            personalDetails: {
+                email: 'test@123.com',
+                phone: '9876543210',
+                acceptTnc: false
+            },
+            isFormValid: false,
+            isFileUploadValid: false,
+            isPersonalDetailsValid: false,
+            isTnCChecked: false,
+            imageSrc: undefined
         }, _this.panes = [{ menuItem: 'Activities', render: function render() {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
@@ -63133,31 +63140,61 @@ var HomepageLayout = function (_Component) {
             classifiedsData[name] = value;
             var isFormValid = true;
             var keys = Object.keys(classifiedsData);
-            console.log(keys);
             keys.forEach(function (field) {
                 if (classifiedsData[field] === "" && field !== 'fileUpload') {
                     isFormValid = false;
                 }
             });
             _this.setState({ classifiedsData: classifiedsData, isFormValid: isFormValid });
+        }, _this.handlePersonalDetailsChange = function (e, _ref7) {
+            var name = _ref7.name,
+                value = _ref7.value;
+
+            var personalDetails = _this.state.personalDetails;
+            personalDetails[name] = value;
+            var isPersonalDetailsValid = true;
+            var keys = Object.keys(personalDetails);
+            keys.forEach(function (field) {
+                if (field !== 'acceptTnc' && personalDetails[field] === "") {
+                    isPersonalDetailsValid = false;
+                }
+            });
+            _this.setState({ personalDetails: personalDetails, isPersonalDetailsValid: isPersonalDetailsValid });
         }, _this.close = function () {
             return _this.setState({ openModal1: false, openModal2: false, activeItem: "none", openModal3: false, openModal4: false, openModal5: false, activeClassifiedItem: 'none' });
         }, _this.handleFileUpload = function (e) {
-            //console.log('event.target.files', e.target.files[0])
-            var classifiedsData = _this.state.classifiedsData;
-            classifiedsData[e.target.name] = e.target.files[0];
+            var isFileUploadValid = true;
+            var imageSrc;
+            if (e.target.files[0]) {
+                var classifiedsData = _this.state.classifiedsData;
+                console.log('event.target.files', e.target.files[0], e.target.result);
+                classifiedsData[e.target.name] = e.target.files[0];
 
-            var reader = new FileReader();
+                var reader = new FileReader();
 
-            reader.onload = function (e) {
-                // get loaded data and render thumbnail.
-                document.getElementById("image").src = e.target.result;
-            };
+                // reader.onload = function (e) {
+                //     // get loaded data and render thumbnail.
+                //     document.getElementById("image").src = e.target.result;
+                // };
+                imageSrc = e.target.files[0];
+                // read the image file as a data URL.
+                //reader.readAsDataURL(imageSrc);
 
-            // read the image file as a data URL.
-            reader.readAsDataURL(e.target.files[0]);
-
-            _this.setState({ classifiedsData: classifiedsData });
+                _this.setState({ classifiedsData: classifiedsData, isFileUploadValid: isFileUploadValid, imageSrc: imageSrc });
+            } else {
+                isFileUploadValid = false;
+                //document.getElementById("image").src =""
+                imageSrc = undefined;
+                _this.setState({ isFileUploadValid: isFileUploadValid, imageSrc: imageSrc });
+            }
+        }, _this.handleCheckBox = function (e) {
+            console.log('e.target.checked', e.target.checked);
+            var personalDetails = _this.state.personalDetails;
+            _this.handlePersonalDetailsChange(undefined, { name: 'email', value: personalDetails['email'] });
+            personalDetails.acceptTnc = e.target.checked;
+            _this.setState({ isTnCChecked: isTnCChecked });
+            var isTnCChecked = e.target.checked;
+            _this.setState({ isTnCChecked: isTnCChecked });
         }, _this.handleFormSubmit = function (e) {
             var data = new FormData();
             var classifiedsInfo = _this.state.classifiedsData;
@@ -63188,6 +63225,24 @@ var HomepageLayout = function (_Component) {
     }
 
     _createClass(HomepageLayout, [{
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            if (document.getElementById("image")) {
+                document.getElementById("fileUpload").value = this.state.classifiedsData.fileUpload.fileName;
+                if (this.state.imageSrc) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // get loaded data and render thumbnail.
+                        document.getElementById("image").src = e.target.result;
+                    };
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.state.imageSrc);
+                } else {
+                    document.getElementById("image").src = "";
+                }
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _state = this.state,
@@ -63199,7 +63254,12 @@ var HomepageLayout = function (_Component) {
                 activeClassifiedItem = _state.activeClassifiedItem,
                 classifiedsData = _state.classifiedsData,
                 openModal5 = _state.openModal5,
-                isFormValid = _state.isFormValid;
+                isFormValid = _state.isFormValid,
+                isFileUploadValid = _state.isFileUploadValid,
+                personalDetails = _state.personalDetails,
+                isPersonalDetailsValid = _state.isPersonalDetailsValid,
+                isTnCChecked = _state.isTnCChecked,
+                imageSrc = _state.imageSrc;
 
             return _react2.default.createElement(
                 'div',
@@ -63655,8 +63715,8 @@ var HomepageLayout = function (_Component) {
                                                     null,
                                                     'Upload Image'
                                                 ),
-                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', onChange: this.handleFileUpload }),
-                                                _react2.default.createElement('img', { id: 'image', style: { width: '200px' } })
+                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', id: 'fileUpload', onChange: this.handleFileUpload }),
+                                                _react2.default.createElement('img', { id: 'image', style: { width: '200px' }, src: imageSrc })
                                             )
                                         )
                                     )
@@ -63675,7 +63735,7 @@ var HomepageLayout = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _semanticUiReact.Button,
-                            { name: 'modal4next', primary: true, onClick: this.handleNextClick, disabled: !isFormValid },
+                            { name: 'modal4next', primary: true, onClick: this.handleNextClick, disabled: !isFormValid || !isFileUploadValid },
                             'Next ',
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'right chevron' })
                         )
@@ -63710,9 +63770,18 @@ var HomepageLayout = function (_Component) {
                                         _react2.default.createElement(
                                             _semanticUiReact.Form,
                                             null,
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Email', name: 'email', value: classifiedsData.email, onChange: this.handleFormChange, placeholder: 'Provide your email id', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Contact Number', name: 'phone', value: classifiedsData.phone, onChange: this.handleFormChange, placeholder: 'Provide your mobile number', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Checkbox, { label: 'I agree to the Terms and Conditions' })
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Email', name: 'email', value: personalDetails.email, onChange: this.handlePersonalDetailsChange, placeholder: 'Provide your email id', required: true }),
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Contact Number', name: 'phone', value: personalDetails.phone, onChange: this.handlePersonalDetailsChange, placeholder: 'Provide your mobile number', required: true }),
+                                            _react2.default.createElement(
+                                                _semanticUiReact.Form.Field,
+                                                { required: true },
+                                                _react2.default.createElement('input', { type: 'checkbox', name: 'acceptTnC', checked: personalDetails.acceptTnc, onChange: this.handleCheckBox }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    null,
+                                                    'I agree to the Terms and Conditions'
+                                                )
+                                            )
                                         )
                                     )
                                 )
@@ -63730,7 +63799,7 @@ var HomepageLayout = function (_Component) {
                         ),
                         _react2.default.createElement(
                             _semanticUiReact.Button,
-                            { primary: true, onClick: this.handleFormSubmit },
+                            { primary: true, onClick: this.handleFormSubmit, disabled: !isPersonalDetailsValid || !isTnCChecked },
                             'Create'
                         )
                     )
@@ -66916,7 +66985,6 @@ var AchievementCards = function (_React$Component) {
   function AchievementCards(props) {
     _classCallCheck(this, AchievementCards);
 
-    // debugger
     var _this = _possibleConstructorReturn(this, (AchievementCards.__proto__ || Object.getPrototypeOf(AchievementCards)).call(this, props));
 
     _this.handleOpen = function () {
@@ -66983,7 +67051,7 @@ var AchievementCards = function (_React$Component) {
           _react2.default.createElement(
             _semanticUiReact.Card.Content,
             null,
-            _react2.default.createElement(_semanticUiReact.Image, { size: 'medium', src: image, floated: 'left', style: { width: '150px' } }),
+            _react2.default.createElement(_semanticUiReact.Image, { size: 'medium', src: image, style: { width: '150px' } }),
             _react2.default.createElement(
               _semanticUiReact.Card.Header,
               null,
@@ -67453,7 +67521,7 @@ var Achievements = function (_Component) {
                                     _react2.default.createElement(
                                         _semanticUiReact.Menu.Item,
                                         { name: 'rewards', active: activeItem === 'rewards', onClick: this.handleItemClick },
-                                        'Rewards Ricognation',
+                                        'Rewards recognition',
                                         _react2.default.createElement('img', { src: 'images/standing_ovation.png', className: 'CustomIcon' })
                                     ),
                                     _react2.default.createElement(
