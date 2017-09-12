@@ -9,7 +9,7 @@ export default class AchievementTile extends React.Component{
     render(){
       return(
           <div>
-              {this.props.data.map( (e,i) => <SingleAchievementTile key={i} {...e}/>)}
+            <SingleAchievementTile {...this.props}/>
           </div> 
         )
     }
