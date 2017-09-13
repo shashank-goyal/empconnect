@@ -21,7 +21,20 @@ router.post('/insert-classifieds', function(req, res, next) {
   //   console.log("Record added as " + records[0]._id);
   //  })
   //})
+  var classifiedsObj = req.body;
+  classifiedsObj.title = classifiedsObj.brand + " " + classifiedsObj.model + " " + classifiedsObj.year;
+  classifiedsObj.ntId = "sgoyb";
+  classifiedsObj.image = "";
+  classifiedsObj.postTimestamp = new Date().toUTCString();
+  classifiedsObj.deletionFlag = false;
 
+  const classifieds = connection.get('classifieds');
+    classifieds.insert(classifiedsObj,function(err,records){
+      console.log('inside insert ',err,records)
+    }
+        //   if (err) throw err;
+        //   console.log("Record added as " + records[0]._id);
+        //  })
   console.log(req)
 
 
