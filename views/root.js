@@ -14,9 +14,9 @@ import {
     Tab,Label
 } from 'semantic-ui-react'
 import HomepageLayout from './HomepageLayout';
-import Classifieds from './Classifieds';
+import Classifieds from './classifieds/Classifieds';
 import Events from './events/Events';
-import Achievements from './Achievements';
+import Achievements from './achievements/Achievements';
 
 export default class Root extends React.Component {
     constructor(){
@@ -26,6 +26,7 @@ export default class Root extends React.Component {
     onChange(state) {
         this.setState(state);
     }
+
     componentWillMount= () => {
         var setState = this.onChange;
         function displayLocation(latitude,longitude){
@@ -66,6 +67,7 @@ export default class Root extends React.Component {
     }
     state = {activeItem : 'Home', selectedLocation : 'Select Location'}
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    
     handleLocationChange = (e) => this.setState({ selectedLocation: e.target.value })
     render() {
         const { activeItem, selectedLocation } = this.state
@@ -100,11 +102,13 @@ export default class Root extends React.Component {
                         </Container>
                     </Menu>
                 </Segment>
-                { activeItem === 'Home' ?   <HomepageLayout/> : undefined}
+                
+                { activeItem === 'Home' ?   <HomepageLayout handleItemClick={this.handleItemClick}/> : undefined}
                 { activeItem === 'Classifieds' ?   <Classifieds/> : undefined}
                 { activeItem === 'Events' ?   <Events/> : undefined}
-                { activeItem === 'Achievements' ?   <Achievements/> : undefined}
-                <Segment inverted vertical style={{ padding: '5em 0em' }}>
+                { activeItem === 'Achievements' ?  <Achievements/> : undefined}
+                  
+                {/* <Segment inverted vertical style={{ padding: '5em 0em' }}>
                     <Container>
                         <Grid divided inverted stackable>
                             <Grid.Row>
@@ -124,7 +128,7 @@ export default class Root extends React.Component {
                             </Grid.Row>
                         </Grid>
                     </Container>
-                </Segment>
+                </Segment> */}
             </div>
         );
     }
