@@ -55,12 +55,12 @@ export default class HomepageLayout extends Component {
     ]
 
     optionsAll = [
-        { key: 's', text: 'Sell', value: 'sell' },
-        { key: 'r', text: 'Rent', value: 'rent' },
-        { key: 'sh', text: 'Share', value: 'share' }
+        { key: 's', text: 'Sell', value: 'S' },
+        { key: 'r', text: 'Rent', value: 'R' },
+        { key: 'sh', text: 'Share', value: 'SH' }
     ]
     optionSell = [
-        { key: 's', text: 'Sell', value: 'sell' }
+        { key: 's', text: 'Sell', value: 'S' }
     ]
 
     handleClick = (e, { name }) => this.setState({ activeItem: name })
@@ -188,6 +188,13 @@ export default class HomepageLayout extends Component {
             } else {
                 console.log('inside else', data)
                 data.append(field.toString(), classifiedsInfo[field]);
+            }
+        })
+        var personalDetails = this.state.personalDetails;
+        var personalDetailKeys = Object.keys(personalDetails);
+        personalDetailKeys.forEach(function(field){
+            if(field !== 'acceptTnc'){
+                data.append(field.toString(), personalDetails[field]);
             }
         })
         var xhr = new XMLHttpRequest();
@@ -383,30 +390,79 @@ export default class HomepageLayout extends Component {
 
                 <Modal open={openModal4} closeOnEscape closeIcon closeOnRootNodeClick={false} onClose={this.close}>
                     <Modal.Header>Step 3<Icon name='angle double right' /> Provide {activeClassifiedItem} Details</Modal.Header>
-                    <Modal.Content image scrolling>
+                    <Modal.Content>
                         <Modal.Description>
+                            <Form>
                             <Grid stackable>
                                 <Grid.Row>
-                                    <Grid.Column width={4}>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Select label='Purpose' name='purpose' value={classifiedsData.purpose} options={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ?this.optionsAll :this.optionSell} onChange={this.handleFormChange} placeholder={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' :'Sell'} required/>
                                     </Grid.Column>
                                     <Grid.Column width={8}>
-                                        <Form>
-                                            <Form.Select label='Purpose' name='purpose' value={classifiedsData.purpose} options={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ?this.optionsAll :this.optionSell} onChange={this.handleFormChange} placeholder={activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' :'Sell'} required/>
-                                            <Form.Input label='Brand' name='brand' value={classifiedsData.brand} onChange={this.handleFormChange} placeholder='Provide Brand name' required/>
-                                            <Form.Input label='Model' name='model' value={classifiedsData.model} onChange={this.handleFormChange} placeholder='Provide Model name' required/>
-                                            <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
-                                            <Form.Input label='Area/Location' name='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required/>
-                                            <Form.Input label='Price' name='price' value={classifiedsData.price} onChange={this.handleFormChange} placeholder='Provide price details' required/>
-                                            <Form.TextArea label='Description' name='description' value={classifiedsData.description} onChange={this.handleFormChange} placeholder='Tell us more...' required/>
-                                            <Form.Field required>
-                                                <label>Upload Image</label>
-                                                <input type='file' accept=".png,.gif" name='fileUpload'  onChange={this.handleFileUpload} />
-                                                <img id="image" style={{width: '200px'}} src={imageSrc}/>
-                                            </Form.Field>
-                                        </Form>
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Input label='Brand' name='brand' value={classifiedsData.brand} onChange={this.handleFormChange} placeholder='Provide Brand name' required/>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Input label='Model' name='model' value={classifiedsData.model} onChange={this.handleFormChange} placeholder='Provide Model name' required/>
+                                    </Grid.Column>
+
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Input label='Area/Location' name='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required/>
+                                    </Grid.Column>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Input label='Price' name='price' value={classifiedsData.price} onChange={this.handleFormChange} placeholder='Provide price details' required/>
+                                    </Grid.Column>
+                                    <Grid.Column width={8}>
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={12}>
+                                        <Form.TextArea label='Description' name='description' value={classifiedsData.description} onChange={this.handleFormChange} placeholder='Tell us more...' required/>
+                                    </Grid.Column>
+                                    <Grid.Column width={4}>
+                                    </Grid.Column>
+                                </Grid.Row>
+                                <Grid.Row>
+                                    <Grid.Column width={2}>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <Form.Field required>
+                                            <label>Upload Image</label>
+                                            <input type='file' accept=".png,.gif" name='fileUpload'  onChange={this.handleFileUpload} />
+                                        </Form.Field>
+                                    </Grid.Column>
+                                    <Grid.Column width={6}>
+                                        <img id="image" style={{width: '200px'}} src={imageSrc}/>
+                                    </Grid.Column>
+                                    <Grid.Column width={2}>
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
+                            </Form>
                         </Modal.Description>
                     </Modal.Content>
                     <Modal.Actions>

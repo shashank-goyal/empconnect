@@ -63244,7 +63244,7 @@ var HomepageLayout = function (_Component) {
                     { attached: false },
                     'Recent Holidays'
                 );
-            } }], _this.optionsAll = [{ key: 's', text: 'Sell', value: 'sell' }, { key: 'r', text: 'Rent', value: 'rent' }, { key: 'sh', text: 'Share', value: 'share' }], _this.optionSell = [{ key: 's', text: 'Sell', value: 'sell' }], _this.handleClick = function (e, _ref2) {
+            } }], _this.optionsAll = [{ key: 's', text: 'Sell', value: 'S' }, { key: 'r', text: 'Rent', value: 'R' }, { key: 'sh', text: 'Share', value: 'SH' }], _this.optionSell = [{ key: 's', text: 'Sell', value: 'S' }], _this.handleClick = function (e, _ref2) {
             var name = _ref2.name;
             return _this.setState({ activeItem: name });
         }, _this.handleClassifiedsClick = function (e, _ref3) {
@@ -63353,6 +63353,13 @@ var HomepageLayout = function (_Component) {
                 } else {
                     console.log('inside else', data);
                     data.append(field.toString(), classifiedsInfo[field]);
+                }
+            });
+            var personalDetails = _this.state.personalDetails;
+            var personalDetailKeys = Object.keys(personalDetails);
+            personalDetailKeys.forEach(function (field) {
+                if (field !== 'acceptTnc') {
+                    data.append(field.toString(), personalDetails[field]);
                 }
             });
             var xhr = new XMLHttpRequest();
@@ -63829,30 +63836,88 @@ var HomepageLayout = function (_Component) {
                     ),
                     _react2.default.createElement(
                         _semanticUiReact.Modal.Content,
-                        { image: true, scrolling: true },
+                        null,
                         _react2.default.createElement(
                             _semanticUiReact.Modal.Description,
                             null,
                             _react2.default.createElement(
-                                _semanticUiReact.Grid,
-                                { stackable: true },
+                                _semanticUiReact.Form,
+                                null,
                                 _react2.default.createElement(
-                                    _semanticUiReact.Grid.Row,
-                                    null,
-                                    _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 4 }),
+                                    _semanticUiReact.Grid,
+                                    { stackable: true },
                                     _react2.default.createElement(
-                                        _semanticUiReact.Grid.Column,
-                                        { width: 8 },
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
                                         _react2.default.createElement(
-                                            _semanticUiReact.Form,
-                                            null,
-                                            _react2.default.createElement(_semanticUiReact.Form.Select, { label: 'Purpose', name: 'purpose', value: classifiedsData.purpose, options: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? this.optionsAll : this.optionSell, onChange: this.handleFormChange, placeholder: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' : 'Sell', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Brand', name: 'brand', value: classifiedsData.brand, onChange: this.handleFormChange, placeholder: 'Provide Brand name', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Model', name: 'model', value: classifiedsData.model, onChange: this.handleFormChange, placeholder: 'Provide Model name', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Year', name: 'year', value: classifiedsData.year, onChange: this.handleFormChange, placeholder: 'Provide year of purchase', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Area/Location', name: 'location', value: classifiedsData.location, onChange: this.handleFormChange, placeholder: 'Provide your location', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Price', name: 'price', value: classifiedsData.price, onChange: this.handleFormChange, placeholder: 'Provide price details', required: true }),
-                                            _react2.default.createElement(_semanticUiReact.Form.TextArea, { label: 'Description', name: 'description', value: classifiedsData.description, onChange: this.handleFormChange, placeholder: 'Tell us more...', required: true }),
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Select, { label: 'Purpose', name: 'purpose', value: classifiedsData.purpose, options: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? this.optionsAll : this.optionSell, onChange: this.handleFormChange, placeholder: activeClassifiedItem === 'RealEstate' || activeClassifiedItem === 'Books' ? 'Sell/Share/Rent' : 'Sell', required: true })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 8 })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Brand', name: 'brand', value: classifiedsData.brand, onChange: this.handleFormChange, placeholder: 'Provide Brand name', required: true })
+                                        ),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Model', name: 'model', value: classifiedsData.model, onChange: this.handleFormChange, placeholder: 'Provide Model name', required: true })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Year', name: 'year', value: classifiedsData.year, onChange: this.handleFormChange, placeholder: 'Provide year of purchase', required: true })
+                                        ),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Area/Location', name: 'location', value: classifiedsData.location, onChange: this.handleFormChange, placeholder: 'Provide your location', required: true })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Price', name: 'price', value: classifiedsData.price, onChange: this.handleFormChange, placeholder: 'Provide price details', required: true })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 8 })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 12 },
+                                            _react2.default.createElement(_semanticUiReact.Form.TextArea, { label: 'Description', name: 'description', value: classifiedsData.description, onChange: this.handleFormChange, placeholder: 'Tell us more...', required: true })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 4 })
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Grid.Row,
+                                        null,
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 }),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Form.Field,
                                                 { required: true },
@@ -63861,10 +63926,15 @@ var HomepageLayout = function (_Component) {
                                                     null,
                                                     'Upload Image'
                                                 ),
-                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', onChange: this.handleFileUpload }),
-                                                _react2.default.createElement('img', { id: 'image', style: { width: '200px' }, src: imageSrc })
+                                                _react2.default.createElement('input', { type: 'file', accept: '.png,.gif', name: 'fileUpload', onChange: this.handleFileUpload })
                                             )
-                                        )
+                                        ),
+                                        _react2.default.createElement(
+                                            _semanticUiReact.Grid.Column,
+                                            { width: 6 },
+                                            _react2.default.createElement('img', { id: 'image', style: { width: '200px' }, src: imageSrc })
+                                        ),
+                                        _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 })
                                     )
                                 )
                             )
