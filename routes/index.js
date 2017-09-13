@@ -31,7 +31,7 @@ router.post('/insert-classifieds', function(req, res, next) {
   const classifieds = connection.get('classifieds');
     classifieds.insert(classifiedsObj,function(err,records){
       console.log('inside insert ',err,records)
-    })ßß
+    })
         //   if (err) throw err;
         //   console.log("Record added as " + records[0]._id);
         //  })
