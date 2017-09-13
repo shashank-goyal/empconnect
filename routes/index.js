@@ -32,17 +32,28 @@ router.post('/insert-classifieds', function(req, res, next) {
     classifieds.insert(classifiedsObj,function(err,records){
     console.log('inside insert ',err,records);
       if (!req.files)
-          return res.status(400).send('No files were uploaded.');
+          return res.status(400).send({status : "error"});
 
       // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
       let sampleFile = req.files.fileUpload;
       let list = sampleFile.name.split(".");
       let ext = list[list.length -1]
       // Use the mv() method to place the file somewhere on your server
-      sampleFile.mv('public/classifieds/' +records._id +'.' + ext, function(err) {
-          if (err)
-              return res.status(500).send(err);
-          res.send('File uploaded!');
+      let public = 'public';
+      let filepath = '/images/classifieds/' +records._id +'.' + ext
+      sampleFile.mv(public+filepath, function(err) {
+          if (err){
+             res.status(500).send({status : "error"});
+          } else {
+            classifieds.update({_id:  records._id}, {$set: {image : filepath }}, function(err, resp){
+              if(err){
+               res.status(500).send({status : "error"});
+              } else{
+                res.send({status: "success"});
+              }
+            })
+          }
+          
       });
     })
 

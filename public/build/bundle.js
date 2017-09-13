@@ -63362,6 +63362,7 @@ var HomepageLayout = function (_Component) {
                     data.append(field.toString(), personalDetails[field]);
                 }
             });
+            var handleItemClick = _this.props.handleItemClick;
             var xhr = new XMLHttpRequest();
             // Create a new XMLHttpRequest
             xhr.open('POST', 'insert-classifieds', true);
@@ -63370,7 +63371,8 @@ var HomepageLayout = function (_Component) {
             xhr.onload = function () {
                 // On Data send the following works
                 if (xhr.status === 200) {
-                    console.log('success');
+                    console.log('success', xhr.response);
+                    handleItemClick(undefined, { name: "Classifieds" });
                 } else {
                     console.log('error');
                 }

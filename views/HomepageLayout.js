@@ -197,6 +197,7 @@ export default class HomepageLayout extends Component {
                 data.append(field.toString(), personalDetails[field]);
             }
         })
+        var handleItemClick = this.props.handleItemClick
         var xhr = new XMLHttpRequest();
         // Create a new XMLHttpRequest
         xhr.open('POST', 'insert-classifieds', true);
@@ -205,7 +206,8 @@ export default class HomepageLayout extends Component {
         xhr.onload = function () {
             // On Data send the following works
             if (xhr.status === 200) {
-                console.log('success')
+                console.log('success', xhr.response);
+                handleItemClick(undefined, {name: "Classifieds"})
             } else {
                 console.log('error')
             }

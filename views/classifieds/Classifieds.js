@@ -35,7 +35,6 @@ export default class Classifieds extends Component {
         var update = this.setState.bind(this)  
         axios.get('/get-classifieds')
         .then(function (response) {
-            debugger
         update({data:response.data.data,action:"normal",rsp:response.data.data})
         })
         .catch(function (error) {
