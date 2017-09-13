@@ -32,3 +32,8 @@
   border-radius:100%;
   border: 1px solid white;
 }
+
+#achievementLink{
+  margin:1em 1em 0em 0em;
+  display: inline-flex;
+}

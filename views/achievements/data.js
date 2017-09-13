@@ -3,54 +3,95 @@ const description = [
     'tiny stature, and even others for their massive size.',
   ].join(' ')
 const data = [
+ { group:"rewards",
+   type:"Standing Ovation",
+   month:"August",
+   postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
+    winners:[{
+       name:"Shashank",
+       image:"images/man.svg",
+       description:description
+   },
+   {
+       name:"Jimit",
+       image:"images/man.svg",
+       description:description
+   },
+   {
+       name:"Animesh",
+       image:"images/man.svg",
+       description:description
+   },
+   {
+       name:"Vinod",
+       image:"images/man.svg",
+       description:description
+   }]
+ }, 
+ { group:"rewards",
+   type:"Star of the month",
+   month:"August",
+   postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
+   winners:[{  
+       name:"Hemasunder",
+       image:"images/man.svg",
+       description:description
+   },
+   {
+       name:"Anusha",
+       image:"images/woman.svg",
+       description:description
+   },
+   {
+       name:"Geeta",
+       image:"images/woman.svg",
+       description:description
+   }]
+ },{
+    group:"sports",
+    type:"Table Tennis",
+    subType:"Singles",
+    postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+    
+    winners:[
+        {
+            name:"Chandra",
+            image:"images/man.png",
+                   rank:"1",
+        },
+        {
+            name:"Rakesh",
+            image:"images/man.png",
+                   rank:"2",
+        }, 
+       {
+       name:"Jimit",
+       image:"images/man.png",
+              rank:"3",
+       }]
+    } ,
     {
-        title:"Shashank",
-        group:"rewards",
-        image:"images/standing_ovation.png",
-        type:"Standing Ovation",
-        postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Jimit",
         group:"sports",
-        image:"images/badminton.png",
-        type:"Badminton",
+        type:"Cricket",
+        subType:"",
         postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
-        rank:"2nd",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Chandra",
-        group:"sports",
-        image:"images/table_tennis.jpg",
-        type:"Table Tennis",
-        postTimestamp:"Thu Aug 25 2017 19:03:35 GMT+0530 (IST)",
-        rank:"1st",
-        contact:"55455ff4",
-        description:description
-    },
-    {
-        title:"Master",
-        group:"cultural",
-        image:"images/singing.jpg",
-        type:"Singing",
-        postTimestamp:"Thu Aug 26 2017 19:03:35 GMT+0530 (IST)",
-        rank:"under top 10",
-        contact:"554554",
-        description:description
-    },
-    {
-        title:"Thiru",
-        group:"cultural",
-        image:"images/dance.jpg",
-        type:"Dancing",
-        postTimestamp:"Thu Aug 21 2017 19:03:35 GMT+0530 (IST)",
-        rank:"under top 5",
-        contact:"554554",
-        description:description
-    }
+        
+        winners:[
+            {
+                name:"Royal Challengers Bellandur",
+                image:"images/man.png",
+                       rank:"1",
+            },
+            {
+                name:"Crazy Compozed",
+                image:"images/man.png",
+                       rank:"2",
+            }, 
+           {
+           name:"Allstate United",
+           image:"images/man.png",
+                  rank:"3",
+           }]
+        } 
 ]
 export default data;

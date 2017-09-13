@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
     Button,
+    Checkbox,
     Container,
     Divider,
     Grid,
@@ -14,6 +15,7 @@ import {
     Tab,Label,Modal,Form
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
+import AchievementWidget from './achievements/AchievementWidget';
 import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {
@@ -32,12 +34,19 @@ export default class HomepageLayout extends Component {
             year: '',
             price:'',
             location: '',
-            email: 'test@123.com',
-            phone: '9876543210',
             description: '',
             fileUpload: ''
         },
-        isFormValid: false
+        personalDetails: {
+            email: 'test@123.com',
+            phone: '9876543210',
+            acceptTnc : false
+        },
+        isFormValid: false,
+        isFileUploadValid: false,
+        isPersonalDetailsValid: false,
+        isTnCChecked: false,
+        imageSrc: undefined
     }
     panes = [
         { menuItem: 'Activities', render: () => <Tab.Pane attached={false}>Recent Activities</Tab.Pane> },
@@ -91,7 +100,6 @@ export default class HomepageLayout extends Component {
         classifiedsData[name] = value;
         var isFormValid = true;
         var keys = Object.keys(classifiedsData);
-        console.log(keys)
         keys.forEach(function(field){
             if(classifiedsData[field] === "" && field !== 'fileUpload'){
                 isFormValid = false;
@@ -100,24 +108,73 @@ export default class HomepageLayout extends Component {
         this.setState({classifiedsData, isFormValid});
     }
 
+    handlePersonalDetailsChange = (e, { name, value }) => {
+        const personalDetails = this.state.personalDetails;
+        personalDetails[name] = value;
+        var isPersonalDetailsValid = true;
+        var keys = Object.keys(personalDetails);
+        keys.forEach(function(field){
+            if(field !== 'acceptTnc' && personalDetails[field] === ""){
+                isPersonalDetailsValid = false;
+            }
+        })
+        this.setState({personalDetails, isPersonalDetailsValid});
+    }
+
+    componentDidUpdate(){
+        if(document.getElementById("image")){
+            if(this.state.imageSrc){
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("image").src = e.target.result;
+                };
+                // read the image file as a data URL.
+                reader.readAsDataURL(this.state.imageSrc);
+            } else {
+                document.getElementById("image").src = "";
+            }
+        }
+
+    }
+
     close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none'})
 
     handleFileUpload = (e) => {
-        //console.log('event.target.files', e.target.files[0])
-        const classifiedsData = this.state.classifiedsData;
-        classifiedsData[e.target.name] = e.target.files[0];
+        var isFileUploadValid = true;
+        var imageSrc;
+        if(e.target.files[0]){
+            const classifiedsData = this.state.classifiedsData;
+            console.log('event.target.files', e.target.files[0], e.target.result)
+            classifiedsData[e.target.name] = e.target.files[0];
 
-        var reader = new FileReader();
+            var reader = new FileReader();
 
-        reader.onload = function (e) {
-            // get loaded data and render thumbnail.
-            document.getElementById("image").src = e.target.result;
-        };
+            // reader.onload = function (e) {
+            //     // get loaded data and render thumbnail.
+            //     document.getElementById("image").src = e.target.result;
+            // };
+            imageSrc=e.target.files[0]
+            // read the image file as a data URL.
+            //reader.readAsDataURL(imageSrc);
 
-        // read the image file as a data URL.
-        reader.readAsDataURL(e.target.files[0]);
+            this.setState({classifiedsData, isFileUploadValid, imageSrc});
+        } else {
+            isFileUploadValid= false;
+            //document.getElementById("image").src =""
+            imageSrc=undefined
+            this.setState({isFileUploadValid, imageSrc});
+        }
+    }
 
-        this.setState({classifiedsData});
+    handleCheckBox = (e) => {
+        console.log('e.target.checked', e.target.checked)
+        var personalDetails = this.state.personalDetails
+        this.handlePersonalDetailsChange(undefined, {name :'email', value : personalDetails['email']})
+        personalDetails.acceptTnc = e.target.checked;
+        this.setState({isTnCChecked});
+        var isTnCChecked = e.target.checked;
+        this.setState({isTnCChecked});
     }
 
     handleFormSubmit = (e) => {
@@ -149,7 +206,8 @@ export default class HomepageLayout extends Component {
     }
 
     render() {
-        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid} = this.state;
+        const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
+            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc} = this.state;
         return (
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
@@ -162,8 +220,16 @@ export default class HomepageLayout extends Component {
                                     </Grid.Row>
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: '100%' }}>
-                                            <Header as='h3' style={{ fontSize: '2em' }}>Recent Achievements</Header>
-                                            <SimpleSlider/>
+                                            <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
+                                                Recent Achievements
+                                                <Button name="Achievements" onClick={this.props.handleItemClick} animated floated="right" secondary>
+                                                    <Button.Content visible>Explore achievements</Button.Content>
+                                                    <Button.Content hidden>
+                                                        <Icon name='right arrow' />
+                                                    </Button.Content>
+                                                </Button>
+                                            </Header>
+                                            <AchievementWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
@@ -281,9 +347,7 @@ export default class HomepageLayout extends Component {
                                             <span><Icon name='building' size='massive' /><br/><br/>Real Estate</span>
                                         </Button>
                                     </Grid.Column>
-
                                 </Grid.Row>
-
                             </Grid>
                             <Grid stackable centered>
                                 <Grid.Row>
@@ -336,8 +400,8 @@ export default class HomepageLayout extends Component {
                                             <Form.TextArea label='Description' name='description' value={classifiedsData.description} onChange={this.handleFormChange} placeholder='Tell us more...' required/>
                                             <Form.Field required>
                                                 <label>Upload Image</label>
-                                                <input type='file' accept=".png,.gif" name='fileUpload' onChange={this.handleFileUpload} />
-                                                <img id="image" style={{width: '200px'}}/>
+                                                <input type='file' accept=".png,.gif" name='fileUpload'  onChange={this.handleFileUpload} />
+                                                <img id="image" style={{width: '200px'}} src={imageSrc}/>
                                             </Form.Field>
                                         </Form>
                                     </Grid.Column>
@@ -349,7 +413,7 @@ export default class HomepageLayout extends Component {
                         <Button name="modal4back" secondary onClick={this.handleBackClick}>
                             Back <Icon name='left chevron' />
                         </Button>
-                        <Button name="modal4next" primary onClick={this.handleNextClick} disabled={!isFormValid}>
+                        <Button name="modal4next" primary onClick={this.handleNextClick} disabled={!isFormValid || !isFileUploadValid}>
                             Next <Icon name='right chevron' />
                         </Button>
                     </Modal.Actions>
@@ -366,9 +430,12 @@ export default class HomepageLayout extends Component {
                                     </Grid.Column>
                                     <Grid.Column width={8}>
                                         <Form>
-                                            <Form.Input label='Email' name='email' value={classifiedsData.email} onChange={this.handleFormChange} placeholder='Provide your email id' required/>
-                                            <Form.Input label='Contact Number' name='phone' value={classifiedsData.phone} onChange={this.handleFormChange} placeholder='Provide your mobile number' required/>
-                                            <Form.Checkbox label='I agree to the Terms and Conditions' />
+                                            <Form.Input label='Email' name='email' value={personalDetails.email} onChange={this.handlePersonalDetailsChange} placeholder='Provide your email id' required/>
+                                            <Form.Input label='Contact Number' name='phone' value={personalDetails.phone} onChange={this.handlePersonalDetailsChange} placeholder='Provide your mobile number' required/>
+                                            <Form.Field required>
+                                                <input type="checkbox" name='acceptTnC' checked={personalDetails.acceptTnc} onChange={this.handleCheckBox}/>
+                                                <label>I agree to the Terms and Conditions</label>
+                                            </Form.Field>
                                         </Form>
                                     </Grid.Column>
                                 </Grid.Row>
@@ -379,7 +446,7 @@ export default class HomepageLayout extends Component {
                         <Button name="modal5back" secondary onClick={this.handleBackClick}>
                             Back <Icon name='left chevron' />
                         </Button>
-                        <Button primary onClick={this.handleFormSubmit}>
+                        <Button primary onClick={this.handleFormSubmit} disabled={!isPersonalDetailsValid || !isTnCChecked}>
                             Create
                         </Button>
                     </Modal.Actions>
