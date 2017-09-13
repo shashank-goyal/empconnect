@@ -15134,6 +15134,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var imgUrl = { "Standing Ovation": "images/standing_ovation.png", "Star of the month": "images/employee_of_the_month.jpg" };
+
 var SingleAchievementTile = function (_React$Component) {
     _inherits(SingleAchievementTile, _React$Component);
 
@@ -15146,7 +15148,7 @@ var SingleAchievementTile = function (_React$Component) {
             return _this.setState({ modalOpen: false });
         };
 
-        _this.state = { modalOpen: false, modelData: {} };
+        _this.state = { modalOpen: false, modelData: {}, awardDetail: {} };
         _this.handleOpen = _this.handleOpen.bind(_this);
         _this.handleClose = _this.handleClose.bind(_this);
 
@@ -15166,19 +15168,22 @@ var SingleAchievementTile = function (_React$Component) {
     _createClass(SingleAchievementTile, [{
         key: 'handleOpen',
         value: function handleOpen(event) {
-            var newData = this.props.data.filter(function (e) {
+            var awardDetail = this.props.data.filter(function (e) {
+                return e.month === event.target.getAttribute("data");
+            })[0];
+            var newData = awardDetail.winners.filter(function (e) {
                 return e.name === event.target.innerText;
             })[0];
-            this.setState({ modalOpen: true, modelData: newData });
+            this.setState({ modalOpen: true, modelData: newData, awardDetail: awardDetail });
         }
     }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
 
-            var data = this.props.data.filter(function (e) {
-                return e.type == "Standing Ovation" && e.month === "July";
-            });
+            var data = this.props.data;
+
+
             return _react2.default.createElement(
                 _semanticUiReact.Segment,
                 { raised: true },
@@ -15198,7 +15203,7 @@ var SingleAchievementTile = function (_React$Component) {
                             _semanticUiReact.Label,
                             { as: 'a', color: 'green', attached: 'top right', tag: true },
                             _react2.default.createElement(_semanticUiReact.Icon, { name: 'calendar', size: 'small' }),
-                            this.state.modelData.month
+                            this.state.awardDetail.month
                         ),
                         _react2.default.createElement(_semanticUiReact.Image, { wrapped: true, size: 'small', src: this.state.modelData.image }),
                         _react2.default.createElement(
@@ -15213,7 +15218,7 @@ var SingleAchievementTile = function (_React$Component) {
                                 _semanticUiReact.Label,
                                 { as: 'a', color: 'orange' },
                                 _react2.default.createElement(_semanticUiReact.Icon, { name: 'winner' }),
-                                this.state.modelData.type
+                                this.state.awardDetail.type
                             ),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement('br', null),
@@ -15225,64 +15230,66 @@ var SingleAchievementTile = function (_React$Component) {
                         )
                     )
                 ),
-                _react2.default.createElement(
-                    _semanticUiReact.Item.Group,
-                    null,
-                    _react2.default.createElement(
-                        _semanticUiReact.Item,
+                data.map(function (e) {
+                    return _react2.default.createElement(
+                        _semanticUiReact.Item.Group,
                         null,
-                        _react2.default.createElement(_semanticUiReact.Item.Image, { size: 'small', src: 'images/standing_ovation.png' }),
                         _react2.default.createElement(
-                            _semanticUiReact.Item.Content,
+                            _semanticUiReact.Item,
                             null,
+                            _react2.default.createElement(_semanticUiReact.Item.Image, { size: 'small', src: imgUrl[data[0].type] }),
                             _react2.default.createElement(
-                                _semanticUiReact.Item.Header,
-                                null,
-                                data[0].type
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Item.Meta,
+                                _semanticUiReact.Item.Content,
                                 null,
                                 _react2.default.createElement(
-                                    _semanticUiReact.Label,
-                                    { as: 'a', color: 'green', attached: 'top right', tag: true },
-                                    _react2.default.createElement(_semanticUiReact.Icon, { name: 'calendar', size: 'large', style: { margin: "0 0.5em 0 0" } }),
-                                    data[0].month
-                                )
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Item.Description,
-                                null,
-                                _react2.default.createElement(
-                                    'h4',
-                                    { style: { margin: "0" } },
-                                    'Winners :-'
-                                ),
-                                data.map(function (e) {
-                                    return _react2.default.createElement(
-                                        'a',
-                                        { id: 'achievementLink', onClick: _this2.handleOpen },
-                                        e.name
-                                    );
-                                })
-                            ),
-                            _react2.default.createElement(
-                                _semanticUiReact.Item.Extra,
-                                null,
-                                _react2.default.createElement(
-                                    'span',
-                                    { className: 'price', style: { float: "left" } },
-                                    data[0].postTimestamp.split(" ").slice(1, 3).reverse().join(" ")
+                                    _semanticUiReact.Item.Header,
+                                    null,
+                                    e.type
                                 ),
                                 _react2.default.createElement(
-                                    _semanticUiReact.Button,
-                                    { secondary: true, size: 'mini', onClick: this.toggleDescription, floated: 'right' },
-                                    'Details'
+                                    _semanticUiReact.Item.Meta,
+                                    null,
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Label,
+                                        { as: 'a', color: 'green', attached: 'top right', tag: true },
+                                        _react2.default.createElement(_semanticUiReact.Icon, { name: 'calendar', size: 'large', style: { margin: "0 0.5em 0 0" } }),
+                                        e.month
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    _semanticUiReact.Item.Description,
+                                    null,
+                                    _react2.default.createElement(
+                                        'h4',
+                                        { style: { margin: "0" } },
+                                        'Winners :-'
+                                    ),
+                                    e.winners.map(function (element) {
+                                        return _react2.default.createElement(
+                                            'a',
+                                            { id: 'achievementLink', data: e.month, onClick: _this2.handleOpen },
+                                            element.name
+                                        );
+                                    })
+                                ),
+                                _react2.default.createElement(
+                                    _semanticUiReact.Item.Extra,
+                                    null,
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'price', style: { float: "left" } },
+                                        e.postTimestamp.split(" ").slice(1, 3).reverse().join(" ")
+                                    ),
+                                    _react2.default.createElement(
+                                        _semanticUiReact.Button,
+                                        { secondary: true, size: 'mini', onClick: _this2.toggleDescription, floated: 'right' },
+                                        'Details'
+                                    )
                                 )
                             )
                         )
-                    )
-                )
+                    );
+                })
             );
         }
     }]);
@@ -15303,70 +15310,82 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var description = ['Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their', 'tiny stature, and even others for their massive size.'].join(' ');
-var data = [{
-    name: "Shashank",
-    group: "rewards",
+var data = [{ group: "rewards",
     type: "Standing Ovation",
-    image: "images/man.svg",
-    month: "July",
+    month: "August",
     postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Jimit",
-    group: "rewards",
-    type: "Standing Ovation",
-    image: "images/man.svg",
-    month: "July",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Animesh",
-    group: "rewards",
-    type: "Standing Ovation",
-    image: "images/man.svg",
-    month: "July",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Vinod",
-    group: "rewards",
-    type: "Standing Ovation",
-    image: "images/man.svg",
-    month: "July",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Hemasunder",
-    group: "rewards",
+    winners: [{
+        name: "Shashank",
+        image: "images/man.svg",
+        description: description
+    }, {
+        name: "Jimit",
+        image: "images/man.svg",
+        description: description
+    }, {
+        name: "Animesh",
+        image: "images/man.svg",
+        description: description
+    }, {
+        name: "Vinod",
+        image: "images/man.svg",
+        description: description
+    }]
+}, { group: "rewards",
     type: "Star of the month",
-    image: "images/man.svg",
-    month: "Aug",
+    month: "August",
     postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
+    winners: [{
+        name: "Hemasunder",
+        image: "images/man.svg",
+        description: description
+    }, {
+        name: "Anusha",
+        image: "images/woman.svg",
+        description: description
+    }, {
+        name: "Geeta",
+        image: "images/woman.svg",
+        description: description
+    }]
 }, {
-    name: "Anusha",
-    group: "rewards",
-    type: "Star of the month",
-    image: "images/woman.svg",
-    month: "Aug",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Geeta",
-    group: "rewards",
-    type: "Star of the month",
-    image: "images/woman.svg",
-    month: "Aug",
-    postTimestamp: "Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
-    description: description
-}, {
-    name: "Jimit",
     group: "sports",
-    type: "Badminton",
-    image: "images/man.png",
+    type: "Table Tennis",
+    subType: "Singles",
     postTimestamp: "Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
-    rank: "2nd",
-    description: description
+
+    winners: [{
+        name: "Chandra",
+        image: "images/man.png",
+        rank: "1"
+    }, {
+        name: "Rakesh",
+        image: "images/man.png",
+        rank: "2"
+    }, {
+        name: "Jimit",
+        image: "images/man.png",
+        rank: "3"
+    }]
+}, {
+    group: "sports",
+    type: "Cricket",
+    subType: "",
+    postTimestamp: "Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+
+    winners: [{
+        name: "Royal Challengers Bellandur",
+        image: "images/man.png",
+        rank: "1"
+    }, {
+        name: "Crazy Compozed",
+        image: "images/man.png",
+        rank: "2"
+    }, {
+        name: "Allstate United",
+        image: "images/man.png",
+        rank: "3"
+    }]
 }];
 exports.default = data;
 
@@ -31938,16 +31957,57 @@ var AchievementTile = function (_React$Component) {
     function AchievementTile(props) {
         _classCallCheck(this, AchievementTile);
 
-        return _possibleConstructorReturn(this, (AchievementTile.__proto__ || Object.getPrototypeOf(AchievementTile)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (AchievementTile.__proto__ || Object.getPrototypeOf(AchievementTile)).call(this, props));
+
+        _this.state = {
+            so: [],
+            sm: [],
+            sports: [],
+            action: ""
+        };
+
+        return _this;
     }
 
     _createClass(AchievementTile, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+
+            var allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var so, sm, sports;
+            var update = this.setState.bind(this);
+            if (this.props.name == "home") {
+                so = this.props.data.filter(function (e) {
+                    return e.type === "Standing Ovation";
+                });
+                sm = this.props.data.filter(function (e) {
+                    return e.type === "Star of the month";
+                });
+                sports = this.props.data.filter(function (e) {
+                    return e.type === "sports";
+                });
+                //sorting
+                so = so.sort(function (a, b) {
+                    return allMonths.indexOf(a.month) > allMonths.indexOf(b.month);
+                });
+                sm = sm.sort(function (a, b) {
+                    return allMonths.indexOf(a.month) > allMonths.indexOf(b.month);
+                });
+                sports = sports.sort(function (a, b) {
+                    return new Date(b.postTimestamp) - new Date(a.postTimestamp);
+                });
+                update({ so: so, sm: sm, sports: sports, action: "home" });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_SingleAchievementTile2.default, this.props)
+                _react2.default.createElement(_SingleAchievementTile2.default, { data: this.state.so.slice(0, 1) }),
+                _react2.default.createElement(_SingleAchievementTile2.default, { data: this.state.sm.slice(0, 1) })
             );
         }
     }]);
@@ -67627,7 +67687,7 @@ var Achievements = function (_Component) {
                             _react2.default.createElement(
                                 _semanticUiReact.Grid.Column,
                                 { width: 12 },
-                                _react2.default.createElement(_AchievementTile2.default, { data: newData })
+                                _react2.default.createElement(_AchievementTile2.default, { name: activeItem, data: newData })
                             )
                         )
                     )

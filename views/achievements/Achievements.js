@@ -71,7 +71,7 @@ export default class Achievements extends Component {
                             </Grid.Column>
 
                             <Grid.Column width={12}>
-                                <AchievementTile data={newData}/>
+                                <AchievementTile name={activeItem} data={newData}/>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
