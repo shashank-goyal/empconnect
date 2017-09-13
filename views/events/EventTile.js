@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SingleEventTile from './SingleEventTile'
+import { Message } from 'semantic-ui-react'
 
 export default class EventTile extends React.Component{
     
@@ -17,7 +18,10 @@ export default class EventTile extends React.Component{
      else 
         return(
             <div>
-                <p>No Events Found for this Category or date</p>
+                 <Message negative>
+                        <Message.Header>We're sorry! , {this.props.FurtureDate!="Please Select Future Dates or No events are available on this date"?"No Events Found for this Category or date":"Please Select Future Dates"}</Message.Header>
+                </Message>
+                <p></p>
             </div>
         )   
     }

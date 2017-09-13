@@ -85,7 +85,7 @@ export default class Events extends Component{
    constructor(props){
        super(props);
 
-        this.state = {activeItem:"all",data:[],action:"loader",res:[],startDate: moment()}
+        this.state = {activeItem:"all",data:[],action:"loader",res:[],startDate: moment(),FurtureDate:""}
         this.handleItemClick = this.handleItemClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
    }
@@ -112,20 +112,30 @@ export default class Events extends Component{
     }
     else{
       newData = this.state.rsp.filter(e => {
+          if(new Date(e.dateOfEvent) > new Date()){
            return e.eventCategory == name
+          }
       })
        this.setState({ activeItem: name,
-                             data:newData
+                       data:newData
                              })}
     }
 
     handleChange(date) {
         var CalenderData;
+        var DateError;
         CalenderData = this.state.rsp.filter(e => {
+            if(date._d > new Date()){
             return new Date(e.dateOfEvent).toDateString() == new Date(date._d).toDateString()
+            }
+            else{
+                DateError = "Please Select Future Dates or No events are available on this date"
+            }
         })
         this.setState({
-            data: CalenderData
+            startDate: date,
+            data: CalenderData,
+            FurtureDate: DateError
         });    
     }
     
@@ -174,7 +184,7 @@ export default class Events extends Component{
                     </Menu>
                  </Grid.Column>
                  <Grid.Column width={12}>
-                {this.state.action != "loader"? <EventTile data={this.state.data}/>:<div></div>}
+                {this.state.action != "loader"? <EventTile data={this.state.data} FurtureDate={this.state.FurtureDate}/>:<div></div>}
                  </Grid.Column>
                 </Grid.Row>
             </Grid>

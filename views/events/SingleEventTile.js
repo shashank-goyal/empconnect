@@ -21,7 +21,6 @@ class SingleEventTile extends React.Component{
     }
 
   render(){
-      debugger
         return(
       <Segment raised>
         <Item.Group>
