@@ -22,6 +22,11 @@ module.exports = {
         query: {
           "presets": ["react", "es2015",'stage-0']
         }
+      },
+      {
+      test: /\.css$/,  
+      include: /node_modules/,  
+      loaders: ['style-loader', 'css-loader'],
       }
     ]
   }
