@@ -33,6 +33,10 @@ const data = [
    month:"August",
    postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
    winners:[{  
+       name:"Divya",
+       image:"images/woman.svg",
+       description:description
+   },{  
        name:"Hemasunder",
        image:"images/man.svg",
        description:description
@@ -47,10 +51,11 @@ const data = [
        image:"images/woman.svg",
        description:description
    }]
- },{
+ },
+ {
     group:"sports",
     type:"Table Tennis",
-    subType:"Singles",
+    subType:"Men's Singles",
     postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
     
     winners:[
@@ -92,6 +97,71 @@ const data = [
            image:"images/man.png",
                   rank:"3",
            }]
-        } 
+        },
+        {
+            group:"sports",
+            type:"Badminton",
+            subType:"Men's Singles",
+            postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+            
+            winners:[
+                {
+                    name:"Dinesh",
+                    image:"images/man.png",
+                           rank:"1",
+                },
+                {
+                    name:"Satya",
+                    image:"images/man.png",
+                           rank:"2",
+                }, 
+               {
+               name:"Kunal",
+               image:"images/man.png",
+                      rank:"3",
+               }]
+            },
+        {
+            group:"cultural",
+            type:"Singing",
+            postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+            winners:[
+                {
+                    name:"Master",
+                    image:"images/man.png",
+                           rank:"1",
+                },
+                {
+                    name:"Sameer",
+                    image:"images/man.png",
+                           rank:"2",
+                }, 
+               {
+               name:"Meenu",
+               image:"images/man.png",
+                      rank:"3",
+               }]
+            } ,
+            {
+                group:"cultural",
+                type:"Dancing",
+                postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
+                winners:[
+                    {
+                        name:"Thiru",
+                        image:"images/man.png",
+                               rank:"1",
+                    },
+                    {
+                        name:"Swapnil",
+                        image:"images/man.png",
+                               rank:"2",
+                    }, 
+                   {
+                   name:"Raman",
+                   image:"images/man.png",
+                          rank:"3",
+                   }]
+                }  
 ]
 export default data;
