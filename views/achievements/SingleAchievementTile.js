@@ -31,7 +31,7 @@ class SingleAchievementTile extends React.Component{
        var {data} = this.props
        
         return(
-            <Segment raised>
+              <div>
                 <Modal
                     
                     open={this.state.modalOpen}
@@ -60,6 +60,7 @@ class SingleAchievementTile extends React.Component{
                     
                 </Modal>
                 {data.map(e =>
+               <Segment raised>  
                 <Item.Group>
                     <Item>
                         <Item.Image size='small'  src={imgUrl[data[0].type]}/> 
@@ -76,21 +77,17 @@ class SingleAchievementTile extends React.Component{
                             <Item.Description >
                                 <h4 style={{margin:"0"}}>Winners :-</h4>
                                 {e.winners.map(element => <a id="achievementLink" data={e.month} onClick={this.handleOpen}>{element.name}</a>)}
-                                
-                              
-                                
-
-                                
-                            </Item.Description> 
+                         </Item.Description> 
                             <Item.Extra>
                                <span className='price' style={{float:"left"}}>{e.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
-                               <Button secondary size='mini' onClick={this.toggleDescription}   floated='right'>Details</Button>
+                               
                             </Item.Extra>
                         </Item.Content> 
                     </Item>
-                </Item.Group>  
+                </Item.Group> 
+                </Segment>    
                 )} 
-            </Segment>   
+           </div>
         )
     }
 }

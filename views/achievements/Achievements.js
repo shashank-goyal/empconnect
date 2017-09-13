@@ -25,21 +25,27 @@ export default class Achievements extends Component {
        super(props);
        
        this.state = {
-           activeItem : 'home'
+           activeItem : 'home',
+           data:data
        }
        this.handleItemClick = this.handleItemClick.bind(this);
     }
 
     handleItemClick(e, {name}){
-        this.setState({activeItem:name})
+        var newData ;
+        
+        if(name != 'home'){
+            newData = data.filter(e => e.group == name);
+        }
+        else
+           newData = data 
+        this.setState({activeItem:name,data:newData})
     }
 
     render() {
         var {activeItem} = this.state
-        var newData =data;
-        if(!(activeItem == 'home')){
-            newData = data.filter(e => e.group == activeItem);
-        }
+        
+        
 
         return (
            
@@ -71,7 +77,7 @@ export default class Achievements extends Component {
                             </Grid.Column>
 
                             <Grid.Column width={12}>
-                                <AchievementTile name={activeItem} data={newData}/>
+                                <AchievementTile name={activeItem} data={this.state.data}/>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
