@@ -16,6 +16,7 @@ import {
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
 import AchievementWidget from './achievements/AchievementWidget';
+import EventWidget from './events/EventWidget'
 import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {
@@ -49,9 +50,9 @@ export default class HomepageLayout extends Component {
         imageSrc: undefined
     }
     panes = [
-        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}>Recent Activities</Tab.Pane> },
-        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}>Recent Bithdays</Tab.Pane> },
-        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}>Recent Holidays</Tab.Pane> },
+        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
+        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
+        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
     ]
 
     optionsAll = [
