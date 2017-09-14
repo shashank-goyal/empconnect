@@ -31967,9 +31967,7 @@ var SimpleSlider = function (_React$Component) {
       }).sort(function (a, b) {
         return new Date(b.postTimestamp) - new Date(a.postTimestamp);
       }).slice(0, 1);
-      console.log("data...", so, sm, sports);
       var settings = {
-        // dots: true,
         speed: 800,
         slidesToShow: 1,
         slidesToScroll: 1,
