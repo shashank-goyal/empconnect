@@ -1,11 +1,13 @@
 var path = require('path')
-//var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
+var webpack = require('webpack')
+var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 const PATHS = {
   js: path.join(__dirname, 'views'),
   build: path.join(__dirname, 'public/build')
 }
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry : {
     Home : PATHS.js + "/app"
   },
@@ -17,7 +19,7 @@ module.exports = {
     loaders:[
       {
         test: /\.(es6|js|jsx)$/,
-        exclude: /node_modules|public/,
+        exclude: /node_modules|public|routes/,
         loader: "babel-loader",
         query: {
           "presets": ["react", "es2015",'stage-0']
@@ -29,5 +31,25 @@ module.exports = {
       loaders: ['style-loader', 'css-loader'],
       }
     ]
-  }
+  },
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false, // Suppress uglification warnings
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        drop_console: true
+      },
+      output: {
+        comments: false,
+      },
+    })
+  ],
 }
