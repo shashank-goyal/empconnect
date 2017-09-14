@@ -50,9 +50,9 @@ export default class HomepageLayout extends Component {
         imageSrc: undefined
     }
     panes = [
-        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
-        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
-        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget/></Tab.Pane> },
+        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget option="Activities"/></Tab.Pane> },
+        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget option="Bithdays"/></Tab.Pane> },
+        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget option="Holidays"/></Tab.Pane> },
     ]
 
     optionsAll = [

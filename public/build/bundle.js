@@ -79063,19 +79063,19 @@ var HomepageLayout = function (_Component) {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
                     { attached: false },
-                    _react2.default.createElement(_EventWidget2.default, null)
+                    _react2.default.createElement(_EventWidget2.default, { option: 'Activities' })
                 );
             } }, { menuItem: 'Bithdays', render: function render() {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
                     { attached: false },
-                    _react2.default.createElement(_EventWidget2.default, null)
+                    _react2.default.createElement(_EventWidget2.default, { option: 'Bithdays' })
                 );
             } }, { menuItem: 'Holidays', render: function render() {
                 return _react2.default.createElement(
                     _semanticUiReact.Tab.Pane,
                     { attached: false },
-                    _react2.default.createElement(_EventWidget2.default, null)
+                    _react2.default.createElement(_EventWidget2.default, { option: 'Holidays' })
                 );
             } }], _this.optionsAll = [{ key: 's', text: 'Sell', value: 'S' }, { key: 'r', text: 'Rent', value: 'R' }, { key: 'sh', text: 'Share', value: 'SH' }], _this.optionSell = [{ key: 's', text: 'Sell', value: 'S' }], _this.handleClick = function (e, _ref2) {
             var name = _ref2.name;
@@ -83150,7 +83150,7 @@ exports.default = AchievementCards;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -83174,100 +83174,113 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var EventWidget = function (_React$Component) {
-  _inherits(EventWidget, _React$Component);
+    _inherits(EventWidget, _React$Component);
 
-  function EventWidget(props) {
-    _classCallCheck(this, EventWidget);
+    function EventWidget(props) {
+        _classCallCheck(this, EventWidget);
 
-    return _possibleConstructorReturn(this, (EventWidget.__proto__ || Object.getPrototypeOf(EventWidget)).call(this, props));
-  }
+        var _this = _possibleConstructorReturn(this, (EventWidget.__proto__ || Object.getPrototypeOf(EventWidget)).call(this, props));
 
-  _createClass(EventWidget, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        _semanticUiReact.Feed,
-        null,
-        _react2.default.createElement(
-          _semanticUiReact.Feed.Event,
-          null,
-          _react2.default.createElement(_semanticUiReact.Feed.Label, { image: '/assets/images/avatar/small/jenny.jpg' }),
-          _react2.default.createElement(
-            _semanticUiReact.Feed.Content,
-            null,
-            _react2.default.createElement(_semanticUiReact.Feed.Date, { content: '1 day ago' }),
-            _react2.default.createElement(
-              _semanticUiReact.Feed.Summary,
-              null,
-              'You added ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'Jenny Hess'
-              ),
-              ' to your ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'coworker'
-              ),
-              ' group.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Feed.Event,
-          null,
-          _react2.default.createElement(_semanticUiReact.Feed.Label, { image: '/assets/images/avatar/small/molly.png' }),
-          _react2.default.createElement(
-            _semanticUiReact.Feed.Content,
-            null,
-            _react2.default.createElement(_semanticUiReact.Feed.Date, { content: '3 days ago' }),
-            _react2.default.createElement(
-              _semanticUiReact.Feed.Summary,
-              null,
-              'You added ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'Molly Malone'
-              ),
-              ' as a friend.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _semanticUiReact.Feed.Event,
-          null,
-          _react2.default.createElement(_semanticUiReact.Feed.Label, { image: '/assets/images/avatar/small/elliot.jpg' }),
-          _react2.default.createElement(
-            _semanticUiReact.Feed.Content,
-            null,
-            _react2.default.createElement(_semanticUiReact.Feed.Date, { content: '4 days ago' }),
-            _react2.default.createElement(
-              _semanticUiReact.Feed.Summary,
-              null,
-              'You added ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'Elliot Baker'
-              ),
-              ' to your ',
-              _react2.default.createElement(
-                'a',
-                null,
-                'musicians'
-              ),
-              ' group.'
-            )
-          )
-        )
-      );
+        _this.state = {
+            eventData: [],
+            data: _data2.default
+        };
+        _this.filterData = _this.filterData.bind(_this);
+        return _this;
     }
-  }]);
 
-  return EventWidget;
+    _createClass(EventWidget, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.filterData(this.props);
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            this.filterData(nextProps);
+        }
+    }, {
+        key: 'filterData',
+        value: function filterData(props) {
+            debugger;
+            var oneDay = 24 * 60 * 60 * 1000,
+                diffDays;
+            var filterData = [];
+            var update = this.setState.bind(this);
+            var outData = [];
+
+            if (props.option == "Activities") {
+
+                filterData = this.state.data.filter(function (e) {
+                    return e.eventSubCategory != "Birthday" && new Date(e.dateOfEvent) - new Date() > 0;
+                }).sort(function (a, b) {
+                    return new Date(a.dateOfEvent) - new Date(b.dateOfEvent);
+                }).slice(0);
+
+                filterData.forEach(function (e) {
+                    diffDays = Math.round(Math.abs((new Date(e.dateOfEvent) - new Date()) / oneDay));
+                    var element = {};
+                    element["image"] = e.image;
+                    element["eventTitle"] = e.eventTitle;
+                    if (diffDays == 0) element["dateOfEvent"] = "Today";else if (diffDays == 1) element["dateOfEvent"] = "Tomorrow";else element["dateOfEvent"] = e.dateOfEvent.split(" ").slice(1, 3).reverse().join(" ");
+                    outData.push(element);
+                });
+                update({ eventData: outData });
+            } else if (props.option == "Bithdays") {
+                filterData = this.state.data.filter(function (e) {
+                    return e.eventSubCategory == "Birthday" && new Date(e.dateOfEvent) - new Date() > 0;
+                }).sort(function (a, b) {
+                    return new Date(a.dateOfEvent) - new Date(b.dateOfEvent);
+                }).slice(0);
+                filterData.forEach(function (e) {
+                    diffDays = Math.round(Math.abs((new Date(e.dateOfEvent) - new Date()) / oneDay));
+                    var element = {};
+                    element["image"] = e.image;
+                    element["eventTitle"] = e.eventTitle;
+                    if (diffDays == 0) element["dateOfEvent"] = "Today";else if (diffDays == 1) element["dateOfEvent"] = "Tomorrow";else element["dateOfEvent"] = e.dateOfEvent.split(" ").slice(1, 3).reverse().join(" ");
+                    outData.push(element);
+                });
+
+                update({ eventData: outData });
+            } else update({ eventData: outData });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'div',
+                { style: { "height": "193px", "overflow": "auto" } },
+                _react2.default.createElement(
+                    _semanticUiReact.Feed,
+                    null,
+                    this.state.eventData.map(function (e) {
+                        return _react2.default.createElement(
+                            _semanticUiReact.Feed.Event,
+                            null,
+                            _react2.default.createElement(_semanticUiReact.Feed.Label, { image: e.image }),
+                            _react2.default.createElement(
+                                _semanticUiReact.Feed.Content,
+                                null,
+                                _react2.default.createElement(_semanticUiReact.Feed.Date, { content: e.dateOfEvent }),
+                                _react2.default.createElement(
+                                    _semanticUiReact.Feed.Summary,
+                                    null,
+                                    _react2.default.createElement(
+                                        'a',
+                                        null,
+                                        e.eventTitle
+                                    )
+                                )
+                            )
+                        );
+                    })
+                )
+            );
+        }
+    }]);
+
+    return EventWidget;
 }(_react2.default.Component);
 
 exports.default = EventWidget;
@@ -83308,7 +83321,7 @@ var data = [{
     "eventSubCategory": "Communication",
     "eventTitle": "Speak up session",
     "location": "Bengaluru",
-    "dateOfEvent": "Wed Sep 13 2017 10:31:23 GMT+0530 (IST)",
+    "dateOfEvent": "Thu Sep 14 2017 22:14:31 GMT+0530 (IST)",
     "eventLink": "https://www.google.com/",
     "Description": "Speakup session at allstate india",
     "image": "images/Communication.jpg"

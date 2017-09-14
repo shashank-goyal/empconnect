@@ -29,7 +29,7 @@ var data = [
         "eventSubCategory" : "Communication",
         "eventTitle" : "Speak up session",
         "location" : "Bengaluru",
-        "dateOfEvent" : "Wed Sep 13 2017 10:31:23 GMT+0530 (IST)",
+        "dateOfEvent" : "Thu Sep 14 2017 22:14:31 GMT+0530 (IST)",
         "eventLink" : "https://www.google.com/",
         "Description" : "Speakup session at allstate india",
         "image" : "images/Communication.jpg"
