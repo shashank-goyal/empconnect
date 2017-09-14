@@ -27,6 +27,9 @@ export default class Root extends React.Component {
         this.setState(state);
     }
 
+
+
+
     componentWillMount= () => {
         var setState = this.onChange;
         function displayLocation(latitude,longitude){
@@ -64,6 +67,7 @@ export default class Root extends React.Component {
 
 
         navigator.geolocation.getCurrentPosition(successCallback);
+
     }
     state = {activeItem : 'Home', selectedLocation : 'Select Location'}
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
