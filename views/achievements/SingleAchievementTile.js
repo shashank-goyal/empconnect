@@ -8,17 +8,8 @@ class SingleAchievementTile extends React.Component{
        this.state = { modalOpen: false ,modelData:{},awardDetail:{}}
        this.handleOpen = this.handleOpen.bind(this)
        this.handleClose = this.handleClose.bind(this)
-       
-    //    this.toggleDescription = this.toggleDescription.bind(this);
    } 
-//    toggleDescription(event){
-//        var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display;
-       
-//        event.target.parentElement.parentElement.getElementsByTagName("button")[0].innerText = toggle == "none" ||toggle == ""? "Less <<":"More >>"
-//        event.target.parentElement.parentElement.parentElement.parentElement.getElementsByClassName("ui small image")[0].style.width = toggle == "none"|| toggle == ""?"300px":"150px"      
-//        event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" ||toggle == ""?"table":"none";
-   
-//     }
+
   handleOpen(event){
        var awardDetail =this.props.data.filter(e => e.month === event.target.getAttribute("data"))[0]       
        var newData = awardDetail.winners.filter(e => e.name === event.target.innerText)[0]
@@ -29,8 +20,9 @@ class SingleAchievementTile extends React.Component{
   handleClose = () => this.setState({ modalOpen: false })
   render(){
        var {data} = this.props
-       
+       var i=0;
         return(
+            
               <div>
                 <Modal
                     
@@ -63,7 +55,7 @@ class SingleAchievementTile extends React.Component{
                <Segment raised>  
                 <Item.Group>
                     <Item>
-                        <Item.Image size='small'  src={imgUrl[data[0].type]}/> 
+                        <Item.Image size='small'  src={imgUrl[data[i++].type]}/> 
                         <Item.Content>
                             <Item.Header>{e.type}</Item.Header>
                             <Item.Meta>

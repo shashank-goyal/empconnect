@@ -30,7 +30,7 @@ export default class SingleSportTile extends React.Component{
 
                             <Item.Description >
                                 <h4 style={{margin:"0"}}>Winners :-</h4>
-                              <br/>
+                               <br/> 
                               <div>
                                 <Label id="achievementLink" as='a' image>
                                 <img src='images/gold.svg' />

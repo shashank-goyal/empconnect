@@ -39,9 +39,9 @@ router.post('/insert-classifieds', function(req, res, next) {
       let list = sampleFile.name.split(".");
       let ext = list[list.length -1]
       // Use the mv() method to place the file somewhere on your server
-      let public = 'public';
+      let publicUrl = 'public';
       let filepath = '/images/classifieds/' +records._id +'.' + ext
-      sampleFile.mv(public+filepath, function(err) {
+      sampleFile.mv(publicUrl+filepath, function(err) {
           if (err){
              res.status(500).send({status : "error"});
           } else {

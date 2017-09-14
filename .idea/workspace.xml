@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="555eb448-3c1e-4c3e-b6c0-3b4b0f69b07f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/bundle.js" afterPath="$PROJECT_DIR$/public/build/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/HomepageLayout.js" afterPath="$PROJECT_DIR$/views/HomepageLayout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/achievements/SimpleSlider.js" afterPath="$PROJECT_DIR$/views/achievements/SimpleSlider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/achievements/SingleAchievementTile.js" afterPath="$PROJECT_DIR$/views/achievements/SingleAchievementTile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/achievements/SingleSportTile.js" afterPath="$PROJECT_DIR$/views/achievements/SingleSportTile.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +19,156 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HomepageLayout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/HomepageLayout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="23" />
+              <folding>
+                <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+                <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+                <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+                <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+                <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+                <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleSlider.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/achievements/SimpleSlider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-54">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -44,6 +198,7 @@
       <list>
         <option value="$PROJECT_DIR$/views/achievements/AchievementCards.js" />
         <option value="$PROJECT_DIR$/views/HomepageLayout.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -83,10 +238,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,14 +384,16 @@
       <option name="presentableId" value="Default" />
       <updated>1505119019558</updated>
       <workItem from="1505119022681" duration="11494000" />
+      <workItem from="1505379092413" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12690000" />
+    <option name="totallyTimeSpent" value="12728000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -247,10 +404,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.53206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037195" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -277,11 +434,435 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/achievements/RewardSpecificFile.js" />
+    <entry file="file://$PROJECT_DIR$/views/achievements/Achievements.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.npmrc" />
+    <entry file="file://$PROJECT_DIR$/views/achievements/AchievementCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/HomepageLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="167" column="5" lean-forward="false" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/achievements/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/achievements/AchievementTile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/achievements/SingleAchievementTile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.npmrc" />
+    <entry file="file://$PROJECT_DIR$/views/achievements/AchievementCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/HomepageLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/HomepageLayout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2505">
           <caret line="167" column="5" lean-forward="false" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -289,10 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="e#236#755#0" expanded="false" />
-            <marker date="1505299811000" expanded="true" signature="233:2272" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -300,10 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1505289306000" expanded="true" signature="1642:1793" ph="&lt;Menu.Item/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -311,12 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="42" column="58" lean-forward="false" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding>
-            <marker date="1505299811000" expanded="true" signature="162:1520" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="362:529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="1484:1501" ph="&lt;div/&gt;" />
-            <marker date="1505299811000" expanded="true" signature="1484:1518" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -332,9 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -342,9 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -352,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -360,12 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1505299811000" expanded="true" signature="147:251" ph="{&quot;Standing Ovation&quot;: &quot;images/standing_ovation.png&quot;...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4531" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -373,7 +927,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -381,10 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="e#236#755#0" expanded="false" />
-            <marker date="1505299811000" expanded="true" signature="233:2272" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -392,10 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="40" column="61" lean-forward="true" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1505289306000" expanded="true" signature="1642:1793" ph="&lt;Menu.Item/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -403,12 +1065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="42" column="58" lean-forward="false" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding>
-            <marker date="1505299811000" expanded="true" signature="162:1520" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="362:529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="1484:1501" ph="&lt;div/&gt;" />
-            <marker date="1505299811000" expanded="true" signature="1484:1518" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -416,12 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="48" column="52" lean-forward="true" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1505299811000" expanded="true" signature="147:251" ph="{&quot;Standing Ovation&quot;: &quot;images/standing_ovation.png&quot;...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4531" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -437,9 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -447,9 +1094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -457,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -466,9 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -476,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -484,9 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -501,7 +1137,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1410">
           <caret line="167" column="5" lean-forward="true" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -510,10 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="40" column="61" lean-forward="false" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <marker date="1505289306000" expanded="true" signature="1642:1793" ph="&lt;Menu.Item/&gt;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -526,8 +1274,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="266">
+          <caret line="43" column="29" lean-forward="false" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -537,9 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,7 +1292,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2235">
           <caret line="167" column="5" lean-forward="false" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -555,10 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="e#236#755#0" expanded="false" />
-            <marker date="1505299811000" expanded="true" signature="233:2272" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -566,12 +1423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-          <folding>
-            <marker date="1505299811000" expanded="true" signature="162:1520" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="362:529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="1484:1501" ph="&lt;div/&gt;" />
-            <marker date="1505299811000" expanded="true" signature="1484:1518" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,12 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1505299811000" expanded="true" signature="147:251" ph="{&quot;Standing Ovation&quot;: &quot;images/standing_ovation.png&quot;...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4529" ph="{...}" />
-            <marker date="1505299811000" expanded="true" signature="4512:4531" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -593,17 +1438,140 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/HomepageLayout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2505">
-          <caret line="167" column="5" lean-forward="false" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <marker date="1505362012000" expanded="true" signature="6832:8282" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8207" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8192:8275" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8213:8265" ph="{...}" />
+            <marker date="1505362012000" expanded="true" signature="8600:12686" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8670:12659" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8741:12631" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8780:11479" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8837:11436" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="8923:9168" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9205:10160" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9256:10160" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9356:10114" ph="&lt;Header/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9558:10060" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="9825:10002" ph="&lt;Button.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11348" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11216:11396" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11508:12595" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11564:12552" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11647:12079" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="11698:12031" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12116:12512" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12167:12464" ph="&lt;Segment/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12704:14962" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12926:14511" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="12982:14474" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13030:14429" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13088:14393" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13135:13518" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13199:13467" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13555:13929" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13619:13878" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="13966:14349" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14030:14298" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14532:14937" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14572:14680" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14705:14900" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="14980:16003" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15219:15607" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15275:15570" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15323:15525" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15381:15489" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15628:15978" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15668:15831" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="15856:15941" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16021:19886" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16247:19370" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16293:19333" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16341:17804" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16399:17768" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16446:16850" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16510:16799" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16887:17286" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="16951:17235" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17323:17724" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17387:17673" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17833:19288" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17891:19252" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="17938:18339" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18002:18288" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18376:18789" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18440:18738" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18826:19207" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="18890:19156" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19391:19861" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19431:19594" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19619:19824" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="19904:25794" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20153:25275" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20193:25238" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20241:25193" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20276:25157" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20325:21106" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20372:20446" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20483:20951" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="20988:21062" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21139:22010" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21186:21260" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21297:21557" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21594:21854" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="21892:21966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22043:22933" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22090:22164" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22201:22464" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22501:22778" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22815:22889" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="22966:23542" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23013:23087" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23124:23387" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23424:23498" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23575:24167" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23622:23696" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="23733:24012" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24049:24123" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24200:25121" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24247:24321" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24358:24757" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24422:24706" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="24794:24966" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25003:25077" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25296:25769" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25336:25499" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25524:25732" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="25813:27977" ph="&lt;Modal/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26053:27497" ph="&lt;Modal.Content/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26109:27460" ph="&lt;Modal.Description/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26157:27415" ph="&lt;Grid/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26206:27379" ph="&lt;Grid.Row/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26253:26327" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26364:27335" ph="&lt;Grid.Column/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26428:27284" ph="&lt;Form/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="26901:27236" ph="&lt;Form.Field/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27518:27952" ph="&lt;Modal.Actions/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27558:27721" ph="&lt;Button/&gt;" />
+            <marker date="1505362012000" expanded="true" signature="27746:27915" ph="&lt;Button/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/achievements/SimpleSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

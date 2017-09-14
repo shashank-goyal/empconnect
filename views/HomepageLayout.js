@@ -238,7 +238,7 @@ export default class HomepageLayout extends Component {
                                                     </Button.Content>
                                                 </Button>
                                             </Header>
-                                            <AchievementWidget {...this.props}/>
+                                            <SimpleSlider/>
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
@@ -252,8 +252,6 @@ export default class HomepageLayout extends Component {
                                                     </Button.Content>
                                                 </Button>
                                             </Header>
-
-
                                             <ClassifiedsWidget {...this.props}/>
                                         </Segment>
                                     </Grid.Row>
