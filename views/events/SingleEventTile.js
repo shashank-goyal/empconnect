@@ -29,10 +29,10 @@ class SingleEventTile extends React.Component{
             <Item.Content>
                 <Item.Header>{this.props.eventTitle}</Item.Header>
                 <Item.Meta>
-                <span className='price'>{this.props.location}</span>
-                <span className='stay'><a href={this.props.eventLink}>{this.props.eventLink}</a></span>
+                <span className='price'><Icon name='marker' />{this.props.location}  </span>
+                <span className='stay'><a href={this.props.eventLink}><Icon name='linkify' /><Label as='a' color='blue' tag>Click here to visit details</Label></a></span>
                 <Label as='a' color='green' attached="top right" tag>   
-                    {this.props.dateOfEvent}
+                    <Icon name='calendar' /> {new Date(this.props.dateOfEvent).toDateString()}
                 </Label>
                 {/*<Label as='a' color='teal' ribbon='top right'>{this.props.dateOfEvent}</Label>*/}
                 
