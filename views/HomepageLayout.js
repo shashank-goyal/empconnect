@@ -12,7 +12,7 @@ import {
     Menu,
     Segment,
     Visibility,Dropdown,
-    Tab,Label,Modal,Form
+    Tab,Label,Modal,Form,Sticky
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
 import AchievementWidget from './achievements/AchievementWidget';
@@ -239,11 +239,13 @@ export default class HomepageLayout extends Component {
         };
     }
 
+    handleContextRef = contextRef => this.setState({ contextRef })
+
     render() {
         const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
-            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc} = this.state;
+            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef} = this.state;
         return (
-            <div>
+            <div ref={this.handleContextRef}>
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
                         <Grid.Row>
@@ -283,20 +285,22 @@ export default class HomepageLayout extends Component {
                                 </Grid>
                             </Grid.Column>
                             <Grid.Column width={5}>
-                                <Grid container stackable verticalAlign='top'>
-                                    <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
-                                            <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
-                                            <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
-                                        </Segment>
-                                    </Grid.Row>
-                                    <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
-                                            <Header as='h3' style={{ fontSize: '2em' }}>Important Links</Header>
-                                            You will see important links here
-                                        </Segment>
-                                    </Grid.Row>
-                                </Grid>
+                                <Sticky context={contextRef} offset={80}>
+                                    <Grid container stackable verticalAlign='top'>
+                                        <Grid.Row>
+                                            <Segment raised color='blue' style={{ width: 'inherit' }}>
+                                                <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
+                                                <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
+                                            </Segment>
+                                        </Grid.Row>
+                                        <Grid.Row>
+                                            <Segment raised color='blue' style={{ width: 'inherit' }}>
+                                                <Header as='h3' style={{ fontSize: '2em' }}>Important Links</Header>
+                                                You will see important links here
+                                            </Segment>
+                                        </Grid.Row>
+                                    </Grid>
+                                </Sticky>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

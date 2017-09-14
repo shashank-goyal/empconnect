@@ -48,7 +48,8 @@ export default class ClassifiedWidget extends React.Component {
     slidesToScroll: 1,
    
     focusOnSelect	:true,
-    draggable:true
+    draggable:true,
+      arrows: false
     
     
   };
