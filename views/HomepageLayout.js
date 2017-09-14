@@ -243,7 +243,7 @@ export default class HomepageLayout extends Component {
 
     render() {
         const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
-            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc} = this.state;
+            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef} = this.state;
         return (
             <div>
                 <Segment style={{ padding: '6em 0em' }} vertical>
