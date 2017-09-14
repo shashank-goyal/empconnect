@@ -28,7 +28,7 @@ export default class AchievementCards extends React.Component{
      var {title,group,image,type,postTimestamp} = this.props
     
    return(
-   <div style={{width:"225px"}}>   
+   <div>
     <Modal
         
         open={this.state.modalOpen}

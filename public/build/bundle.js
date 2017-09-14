@@ -82647,7 +82647,7 @@ var ClassiCards = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: { width: "225px" } },
+        null,
         _react2.default.createElement(
           _semanticUiReact.Modal,
           {
@@ -83070,7 +83070,7 @@ var AchievementCards = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: { width: "225px" } },
+        null,
         _react2.default.createElement(
           _semanticUiReact.Modal,
           {
