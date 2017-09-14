@@ -15,7 +15,7 @@ import {
 } from 'semantic-ui-react'
 import HomepageLayout from './HomepageLayout';
 import Classifieds from './classifieds/Classifieds';
-import Events from './Events';
+import Events from './events/Events';
 import Achievements from './achievements/Achievements';
 
 export default class Root extends React.Component {
