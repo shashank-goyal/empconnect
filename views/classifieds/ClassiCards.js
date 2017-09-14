@@ -28,7 +28,7 @@ export default class ClassiCards extends React.Component{
       
     
    return(
-   <div style={{width:"225px"}}>   
+   <div>
     <Modal
         
         open={this.state.modalOpen}

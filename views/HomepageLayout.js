@@ -16,6 +16,7 @@ import {
 } from 'semantic-ui-react'
 import ClassifiedsWidget from './classifieds/ClassifiedsWidget';
 import AchievementWidget from './achievements/AchievementWidget';
+import EventWidget from './events/EventWidget'
 import SimpleSlider from './achievements/SimpleSlider';
 export default class HomepageLayout extends Component {
     state = {
@@ -49,9 +50,9 @@ export default class HomepageLayout extends Component {
         imageSrc: undefined
     }
     panes = [
-        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}>Recent Activities</Tab.Pane> },
-        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}>Recent Bithdays</Tab.Pane> },
-        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}>Recent Holidays</Tab.Pane> },
+        { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget option="Activities"/></Tab.Pane> },
+        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget option="Bithdays"/></Tab.Pane> },
+        { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget option="Holidays"/></Tab.Pane> },
     ]
 
     optionsAll = [
@@ -62,6 +63,16 @@ export default class HomepageLayout extends Component {
     optionSell = [
         { key: 's', text: 'Sell', value: 'S' }
     ]
+
+    initialize() {
+        console.log('###############################inside')
+        if( document.getElementById('location')){
+            console.log("found##############################")
+            var input = document.getElementById('location');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+    }
+
 
     handleClick = (e, { name }) => this.setState({ activeItem: name })
     handleClassifiedsClick= (e, { name }) => {
@@ -121,7 +132,7 @@ export default class HomepageLayout extends Component {
         this.setState({personalDetails, isPersonalDetailsValid});
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState){
         if(document.getElementById("image")){
             if(this.state.imageSrc){
                 var reader = new FileReader();
@@ -135,7 +146,21 @@ export default class HomepageLayout extends Component {
                 document.getElementById("image").src = "";
             }
         }
-
+        if(this.state.openModal4 && !prevState.openModal4){
+            var bangaloreBounds = new google.maps.LatLngBounds(
+                new google.maps.LatLng(12.864162, 77.438610),
+                new google.maps.LatLng(13.139807, 77.711895));
+            var options = {
+                bounds: bangaloreBounds,
+                strictBounds: true,
+                componentRestrictions: {country: "in"}
+            };
+            //google.maps.event.addDomListener(window, 'load', this.initialize);
+            if( document.getElementById('location')){
+                var input = document.getElementById('location');
+                var autocomplete = new google.maps.places.Autocomplete(input, options);
+            }
+        }
     }
 
     close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none'})
@@ -228,10 +253,10 @@ export default class HomepageLayout extends Component {
                                         <a href="javascript:void(0);" onClick={this.handleNewItemClick}><Icon size="large" color="blue" name='add square' />Click here to add new item</a>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%' }}>
-                                            <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
+                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
+                                            <Header as='h3' style={{background: "white",border: "0rem" }} block>
                                                 Recent Achievements
-                                                <Button name="Achievements" onClick={this.props.handleItemClick} animated floated="right" secondary>
+                                                <Button name="Achievements" onClick={this.props.handleItemClick} animated floated="right" primary>
                                                     <Button.Content visible>Explore achievements</Button.Content>
                                                     <Button.Content hidden>
                                                         <Icon name='right arrow' />
@@ -242,10 +267,10 @@ export default class HomepageLayout extends Component {
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%' }}>
-                                            <Header as='h3' style={{ fontSize: '2em',background: "white",border: "0rem" }} block>
+                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
+                                            <Header as='h3' style={{background: "white",border: "0rem" }} block>
                                                 Recent Classifieds
-                                                <Button name="Classifieds" onClick={this.props.handleItemClick} animated floated="right" secondary>
+                                                <Button name="Classifieds" onClick={this.props.handleItemClick} animated floated="right" primary>
                                                     <Button.Content visible>Explore classifieds</Button.Content>
                                                     <Button.Content hidden>
                                                         <Icon name='right arrow' />
@@ -260,13 +285,13 @@ export default class HomepageLayout extends Component {
                             <Grid.Column width={5}>
                                 <Grid container stackable verticalAlign='top'>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%' }}>
+                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
                                             <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
                                             <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
                                         </Segment>
                                     </Grid.Row>
                                     <Grid.Row>
-                                        <Segment raised color='blue' style={{ width: '100%' }}>
+                                        <Segment raised color='blue' style={{ width: 'inherit' }}>
                                             <Header as='h3' style={{ fontSize: '2em' }}>Important Links</Header>
                                             You will see important links here
                                         </Segment>
@@ -423,7 +448,7 @@ export default class HomepageLayout extends Component {
                                         <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
                                     </Grid.Column>
                                     <Grid.Column width={6}>
-                                        <Form.Input label='Area/Location' name='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required/>
+                                        <Form.Input label='Area/Location' name='location' id='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required autoComplete="on"/>
                                     </Grid.Column>
                                     <Grid.Column width={2}>
                                     </Grid.Column>

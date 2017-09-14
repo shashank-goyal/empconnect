@@ -41,3 +41,11 @@
   border-radius: 0rem !important;
   border:0 !important; 
 }
+
+.ui.inverted.menu{
+    background : #254b6e !important;
+}
+
+/*.ui.secondary.button, .ui.secondary.buttons .button{*/
+    /*background-color: #2185d0 !important;*/
+/*}*/
