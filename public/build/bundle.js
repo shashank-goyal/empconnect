@@ -79214,8 +79214,18 @@ var HomepageLayout = function (_Component) {
     }
 
     _createClass(HomepageLayout, [{
+        key: 'initialize',
+        value: function initialize() {
+            console.log('###############################inside');
+            if (document.getElementById('location')) {
+                console.log("found##############################");
+                var input = document.getElementById('location');
+                var autocomplete = new google.maps.places.Autocomplete(input);
+            }
+        }
+    }, {
         key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
+        value: function componentDidUpdate(prevProps, prevState) {
             if (document.getElementById("image")) {
                 if (this.state.imageSrc) {
                     var reader = new FileReader();
@@ -79227,6 +79237,19 @@ var HomepageLayout = function (_Component) {
                     reader.readAsDataURL(this.state.imageSrc);
                 } else {
                     document.getElementById("image").src = "";
+                }
+            }
+            if (this.state.openModal4 && !prevState.openModal4) {
+                var bangaloreBounds = new google.maps.LatLngBounds(new google.maps.LatLng(12.864162, 77.438610), new google.maps.LatLng(13.139807, 77.711895));
+                var options = {
+                    bounds: bangaloreBounds,
+                    strictBounds: true,
+                    componentRestrictions: { country: "in" }
+                };
+                //google.maps.event.addDomListener(window, 'load', this.initialize);
+                if (document.getElementById('location')) {
+                    var input = document.getElementById('location');
+                    var autocomplete = new google.maps.places.Autocomplete(input, options);
                 }
             }
         }
@@ -79282,14 +79305,14 @@ var HomepageLayout = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _semanticUiReact.Segment,
-                                            { raised: true, color: 'blue', style: { width: '100%' } },
+                                            { raised: true, color: 'blue', style: { width: 'inherit' } },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Header,
-                                                { as: 'h3', style: { fontSize: '2em', background: "white", border: "0rem" }, block: true },
+                                                { as: 'h3', style: { background: "white", border: "0rem" }, block: true },
                                                 'Recent Achievements',
                                                 _react2.default.createElement(
                                                     _semanticUiReact.Button,
-                                                    { name: 'Achievements', onClick: this.props.handleItemClick, animated: true, floated: 'right', secondary: true },
+                                                    { name: 'Achievements', onClick: this.props.handleItemClick, animated: true, floated: 'right', primary: true },
                                                     _react2.default.createElement(
                                                         _semanticUiReact.Button.Content,
                                                         { visible: true },
@@ -79310,14 +79333,14 @@ var HomepageLayout = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _semanticUiReact.Segment,
-                                            { raised: true, color: 'blue', style: { width: '100%' } },
+                                            { raised: true, color: 'blue', style: { width: 'inherit' } },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Header,
-                                                { as: 'h3', style: { fontSize: '2em', background: "white", border: "0rem" }, block: true },
+                                                { as: 'h3', style: { background: "white", border: "0rem" }, block: true },
                                                 'Recent Classifieds',
                                                 _react2.default.createElement(
                                                     _semanticUiReact.Button,
-                                                    { name: 'Classifieds', onClick: this.props.handleItemClick, animated: true, floated: 'right', secondary: true },
+                                                    { name: 'Classifieds', onClick: this.props.handleItemClick, animated: true, floated: 'right', primary: true },
                                                     _react2.default.createElement(
                                                         _semanticUiReact.Button.Content,
                                                         { visible: true },
@@ -79346,7 +79369,7 @@ var HomepageLayout = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _semanticUiReact.Segment,
-                                            { raised: true, color: 'blue', style: { width: '100%' } },
+                                            { raised: true, color: 'blue', style: { width: 'inherit' } },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Header,
                                                 { as: 'h3', style: { fontSize: '2em' } },
@@ -79360,7 +79383,7 @@ var HomepageLayout = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _semanticUiReact.Segment,
-                                            { raised: true, color: 'blue', style: { width: '100%' } },
+                                            { raised: true, color: 'blue', style: { width: 'inherit' } },
                                             _react2.default.createElement(
                                                 _semanticUiReact.Header,
                                                 { as: 'h3', style: { fontSize: '2em' } },
@@ -79720,7 +79743,7 @@ var HomepageLayout = function (_Component) {
                                         _react2.default.createElement(
                                             _semanticUiReact.Grid.Column,
                                             { width: 6 },
-                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Area/Location', name: 'location', value: classifiedsData.location, onChange: this.handleFormChange, placeholder: 'Provide your location', required: true })
+                                            _react2.default.createElement(_semanticUiReact.Form.Input, { label: 'Area/Location', name: 'location', id: 'location', value: classifiedsData.location, onChange: this.handleFormChange, placeholder: 'Provide your location', required: true, autoComplete: 'on' })
                                         ),
                                         _react2.default.createElement(_semanticUiReact.Grid.Column, { width: 2 })
                                     ),
