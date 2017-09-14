@@ -245,7 +245,7 @@ export default class HomepageLayout extends Component {
         const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
             isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef} = this.state;
         return (
-            <div>
+            <div ref={this.handleContextRef}>
                 <Segment style={{ padding: '6em 0em' }} vertical>
                     <Grid container stackable verticalAlign='top'>
                         <Grid.Row>
