@@ -184,7 +184,9 @@ export default class Events extends Component{
                     </Menu>
                  </Grid.Column>
                  <Grid.Column width={12}>
-                {this.state.action != "loader"? <EventTile data={this.state.data} FurtureDate={this.state.FurtureDate}/>:<div></div>}
+                {this.state.action != "loader"? <EventTile data={this.state.data} FurtureDate={this.state.FurtureDate}/>:<div><Dimmer active inverted>
+                                     <Loader inverted inline='centered'  size='large'>Fetching Event List...</Loader>
+                                   </Dimmer></div>}
                  </Grid.Column>
                 </Grid.Row>
             </Grid>

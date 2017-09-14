@@ -15,7 +15,6 @@ router.get("/events",function(req,res){
             if(err) {
                 response = {"error" : true,"message" : "Error fetching data"};
             } else {
-                console.log("data>>>>",data);
                 response = {"error" : false,"message" : data};
             }
             res.json(response);
