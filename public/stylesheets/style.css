@@ -49,3 +49,7 @@
 /*.ui.secondary.button, .ui.secondary.buttons .button{*/
     /*background-color: #2185d0 !important;*/
 /*}*/
+
+.ui.secondary.vertical.pointing.menu{
+   width: 250px!important
+}
