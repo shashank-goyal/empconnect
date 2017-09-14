@@ -67605,7 +67605,6 @@ var Classifieds = function (_Component) {
         value: function renderTiles() {
             var update = this.setState.bind(this);
             _axios2.default.get('/get-classifieds').then(function (response) {
-                debugger;
                 update({ data: response.data.data, action: "normal", rsp: response.data.data });
             }).catch(function (error) {
                 console.log(error);
