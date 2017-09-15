@@ -1,10 +1,6 @@
 import React from 'react'
 import { Image as ImageComponent, Item,Label,Button,Icon,Segment,Modal,Header } from 'semantic-ui-react'
 
-//const paragraph = <ImageComponent src='/assets/images/wireframe/short-paragraph.png' />
-
-
-
 class SingleClassifiedTile extends React.Component{
    constructor(props){
        super(props);
@@ -18,16 +14,13 @@ class SingleClassifiedTile extends React.Component{
        this.toggleDescription = this.toggleDescription.bind(this);
        this.requestDetails = this.requestDetails.bind(this)
    } 
-//    componentWillRecieveProps(){
-//      this.setState({action:false});
-//      this.setState({action:true});
-//    }
+
   handleOpen = () => this.setState({ modalOpen: true })
 
   handleClose = () => this.setState({ modalOpen: false })
   handleOpenSmall = () => this.setState({ modalOpenSmall: true })
   
-    handleCloseSmall = () => this.setState({ modalOpenSmall: false })
+  handleCloseSmall = () => this.setState({ modalOpenSmall: false })
    toggleDescription(event){
        
        var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[3].style.display;
@@ -47,6 +40,18 @@ class SingleClassifiedTile extends React.Component{
     }
     
   render(){
+     //find City name 
+      var {location}  =this.props;
+      var array = location.split(",");
+      if(array.length == 1)
+        location = array[0]
+      else{
+         var i = array.indexOf(" Bengaluru")
+         if(i = -1 || i == 0)
+            location = array[0]
+         else
+            location = array[i-1]
+      }
      // var action = this.state.action;
      var purpose = {SH:"For sharing",R:"For Rent"}
     return(
@@ -110,9 +115,9 @@ class SingleClassifiedTile extends React.Component{
                 <Item.Description>
                 <div>    
                     {this.props.purpose=="S"?<Label as='a' color="orange" tag>{this.props.year} Model</Label>:<Label as='a' color="orange" tag>{purpose[this.props.purpose]}</Label>}
-                    <Label as='a' color="orange">
+                    <Label as='a' color="blue">
                     <Icon name='location arrow' />
-                    {this.props.location} 
+                    {location} 
                     </Label>    
                </div>  
                <br></br> 
@@ -129,7 +134,7 @@ class SingleClassifiedTile extends React.Component{
                 <span className='price' style={{float:"left"}}>{this.props.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
                 <Button secondary size='mini' floated='right' onClick={this.handleOpen}>
                 <Icon name='phone' />
-                    Get contact details
+                    Contact
                     
                 </Button>
                 </Item.Extra>
