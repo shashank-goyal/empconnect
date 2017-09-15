@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import {Dimmer,Loader,Button,Icon} from 'semantic-ui-react'
 import axios from 'axios'
 import ClassiCards from './ClassiCards'
-import data from './data'
+//import data from './data'
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -12,26 +12,26 @@ export default class ClassifiedWidget extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            data : data,
-            action:"normal"
+            data : [],
+            action:"loader"
         }
           this.next = this.next.bind(this)
           this.prev = this.prev.bind(this)
     }
-    // componentWillMount(){
-    //     this.renderTiles();
-    // }
-    // renderTiles(){
-    //      var update = this.setState.bind(this)  
-    //      axios.get('/get-classifieds')
-    //      .then(function (response) {
-    //      update({data:response.data.data,action:"normal"})
-    //      })
-    //      .catch(function (error) {
-    //      console.log(error);
-    //      });
+    componentWillMount(){
+        this.renderTiles();
+    }
+    renderTiles(){
+         var update = this.setState.bind(this)  
+         axios.get('/get-classifieds')
+         .then(function (response) {
+         update({data:response.data.data,action:"normal"})
+         })
+         .catch(function (error) {
+         console.log(error);
+         });
  
-    // }
+    }
   next(){
    this.slider.slickNext()
   }

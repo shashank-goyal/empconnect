@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const connection = require('../config/database')
+var nodemailer = require('nodemailer');
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
@@ -67,5 +68,35 @@ router.get("/get-classifieds",function(req,res,next){
     var sortList = data.sort((a,b) => new Date(b.postTimestamp)-new Date(a.postTimestamp))
     res.json({data:sortList}) 
   }).catch(e => e)
+})
+router.get("/mail",function(req,res,next){
+  console.log("came 1st line")
+
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'way2nirmalps@gmail.com', // Your email id
+        pass: 'nimmu9388222623' // Your password
+    }
+  });
+  var text = 'Hello world from \n\n' + "Nirmal";
+  var mailOptions = {
+    from: 'nirmaloasis@hotmail.com', // sender address
+    to: 'npsaa@allstate.com', // list of receivers
+    subject: 'Email Example', // Subject line
+    text: text //, // plaintext body
+    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        console.log(error);
+        res.json({yo: 'error'});
+    }else{
+        console.log('Message sent: ' + info.response);
+        res.json({yo: info.response});
+    };
+});
+
+
 })
 module.exports = router;
