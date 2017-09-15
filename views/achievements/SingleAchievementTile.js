@@ -65,10 +65,14 @@ class SingleAchievementTile extends React.Component{
                                 </Label> 
                                
                             </Item.Meta> 
-
+                           
                             <Item.Description >
                                 <h4 style={{margin:"0"}}>Winners :-</h4>
-                                {e.winners.map(element => <a id="achievementLink" data={e.month} onClick={this.handleOpen}>{element.name}</a>)}
+                                {e.winners.map(element =>  <Label id="achievementLink" color='white' as='a' data={e.month}  onClick={this.handleOpen} image>
+                                <img src='images/star.svg' />
+                                {element.name}
+                                
+                                </Label>)}
                          </Item.Description> 
                             <Item.Extra>
                                <span className='price' style={{float:"left"}}>{e.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
