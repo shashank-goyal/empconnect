@@ -32,17 +32,17 @@ export default class SingleSportTile extends React.Component{
                                 <h4 style={{margin:"0"}}>Winners :-</h4>
                                <br/> 
                               <div>
-                                <Label id="achievementLink" as='a' image>
+                                <Label id="achievementLink"  image>
                                 <img src='images/gold.svg' />
                                 {e.winners.filter(e => e.rank == "1")[0].name}
                                 
                                 </Label>
-                                <Label id="achievementLink" as='a' image>
+                                <Label id="achievementLink"  image>
                                 <img src='images/silver.svg' />
                                 {e.winners.filter(e => e.rank == "2")[0].name}
                                 
                                 </Label>
-                                <Label id="achievementLink" as='a' image>
+                                <Label id="achievementLink"  image>
                                 <img src='images/bronze.svg' />
                                 {e.winners.filter(e => e.rank == "3")[0].name}
                                 

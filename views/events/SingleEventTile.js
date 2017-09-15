@@ -8,7 +8,9 @@ import { Image as ImageComponent, Item,Label,Button,Icon,Segment } from 'semanti
 class SingleEventTile extends React.Component{
    constructor(props){
        super(props);    
+      
        this.toggleDescription = this.toggleDescription.bind(this);
+       
    } 
 
    toggleDescription(event){    
@@ -19,7 +21,9 @@ class SingleEventTile extends React.Component{
        event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display = toggle == "none" ||toggle == ""?"table":"none";
    
     }
-
+    handleOpen = () => this.setState({ modalOpen: true })
+    
+    handleClose = () => this.setState({ modalOpen: false })
   render(){
         return(
       <Segment raised>
