@@ -26,6 +26,7 @@ export default class HomepageLayout extends Component {
         openModal3:false,
         openModal4:false,
         openModal5: false,
+        addLinkModal:false,
         activeClassifiedItem:'none',
         classifiedsData : {
             category: '',
@@ -43,16 +44,57 @@ export default class HomepageLayout extends Component {
             phone: '9876543210',
             acceptTnc : false
         },
+        link : {
+            name: "",
+            url: ""
+        },
         isFormValid: false,
         isFileUploadValid: false,
         isPersonalDetailsValid: false,
         isTnCChecked: false,
-        imageSrc: undefined
+        imageSrc: undefined,
+        personalLinks : [],
+        isLinkValid : false
     }
+
+    linkList = []
+
     panes = [
         { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget option="Activities"/></Tab.Pane> },
         { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget option="Bithdays"/></Tab.Pane> },
         { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget option="Holidays"/></Tab.Pane> },
+    ]
+
+    linkPanes = [
+        { menuItem: 'Allstate', render: () =>
+            <Tab.Pane attached={false}>
+                <List style={{height: "193px",overflow: "auto"}}>
+                    <List.Item icon='linkify' content={<a href='https://home.allstate.com/default.aspx' target="_blank">My Desktop</a>} />
+                    <List.Item icon='linkify' content={<a href='https://agtacc.allstate.com/eaiSSL/EAIWeb/EAIServlet?OrigURL=https%3A//agtacc.allstate.com/FIM/sps/successfactors_ag/saml20/logininitial%3FRequestBinding%3DHTTPPost%26NameIdFormat%3Demail%26PartnerId%3Dhttps%3A//www.successfactors.com'  target="_blank">Talent Connection</a>} />
+                    <List.Item icon='linkify' content={<a href='http://high5/High5/Secure/default.aspx'  target="_blank">High 5</a>} />
+                    <List.Item icon='linkify' content={<a href='http://prism.allstate.com/'  target="_blank">Prism</a>} />
+                    <List.Item icon='linkify' content={<a href='https://allstate.routematic.com/'  target="_blank">Routematic</a>} />
+                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/Allstate_India_HR/HRPolicy/SitePages/Home.aspx'  target="_blank">HR Policies</a>} />
+                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/LLD/SitePages/LLDNewHomePage.aspx'  target="_blank">LEAP</a>} />
+                    <List.Item icon='linkify' content={<a href='https://prudentplus.in/allstate-insurance-partners/Forms/login.aspx#'  target="_blank">Prudent Plus</a>} />
+                    <List.Item icon='linkify' content={<a href='https://www.kwench.in/klib/#/login'  target="_blank">Kwench</a>} />
+                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/KMPortal/SitePages/IgnitePlus.aspx'  target="_blank">Ignit Plus</a>} />
+                </List>
+
+            </Tab.Pane> },
+        { menuItem: 'Personal', render: () =>
+
+            <Tab.Pane attached={false}>
+                <List style={{height: "193px",overflow: "auto"}}>
+                {
+                    this.state.personalLinks.length === 0 ? "nothing to display":
+                            this.linkList
+
+                }
+                </List>
+
+
+            </Tab.Pane> },
     ]
 
     optionsAll = [
@@ -103,6 +145,8 @@ export default class HomepageLayout extends Component {
             this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false, openModal5:false})
         } else if(name === 'modal5back'){
             this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4:true, openModal5:false})
+        } else if(name ==='addLinkModalClose'){
+            this.setState({ addLinkModal: false})
         }
     }
 
@@ -130,6 +174,19 @@ export default class HomepageLayout extends Component {
             }
         })
         this.setState({personalDetails, isPersonalDetailsValid});
+    }
+
+    handleLinkAddition = (e, { name, value }) => {
+        const link = this.state.link;
+        link[name] = value;
+        var isLinkValid = true;
+        var keys = Object.keys(this.state.link);
+        keys.forEach(function(key){
+            if(link[key] === ""){
+                isLinkValid = false
+            }
+        })
+        this.setState(link, isLinkValid);
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -163,7 +220,7 @@ export default class HomepageLayout extends Component {
         }
     }
 
-    close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none'})
+    close = () => this.setState({ openModal1: false, openModal2: false,activeItem : "none", openModal3: false, openModal4:false, openModal5:false, activeClassifiedItem:'none', addLinkModal:false})
 
     handleFileUpload = (e) => {
         var isFileUploadValid = true;
@@ -239,11 +296,37 @@ export default class HomepageLayout extends Component {
         };
     }
 
+
+    addLink=(e)=> {
+        var myPersonalLinks = this.state.personalLinks
+        myPersonalLinks.push({
+            name : this.state.link.name,
+            url : this.state.link.url,
+        })
+        var link= {
+            name : "",
+            url: ""
+        }
+        this.setState({addLinkModal : false, personalLinks : myPersonalLinks, link})
+    }
+
+    showAddLinkModal = (e) => {
+        this.setState({addLinkModal : true});
+    }
+
     handleContextRef = contextRef => this.setState({ contextRef })
 
     render() {
         const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
-            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef} = this.state;
+            isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef, addLinkModal, link, isLinkValid} = this.state;
+
+        var mylinkList = [];
+            this.state.personalLinks.forEach(function(item){
+                mylinkList.push(<List.Item icon='linkify' content={<a href={item.url} target="_blank">{item.name}</a>} />)
+            })
+
+        this.linkList = mylinkList;
+
         return (
             <div ref={this.handleContextRef}>
                 <Segment style={{ padding: '6em 0em' }} vertical>
@@ -257,9 +340,9 @@ export default class HomepageLayout extends Component {
                                     <Grid.Row>
                                         <Segment raised color='blue' style={{ width: 'inherit' }}>
                                             <Header as='h3' style={{background: "white",border: "0rem" }} block>
-                                                Recent Achievements
+                                                Recent Recognitions
                                                 <Button name="Achievements" onClick={this.props.handleItemClick} animated floated="right" primary>
-                                                    <Button.Content visible>Explore achievements</Button.Content>
+                                                    <Button.Content visible>View All</Button.Content>
                                                     <Button.Content hidden>
                                                         <Icon name='right arrow' />
                                                     </Button.Content>
@@ -273,7 +356,7 @@ export default class HomepageLayout extends Component {
                                             <Header as='h3' style={{background: "white",border: "0rem" }} block>
                                                 Recent Classifieds
                                                 <Button name="Classifieds" onClick={this.props.handleItemClick} animated floated="right" primary>
-                                                    <Button.Content visible>Explore classifieds</Button.Content>
+                                                    <Button.Content visible>View All</Button.Content>
                                                     <Button.Content hidden>
                                                         <Icon name='right arrow' />
                                                     </Button.Content>
@@ -289,14 +372,14 @@ export default class HomepageLayout extends Component {
                                     <Grid container stackable verticalAlign='top'>
                                         <Grid.Row>
                                             <Segment raised color='blue' style={{ width: 'inherit' }}>
-                                                <Header as='h3' style={{ fontSize: '2em' }}>Upcoming Events</Header>
+                                                <Header as='h3'>Upcoming Events</Header>
                                                 <Tab menu={{ secondary: true, pointing: true }} panes={this.panes} />
                                             </Segment>
                                         </Grid.Row>
                                         <Grid.Row>
                                             <Segment raised color='blue' style={{ width: 'inherit' }}>
-                                                <Header as='h3' style={{ fontSize: '2em' }}>Important Links</Header>
-                                                You will see important links here
+                                                <Header as='h3'>Important Links<a name="showAddLinkModal" href="javascript:void(0);" onClick={this.showAddLinkModal} style={{float:"right","font-size": "12px"}}><Icon size="large" color="blue" name='add circle' id="impLinks" />Add Your Own Link</a></Header>
+                                                <Tab menu={{ secondary: true, pointing: true }} panes={this.linkPanes} />
                                             </Segment>
                                         </Grid.Row>
                                     </Grid>
@@ -532,6 +615,34 @@ export default class HomepageLayout extends Component {
                             Back <Icon name='left chevron' />
                         </Button>
                         <Button primary onClick={this.handleFormSubmit} disabled={!isPersonalDetailsValid || !isTnCChecked}>
+                            Create
+                        </Button>
+                    </Modal.Actions>
+                </Modal>
+
+                <Modal open={addLinkModal} closeOnEscape closeIcon closeOnRootNodeClick={false} onClose={this.close}>
+                    <Modal.Header>Add your own link<Icon name='angle double right' /></Modal.Header>
+                    <Modal.Content image scrolling>
+                        <Modal.Description>
+                            <Grid stackable>
+                                <Grid.Row>
+                                    <Grid.Column width={4}>
+                                    </Grid.Column>
+                                    <Grid.Column width={8}>
+                                        <Form>
+                                            <Form.Input label='Name' name='name' value={link.name} onChange={this.handleLinkAddition} placeholder='Provide a name to your link' required/>
+                                            <Form.Input label='URL' name='url' value={link.url} onChange={this.handleLinkAddition} placeholder='Provide URL' required/>
+                                        </Form>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Modal.Description>
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button name="addLinkModalClose" secondary onClick={this.handleBackClick}>
+                            Close
+                        </Button>
+                        <Button primary onClick={this.addLink}>
                             Create
                         </Button>
                     </Modal.Actions>

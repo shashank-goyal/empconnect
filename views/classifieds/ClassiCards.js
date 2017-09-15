@@ -2,12 +2,7 @@ import React from 'react'
 import { Card, Icon,Label,Image,Segment,Modal,Button } from 'semantic-ui-react'
 import SingleClassifiedTile from './SingleClassifiedTile'
 
-const extra = (
-  <a>
-    <Icon  name='location arrow' />
-    16 Friends
-  </a>
-)
+
 
 export default class ClassiCards extends React.Component{ 
   constructor(props){
@@ -48,7 +43,9 @@ export default class ClassiCards extends React.Component{
       </Modal>
     <Card onClick={this.handleOpen}>
       <Card.Content>
-        <Image  size="medium" src={image}/>
+          <div style={{"text-align":"center"}}>
+              <Image  size="medium" src={image}/>
+          </div>
         <Card.Header>
           <br></br>
           {title}

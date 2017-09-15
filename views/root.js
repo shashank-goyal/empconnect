@@ -70,7 +70,10 @@ export default class Root extends React.Component {
 
     }
     state = {activeItem : 'Home', selectedLocation : 'Select Location'}
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    handleItemClick = (e, { name }) => {
+        console.log(e, name)
+        this.setState({ activeItem: name })
+    }
     
     handleLocationChange = (e) => this.setState({ selectedLocation: e.target.value })
     render() {
@@ -89,7 +92,7 @@ export default class Root extends React.Component {
                             <Menu.Item as='a' name="Home" onClick={this.handleItemClick} active={activeItem === 'Home'}>Home</Menu.Item>
                             <Menu.Item as='a' name="Classifieds" onClick={this.handleItemClick}  active={activeItem === 'Classifieds'}>Classifieds</Menu.Item>
                             <Menu.Item as='a' name="Events" onClick={this.handleItemClick} active={activeItem === 'Events'}>Events</Menu.Item>
-                            <Menu.Item as='a' name="Achievements" onClick={this.handleItemClick} active={activeItem === 'Achievements'}>Achievements</Menu.Item>
+                            <Menu.Item as='a' name="Achievements" onClick={this.handleItemClick} active={activeItem === 'Achievements'}>Recognitions</Menu.Item>
                             <Menu.Item position='right'>
                                 <Menu.Item>Welcome User</Menu.Item>
                                 <Dropdown
