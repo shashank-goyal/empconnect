@@ -38,8 +38,12 @@
   display: inline-flex;
 }
 .homeSlide .ui.segment{
-  border-radius: 0rem !important;
-  border:0 !important; 
+    border: 0 !important;
+    background: rgba(163, 159, 159, 0.12);
+    margin-bottom: 15px;
+    margin-top: 4px;
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
 .ui.inverted.menu{
@@ -52,4 +56,17 @@
 
 .ui.secondary.vertical.pointing.menu{
    width: 250px!important
+}
+
+.ui.medium.image{
+    height: 125px !important;
+    width: auto !important;
+}
+
+#impLinks{
+    margin-right :0rem !important;
+}
+
+.ui.secondary.button{
+    background-color: #888 !important;
 }
