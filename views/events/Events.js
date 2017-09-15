@@ -96,7 +96,6 @@ export default class Events extends Component{
         var update = this.setState.bind(this)  
         axios.get('/events')
         .then(function (response) {
-            debugger
             var x = response.data.message.filter(e =>  (new Date(e.dateOfEvent)-new Date()) > 0 ).sort((a,b)=> new Date(a.dateOfEvent) - new Date(b.dateOfEvent)).slice(0)
             
         update({data:x,action:"normal",rsp:response.data.message})

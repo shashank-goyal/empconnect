@@ -52,7 +52,6 @@ export default class SingleSportTile extends React.Component{
                             </Item.Description> 
                             <Item.Extra>
                                <span className='price' style={{float:"left"}}>{e.postTimestamp.split(" ").slice(1,3).reverse().join(" ")}</span>
-                               <Button secondary size='mini' onClick={this.toggleDescription}   floated='right'>Details</Button>
                             </Item.Extra>
                         </Item.Content> 
                     </Item>

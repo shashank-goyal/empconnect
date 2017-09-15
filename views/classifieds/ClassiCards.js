@@ -48,7 +48,9 @@ export default class ClassiCards extends React.Component{
       </Modal>
     <Card onClick={this.handleOpen}>
       <Card.Content>
-        <Image  size="medium" src={image}/>
+          <div style={{"text-align":"center"}}>
+              <Image  size="medium" src={image}/>
+          </div>
         <Card.Header>
           <br></br>
           {title}
