@@ -84,7 +84,8 @@ export default class Root extends React.Component {
                 >
                     <Menu fixed="top" inverted compact size='large'>
                         <Container>
-                            <Menu.Item><span style={{fontSize: '20px', fontWeight: 'bold'}}>Employee Connect</span></Menu.Item>
+                            {/*<Menu.Item><Image src='/images/EmpIcon.jpg' size='mini' /></Menu.Item>*/}
+                            <Menu.Item position="left"><span style={{fontSize: '20px', fontWeight: 'bold'}}>Employee Connect</span></Menu.Item>
                             <Menu.Item as='a' name="Home" onClick={this.handleItemClick} active={activeItem === 'Home'}>Home</Menu.Item>
                             <Menu.Item as='a' name="Classifieds" onClick={this.handleItemClick}  active={activeItem === 'Classifieds'}>Classifieds</Menu.Item>
                             <Menu.Item as='a' name="Events" onClick={this.handleItemClick} active={activeItem === 'Events'}>Events</Menu.Item>

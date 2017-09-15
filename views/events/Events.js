@@ -96,6 +96,7 @@ export default class Events extends Component{
         var update = this.setState.bind(this)  
         axios.get('/events')
         .then(function (response) {
+            response.data.message.sort((a,b)=> new Date(a.dateOfEvent) - new Date(b.dateOfEvent))
             //update({eventsList:rsp.data.message,action:"data"})
         update({data:response.data.message,action:"normal",rsp:response.data.message})
 
