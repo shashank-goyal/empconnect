@@ -96,8 +96,10 @@ export default class Events extends Component{
         var update = this.setState.bind(this)  
         axios.get('/events')
         .then(function (response) {
-            //update({eventsList:rsp.data.message,action:"data"})
-        update({data:response.data.message,action:"normal",rsp:response.data.message})
+            debugger
+            var x = response.data.message.filter(e =>  (new Date(e.dateOfEvent)-new Date()) > 0 ).sort((a,b)=> new Date(a.dateOfEvent) - new Date(b.dateOfEvent)).slice(0)
+            
+        update({data:x,action:"normal",rsp:response.data.message})
 
         })
         .catch(function (error) {
@@ -150,14 +152,9 @@ export default class Events extends Component{
                     <Grid.Row id="clasifiedTile">
                       <Grid.Column width={4}>
                       <Menu pointing secondary vertical>
-                        <Menu.Item>
-                        Home
-
-                        <Menu.Menu>
                         <Menu.Item name='all' active={activeItem === 'all'} onClick={this.handleItemClick}>
-                            All Listing
-                        </Menu.Item>
-                        </Menu.Menu>
+                            <Icon name='home' />
+                            <b>Home</b>
                         </Menu.Item>
                           <Menu.Item name='Activities' active={activeItem === 'Activities'} onClick={this.handleItemClick}>
                         <Icon name='checked calendar' />

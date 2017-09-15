@@ -34,8 +34,6 @@ class SingleEventTile extends React.Component{
                 <Label as='a' color='green' attached="top right" tag>   
                     <Icon name='calendar' /> {new Date(this.props.dateOfEvent).toDateString()}
                 </Label>
-                {/*<Label as='a' color='teal' ribbon='top right'>{this.props.dateOfEvent}</Label>*/}
-                
                 </Item.Meta>
                 
                 <Item.Description>
