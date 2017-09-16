@@ -69,7 +69,7 @@ router.get("/get-classifieds",function(req,res,next){
     res.json({data:sortList}) 
   }).catch(e => e)
 })
-router.get("/mail",function(req,res,next){
+router.post("/mail",function(req,res,next){
   console.log("came 1st line")
 
   var transporter = nodemailer.createTransport({
@@ -79,11 +79,11 @@ router.get("/mail",function(req,res,next){
         pass: 'nimmu9388222623' // Your password
     }
   });
-  var text = 'Hello world from \n\n' + "Nirmal";
+  var text = 'Greetings, \n\n' + "Seller's Contact information \n\n Name: John David \n Email:testmail@testmail.com\n Phone Number:9999999999\n\nThanks,\nTeam Employee Connect";
   var mailOptions = {
-    from: 'nirmaloasis@hotmail.com', // sender address
-    to: 'npsaa@allstate.com', // list of receivers
-    subject: 'Email Example', // Subject line
+    from: 'EmployeeConnect from @test.com <donotreply@test.com>', // sender address
+    to:req.body.email, // list of receivers
+    subject: 'Contact details for the Add - '+req.body.title, // Subject line
     text: text //, // plaintext body
     // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
   };
