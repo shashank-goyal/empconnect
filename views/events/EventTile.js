@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SingleEventTile from './SingleEventTile'
 import { Message } from 'semantic-ui-react'
 
+
 export default class EventTile extends React.Component{
     
     constructor(props){

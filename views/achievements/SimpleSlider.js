@@ -6,28 +6,6 @@ import SingleSportTile from './SingleSportTile'
 import data from './data'
 import {Button,Icon} from 'semantic-ui-react'
 
-// function SampleNextArrow(props) {
-//   const {className, style, onClick} = props
-//   return (
-//     <div
-//       className={className}
-//       style={{...style, background: 'cornflowerblue'}}
-//       onClick={onClick}
-//     ></div>
-//   );
-// }
-
-// function SamplePrevArrow(props) {
-//   const {className, style, onClick} = props
-//   return (
-//     <div
-//       className={className}
-//       style={{...style, background: 'cornflowerblue'}}
-//       onClick={onClick}
-//     ></div>
-//   );
-// }
-
 class SimpleSlider extends React.Component {
 
   constructor(props){

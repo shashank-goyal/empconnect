@@ -8,9 +8,12 @@ import { Image as ImageComponent, Item,Label,Button,Icon,Segment } from 'semanti
 class SingleEventTile extends React.Component{
    constructor(props){
        super(props);    
-      
+       this.state = {
+           modalOpen:false
+       }
        this.toggleDescription = this.toggleDescription.bind(this);
-       
+       this.handleOpen = this.handleOpen.bind(this)
+       this.handleClose = this.handleClose.bind(this)
    } 
 
    toggleDescription(event){    

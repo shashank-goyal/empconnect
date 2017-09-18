@@ -19,8 +19,6 @@ export default class ClassiCards extends React.Component{
   render(){
     
       var {image,category,title,brand,model,price,location} = this.props
-      
-      
     
    return(
    <div>
@@ -62,10 +60,6 @@ export default class ClassiCards extends React.Component{
         
         
         <Card.Description>
-
-        
-           
-            
         </Card.Description>
       </Card.Content>
     </Card> 
