@@ -61,7 +61,7 @@ export default class HomepageLayout extends Component {
 
     panes = [
         { menuItem: 'Activities', render: () => <Tab.Pane attached={false}><EventWidget option="Activities"/></Tab.Pane> },
-        { menuItem: 'Bithdays', render: () => <Tab.Pane attached={false}><EventWidget option="Bithdays"/></Tab.Pane> },
+        { menuItem: 'Birthdays', render: () => <Tab.Pane attached={false}><EventWidget option="Birthdays"/></Tab.Pane> },
         { menuItem: 'Holidays', render: () => <Tab.Pane attached={false}><EventWidget option="Holidays"/></Tab.Pane> },
     ]
 
@@ -69,16 +69,16 @@ export default class HomepageLayout extends Component {
         { menuItem: 'Allstate', render: () =>
             <Tab.Pane attached={false}>
                 <List style={{height: "193px",overflow: "auto"}}>
-                    <List.Item icon='linkify' content={<a href='https://home.allstate.com/default.aspx' target="_blank">My Desktop</a>} />
-                    <List.Item icon='linkify' content={<a href='https://agtacc.allstate.com/eaiSSL/EAIWeb/EAIServlet?OrigURL=https%3A//agtacc.allstate.com/FIM/sps/successfactors_ag/saml20/logininitial%3FRequestBinding%3DHTTPPost%26NameIdFormat%3Demail%26PartnerId%3Dhttps%3A//www.successfactors.com'  target="_blank">Talent Connection</a>} />
-                    <List.Item icon='linkify' content={<a href='http://high5/High5/Secure/default.aspx'  target="_blank">High 5</a>} />
-                    <List.Item icon='linkify' content={<a href='http://prism.allstate.com/'  target="_blank">Prism</a>} />
-                    <List.Item icon='linkify' content={<a href='https://allstate.routematic.com/'  target="_blank">Routematic</a>} />
-                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/Allstate_India_HR/HRPolicy/SitePages/Home.aspx'  target="_blank">HR Policies</a>} />
-                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/LLD/SitePages/LLDNewHomePage.aspx'  target="_blank">LEAP</a>} />
-                    <List.Item icon='linkify' content={<a href='https://prudentplus.in/allstate-insurance-partners/Forms/login.aspx#'  target="_blank">Prudent Plus</a>} />
-                    <List.Item icon='linkify' content={<a href='https://www.kwench.in/klib/#/login'  target="_blank">Kwench</a>} />
-                    <List.Item icon='linkify' content={<a href='https://share.allstate.com/sites/KMPortal/SitePages/IgnitePlus.aspx'  target="_blank">Ignit Plus</a>} />
+                    <List.Item icon='linkify' content={<a href='#' target="_blank">My Desktop</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Talent Connection</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">High 5</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Prism</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Routematic</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">HR Policies</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">LEAP</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Prudent Plus</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Kwench</a>} />
+                    <List.Item icon='linkify' content={<a href='#'  target="_blank">Ignit Plus</a>} />
                 </List>
 
             </Tab.Pane> },
@@ -87,7 +87,7 @@ export default class HomepageLayout extends Component {
             <Tab.Pane attached={false}>
                 <List style={{height: "193px",overflow: "auto"}}>
                 {
-                    this.state.personalLinks.length === 0 ? "nothing to display":
+                    this.state.personalLinks.length === 0 ? "You don't have any links added.":
                             this.linkList
 
                 }
@@ -125,6 +125,7 @@ export default class HomepageLayout extends Component {
 
     handleNewItemClick = (e) => this.setState({ openModal1: true,openModal2: false,  openModal3: false, openModal4:false})
     handleNextClick = (e, { name }) => {
+        debugger
         if(name === 'modal1next'){
             if(this.state.activeItem === 'Classifieds'){
                 this.setState({ openModal2: false , openModal1: false, openModal3: true, openModal4:false, openModal5:false})
@@ -132,9 +133,13 @@ export default class HomepageLayout extends Component {
                 this.setState({ openModal2: true , openModal1: false, openModal3: false, openModal4:false, openModal5:false})
             }
         } else if(name === 'modal3next'){
+
             this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: true, openModal5:false})
         } else if(name === 'modal4next'){
-            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: false, openModal5: true})
+            var classifiedsData = this.state.classifiedsData;
+
+            classifiedsData.location = document.getElementById('location').value;
+            this.setState({ openModal2: false , openModal1: false, openModal3: false, openModal4: false, openModal5: true, classifiedsData})
         }
 
     }
@@ -161,6 +166,10 @@ export default class HomepageLayout extends Component {
             }
         })
         this.setState({classifiedsData, isFormValid});
+    }
+
+    handleBlur = e =>{
+        console.log(e.target)
     }
 
     handlePersonalDetailsChange = (e, { name, value }) => {
@@ -216,6 +225,10 @@ export default class HomepageLayout extends Component {
             if( document.getElementById('location')){
                 var input = document.getElementById('location');
                 var autocomplete = new google.maps.places.Autocomplete(input, options);
+                google.maps.event.addListener(autocomplete, 'input', function(e) {
+                    var data = document.getElementById('location');
+                    console.log('blah', data, autocomplete, e)
+                });
             }
         }
     }
@@ -316,6 +329,14 @@ export default class HomepageLayout extends Component {
 
     handleContextRef = contextRef => this.setState({ contextRef })
 
+
+    onBlurHandler = e =>{
+        var classifiedsData = this.state.classifiedsData;
+        console.log(e.target.value)
+        classifiedsData.location = e.target.value;
+        this.setState({classifiedsData})
+    }
+
     render() {
         const {activeItem, openModal1, openModal2, openModal3, openModal4, activeClassifiedItem, classifiedsData, openModal5 , isFormValid,
             isFileUploadValid, personalDetails, isPersonalDetailsValid, isTnCChecked, imageSrc, contextRef, addLinkModal, link, isLinkValid} = this.state;
@@ -326,6 +347,8 @@ export default class HomepageLayout extends Component {
             })
 
         this.linkList = mylinkList;
+
+
 
         return (
             <div ref={this.handleContextRef}>
@@ -418,7 +441,7 @@ export default class HomepageLayout extends Component {
                         <Button secondary onClick={this.close}>
                             Cancel
                         </Button>
-                        <Button name="modal1next" primary onClick={this.handleNextClick} disabled={activeItem === 'none'}>
+                        <Button name="modal1next" primary onClick={this.handleNextClick.bind(this)} disabled={activeItem === 'none'}>
                             Next <Icon name='right chevron' />
                         </Button>
                     </Modal.Actions>
@@ -535,7 +558,7 @@ export default class HomepageLayout extends Component {
                                         <Form.Input label='Year' name='year' value={classifiedsData.year} onChange={this.handleFormChange} placeholder='Provide year of purchase' required/>
                                     </Grid.Column>
                                     <Grid.Column width={6}>
-                                        <Form.Input label='Area/Location' name='location' id='location' value={classifiedsData.location} onChange={this.handleFormChange} placeholder='Provide your location' required autoComplete="on"/>
+                                        <Form.Input label='Area/Location' name='location' id='location' ref='location' onBlur={this.onBlurHandler} placeholder='Provide your location' required autoComplete="on"/>
                                     </Grid.Column>
                                     <Grid.Column width={2}>
                                     </Grid.Column>

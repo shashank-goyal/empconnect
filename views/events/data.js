@@ -123,6 +123,28 @@ var data = [
         "eventLink" : "https://www.google.com/",
         "Description" : "Induction to new joinees",
         "image" : "images/Induction.jpg"
+    },
+    {
+        "eventID" : 4,
+        "eventCategory" : "Holiday",
+        "eventSubCategory" : "Holiday",
+        "eventTitle" : "Ayudha Puja",
+        "location" : "",
+        "dateOfEvent" : "Fri Sep 29 2017 00:00:00 GMT+0530 (IST)",
+        "eventLink" : "",
+        "Description" : "Festival",
+        "image" : ""
+    },
+    {
+        "eventID" : 4,
+        "eventCategory" : "Holiday",
+        "eventSubCategory" : "Holiday",
+        "eventTitle" : "Gandhi Jayanti",
+        "location" : "",
+        "dateOfEvent" : "Fri Oct 02 2017 00:00:00 GMT+0530 (IST)",
+        "eventLink" : "",
+        "Description" : "Gandhi birthday",
+        "image" : ""
     }
 ]
 export default data
