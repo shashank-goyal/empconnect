@@ -8,22 +8,22 @@ const data = [
    month:"August",
    postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
     winners:[{
-       name:"Shashank",
+       name:"Person 1",
        image:"images/man.svg",
        description:description
    },
    {
-       name:"Jimit",
+       name:"Person 2",
        image:"images/man.svg",
        description:description
    },
    {
-       name:"Animesh",
+       name:"Person 3",
        image:"images/man.svg",
        description:description
    },
    {
-       name:"Vinod",
+       name:"Person 4",
        image:"images/man.svg",
        description:description
    }]
@@ -33,21 +33,21 @@ const data = [
    month:"August",
    postTimestamp:"Thu Aug 30 2017 19:03:35 GMT+0530 (IST)",
    winners:[{  
-       name:"Divya",
+       name:"Person 1",
        image:"images/woman.svg",
        description:description
    },{  
-       name:"Hemasunder",
+       name:"Person 2",
        image:"images/man.svg",
        description:description
    },
    {
-       name:"Anusha",
+       name:"Person 3",
        image:"images/woman.svg",
        description:description
    },
    {
-       name:"Geeta",
+       name:"Person 4",
        image:"images/woman.svg",
        description:description
    }]
@@ -60,17 +60,17 @@ const data = [
     
     winners:[
         {
-            name:"Chandra",
+            name:"Person 1",
             image:"images/man.png",
                    rank:"1",
         },
         {
-            name:"Rakesh",
+            name:"Person 2",
             image:"images/man.png",
                    rank:"2",
         }, 
        {
-       name:"Jimit",
+       name:"Person 3",
        image:"images/man.png",
               rank:"3",
        }]
@@ -83,17 +83,17 @@ const data = [
         
         winners:[
             {
-                name:"Royal Challengers Bellandur",
+                name:"Team 1",
                 image:"images/man.png",
                        rank:"1",
             },
             {
-                name:"Crazy Compozed",
+                name:"Team 2",
                 image:"images/man.png",
                        rank:"2",
             }, 
            {
-           name:"Allstate United",
+           name:"Team 3",
            image:"images/man.png",
                   rank:"3",
            }]
@@ -106,17 +106,17 @@ const data = [
             
             winners:[
                 {
-                    name:"Dinesh",
+                    name:"Person 1",
                     image:"images/man.png",
                            rank:"1",
                 },
                 {
-                    name:"Satya",
+                    name:"Person 2",
                     image:"images/man.png",
                            rank:"2",
                 }, 
                {
-               name:"Kunal",
+               name:"Person 3",
                image:"images/man.png",
                       rank:"3",
                }]
@@ -127,17 +127,17 @@ const data = [
             postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
             winners:[
                 {
-                    name:"Master",
+                    name:"Person 1",
                     image:"images/man.png",
                            rank:"1",
                 },
                 {
-                    name:"Sameer",
+                    name:"Person 2",
                     image:"images/man.png",
                            rank:"2",
                 }, 
                {
-               name:"Meenu",
+               name:"Person 3",
                image:"images/man.png",
                       rank:"3",
                }]
@@ -148,17 +148,17 @@ const data = [
                 postTimestamp:"Thu Aug 31 2017 19:03:35 GMT+0530 (IST)",
                 winners:[
                     {
-                        name:"Thiru",
+                        name:"Person 1",
                         image:"images/man.png",
                                rank:"1",
                     },
                     {
-                        name:"Swapnil",
+                        name:"Person 2",
                         image:"images/man.png",
                                rank:"2",
                     }, 
                    {
-                   name:"Raman",
+                   name:"Person 3",
                    image:"images/man.png",
                           rank:"3",
                    }]
