@@ -44,9 +44,9 @@ router.get("/events",function(req,res){
             } else {
                 response = {"error" : false,"message" : data};
             }
-            holidayData.forEach(function(item){
-                response.push(item)
-            })
+            // holidayData.forEach(function(item){
+            //     response.push(item)
+            // })
             res.json(response);
         });
     });
