@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image as ImageComponent, Item,Label,Button,Icon,Segment } from 'semantic-ui-react'
-
+import CSSTransactionGroup from "react-addons-css-transition-group";
 //const paragraph = <ImageComponent src='/assets/images/wireframe/short-paragraph.png' />
 
   
@@ -8,11 +8,18 @@ import { Image as ImageComponent, Item,Label,Button,Icon,Segment } from 'semanti
 class SingleEventTile extends React.Component{
    constructor(props){
        super(props);    
-      
+       this.state = {
+            like:10
+        }
        this.toggleDescription = this.toggleDescription.bind(this);
+       this.addLike = this.addLike.bind(this)
        
    } 
+   addLike(){
+       this.setState({like:this.state.like+1})
+   }
 
+   
    toggleDescription(event){    
        var toggle = event.target.parentElement.parentElement.parentElement.getElementsByTagName("span")[2].style.display;
        
@@ -27,9 +34,17 @@ class SingleEventTile extends React.Component{
   render(){
         return(
       <Segment raised>
+         <CSSTransactionGroup
+                    transitionName="like"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}>
+                    <span  key={this.state.like} className="likes-heart">{this.state.like} </span>
+        </CSSTransactionGroup> 
+        <Button onClick={this.addLike}>{this.state.like}</Button>
         <Item.Group>
             <Item>
             <Item.Image size='small'  src={this.props.image}/>
+
             <Item.Content>
                 <Item.Header>{this.props.eventTitle}</Item.Header>
                 <Item.Meta>
