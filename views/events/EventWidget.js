@@ -50,7 +50,7 @@ export default class EventWidget extends React.Component{
         })
         update({eventData:outData})
     }
-    else if(props.option == "Bithdays"){
+    else if(props.option == "Birthdays"){
         filterData = this.state.data.filter(e => e.eventSubCategory == "Birthday" && (new Date(e.dateOfEvent)-new Date()) > 0 ).sort((a,b) => new Date(a.dateOfEvent)-new Date(b.dateOfEvent)).slice(0);
         filterData.forEach(function(e){
             diffDays = Math.round(Math.abs((new Date(e.dateOfEvent) - new Date())/(oneDay)));
@@ -60,7 +60,7 @@ export default class EventWidget extends React.Component{
             if(diffDays == 0)
                 element["dateOfEvent"]="Today"
             else if(diffDays == 1)
-                element["dateOfEvent"] = "Tomorrow"
+                element["dateOfEvent"] = g"Tomorrow"
             else
                 element["dateOfEvent"] = e.dateOfEvent.split(" ").slice(1,3).reverse().join(" ");
             outData.push(element)
@@ -68,9 +68,24 @@ export default class EventWidget extends React.Component{
         
         update({eventData:outData})
     }
-    else
-        update({eventData:outData})  
-      
+    else if(props.option == "Holidays"){
+          filterData = this.state.data.filter(e => e.eventSubCategory == "Holiday" && (new Date(e.dateOfEvent)-new Date()) > 0 ).sort((a,b) => new Date(a.dateOfEvent)-new Date(b.dateOfEvent)).slice(0);
+          filterData.forEach(function(e){
+              diffDays = Math.round(Math.abs((new Date(e.dateOfEvent) - new Date())/(oneDay)));
+              var element = {}
+              element["image"] = e.image
+              element["eventTitle"] = e.eventTitle
+              if(diffDays == 0)
+                  element["dateOfEvent"]="Today"
+              else if(diffDays == 1)
+                  element["dateOfEvent"] = "Tomorrow"
+              else
+                  element["dateOfEvent"] = e.dateOfEvent.split(" ").slice(1,3).reverse().join(" ");
+              outData.push(element)
+          })
+
+          update({eventData:outData})
+      }
     }
     handleOpen(event){
        var newData =  this.state.data.filter(e => e.eventTitle === event.target.innerText)[0]
