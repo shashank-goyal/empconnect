@@ -38,18 +38,18 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   mangle: true,
-    //   compress: {
-    //     warnings: false, // Suppress uglification warnings
-    //     pure_getters: true,
-    //     unsafe: true,
-    //     unsafe_comps: true,
-    //     //drop_console: true
-    //   },
-    //   output: {
-    //     comments: false,
-    //   },
-    //})
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false, // Suppress uglification warnings
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        drop_console: true
+      },
+      output: {
+        comments: false,
+      },
+    })
   ],
 }

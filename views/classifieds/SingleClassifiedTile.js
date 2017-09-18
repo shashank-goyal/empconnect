@@ -95,7 +95,8 @@ class SingleClassifiedTile extends React.Component{
            update({formError:false,formLoading:true,errorText:""})
            axios.post('/mail', {
                 email:contactData.email,
-                title:title
+                title:title,
+                phone:contactData.phone
             })
             .then(function (response) {
                 var contactData = {

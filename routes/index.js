@@ -3,6 +3,13 @@ var router = express.Router();
 const connection = require('../config/database')
 var nodemailer = require('nodemailer');
 /* GET home page. */
+const Nexmo = require('nexmo');
+const nexmo = new Nexmo({
+  apiKey:"8d92de9e",
+  apiSecret: "a71a89fd2a03cc0e"
+});
+ 
+
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Employee Connect' });
@@ -70,7 +77,7 @@ router.get("/get-classifieds",function(req,res,next){
   }).catch(e => e)
 })
 router.post("/mail",function(req,res,next){
-  console.log("came 1st line")
+  //console.log("came 1st line")
 
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -92,11 +99,26 @@ router.post("/mail",function(req,res,next){
         console.log(error);
         res.json({yo: 'error'});
     }else{
-        console.log('Message sent: ' + info.response);
-        res.json({yo: info.response});
+      nexmo.message.sendSms(
+        "919567721579","91"+req.body.phone,'Contact details for the Add - '+req.body.title+"\n\n"+text, 
+        (err, responseData) => {
+          if (responseData) {
+            console.log(responseData)
+            res.json({yo: info.response});
+        }}
+      );    
+        
     };
 });
 
 
 })
+
+router.post('/sms', (req, res) => {
+  // Send SMS
+ // var text = 'Greetings, \n\n' + "Seller's Contact information \n\n Name: John David \n Email:testmail@testmail.com\n Phone Number:9999999999\n\nThanks,\nTeam Employee Connect";
+ 
+});
+
+
 module.exports = router;

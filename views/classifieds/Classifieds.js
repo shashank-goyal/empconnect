@@ -48,7 +48,10 @@ export default class Classifieds extends Component {
         this.setState({action:"loader"}) 
         this.renderTiles();
     }
-    else
+    else if(name == "add"){
+         newData =this.state.rsp.filter(e => e.ntId === "npsaa" )         
+    }
+    else   
       newData = this.state.rsp.filter(e => e.category.toLowerCase() == name)
        //console.log(newData)
        this.setState({ activeItem: name,
