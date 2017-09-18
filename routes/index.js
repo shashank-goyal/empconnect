@@ -31,7 +31,7 @@ router.post('/insert-classifieds', function(req, res, next) {
   //})
   var classifiedsObj = req.body;
   classifiedsObj.title = classifiedsObj.brand + " " + classifiedsObj.model + " " + classifiedsObj.year;
-  classifiedsObj.ntId = "sgoyb";
+  classifiedsObj.ntId = "npsaa";
   classifiedsObj.image = "";
   classifiedsObj.postTimestamp = new Date().toUTCString();
   classifiedsObj.deletionFlag = false;
