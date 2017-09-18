@@ -60,7 +60,7 @@ export default class EventWidget extends React.Component{
             if(diffDays == 0)
                 element["dateOfEvent"]="Today"
             else if(diffDays == 1)
-                element["dateOfEvent"] = g"Tomorrow"
+                element["dateOfEvent"] = "Tomorrow"
             else
                 element["dateOfEvent"] = e.dateOfEvent.split(" ").slice(1,3).reverse().join(" ");
             outData.push(element)

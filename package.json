@@ -20,7 +20,6 @@
     "nexmo": "^2.0.2",
     "nodemailer": "^4.1.0",
     "react": "^15.6.1",
-    
     "react-datepicker": "^0.54.0",
     "react-dom": "^15.6.1",
     "react-slick": "^0.15.4",
@@ -49,6 +48,6 @@
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.7",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.5"
+    "webpack": "^3.6.0"
   }
 }
