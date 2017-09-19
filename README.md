@@ -13,4 +13,4 @@ Steps to configure the application
     npm run webpack
     npm run start //to start application. Launch http://localhost:3000
 
-
+MVP of the product is hosted here: https://emp-connect.herokuapp.com/

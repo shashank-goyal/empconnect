@@ -37,7 +37,7 @@ class SingleEventTile extends React.Component{
                 <Item.Header>{this.props.eventTitle}</Item.Header>
                 <Item.Meta>
                 <span className='price'><Icon name='marker' />{this.props.location}  </span>
-                <span className='stay'><a href={this.props.eventLink} target="_blank"><Icon name='linkify' /><Label as='a' color='blue' tag>Click here to visit details</Label></a></span>
+                <span className='stay'><a href={this.props.eventLink} target="_blank"><Icon name='linkify' /><Label as='a' color='blue' tag>Click here to view details</Label></a></span>
                 <Label as='a' color='green' attached="top right" tag>   
                     <Icon name='calendar' /> {new Date(this.props.dateOfEvent).toDateString()}
                 </Label>
